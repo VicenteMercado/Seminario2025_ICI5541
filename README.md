@@ -1,0 +1,2 @@
+# Seminario2025_ICI5541
+Proyecto de Seminario de Título: GENERACIÓN DE MAPAS A PARTIR DE NARRACIONES LITERARIAS
