@@ -1,0 +1,1032 @@
+{
+  "lugares": [
+    "balcón de la Mansión Renoux",
+    "Dominio Central",
+    "Guarnición",
+    "salón de baile Elariel",
+    "edificio del Cantón",
+    "Torreón de Lekal",
+    "Casa Venture",
+    "refugio de Elend",
+    "suburbios skaa de Luthadel",
+    "Montaña de Verano",
+    "torreón de Tekiel",
+    "Guarnición de Valtroux",
+    "jardines de la Mansión Renoux",
+    "salón de baile del Torreón de Lekal",
+    "Holstep",
+    "guarida de Camon",
+    "Cantón de las Finanzas",
+    "Casa Renoux",
+    "edificio de Clubs",
+    "Fellise",
+    "taller de Clubs",
+    "ciudad de Holstep",
+    "salón de baile Venture",
+    "Pozo de la Ascensión",
+    "salón Venture",
+    "Laberintos de Hollín",
+    "ciudad de Valtroux",
+    "Torreón de Erikeller",
+    "palacio del lord Legislador",
+    "Torreón de Elariel",
+    "Casa Elariel",
+    "ciudad de Luthadel",
+    "salón de caballeros del Torreón de Lekal",
+    "Terris",
+    "guarida de Vin",
+    "Guarnición de Holstep",
+    "Guarnición de Luthadel",
+    "jardín de la Mansión Renoux",
+    "campos de la Mansión Renoux",
+    "Pozos de Hathsin",
+    "Torreón de Venture",
+    "calle Kenton",
+    "Mansión Renoux",
+    "Luthadel",
+    "Montañas Lejanas de Terris",
+    "salón principal Venture",
+    "Montes de Ceniza"
+  ],
+  "relaciones": [
+    {
+      "origen": "edificio del Cantón",
+      "tipo": "CERCA_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Cantón de las Finanzas",
+      "tipo": "CERCA_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "palacio del lord Legislador"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Terris"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Montes de Ceniza"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Cantón de las Finanzas"
+    },
+    {
+      "origen": "guarida de Vin",
+      "tipo": "CONECTA",
+      "destino": "taller de Clubs"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Luthadel"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "SUR_DE",
+      "destino": "Fellise"
+    },
+    {
+      "origen": "Pozos de Hathsin",
+      "tipo": "NORTE_DE",
+      "destino": "Luthadel"
+    },
+    {
+      "origen": "ciudad de Luthadel",
+      "tipo": "SUR_DE",
+      "destino": "Fellise"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "DENTRO_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "suburbios skaa de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "SUR_DE",
+      "destino": "Fellise"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Pozos de Hathsin"
+    },
+    {
+      "origen": "taller de Clubs",
+      "tipo": "CERCA_DE",
+      "destino": "Montes de Ceniza"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "DENTRO_DE",
+      "destino": "salón principal Venture"
+    },
+    {
+      "origen": "salón principal Venture",
+      "tipo": "DENTRO_DE",
+      "destino": "Luthadel"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "ciudad de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Torreón de Erikeller"
+    },
+    {
+      "origen": "Pozos de Hathsin",
+      "tipo": "DENTRO_DE",
+      "destino": "palacio del lord Legislador"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "CONECTA",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "taller de Clubs",
+      "tipo": "DENTRO_DE",
+      "destino": "Fellise"
+    },
+    {
+      "origen": "Fellise",
+      "tipo": "NORTE_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "balcón de la Mansión Renoux",
+      "tipo": "CERCA_DE",
+      "destino": "jardín de la Mansión Renoux"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "CERCA_DE",
+      "destino": "campos de la Mansión Renoux"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "CONECTA",
+      "destino": "calle Kenton"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "NORTE_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "DENTRO_DE",
+      "destino": "Pozo de la Ascensión"
+    },
+    {
+      "origen": "Torreón de Elariel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Venture"
+    },
+    {
+      "origen": "salón de baile Elariel",
+      "tipo": "DENTRO_DE",
+      "destino": "Torreón de Elariel"
+    },
+    {
+      "origen": "salón Venture",
+      "tipo": "DENTRO_DE",
+      "destino": "Casa Venture"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "DENTRO_DE",
+      "destino": "Dominio Central"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "SUR_DE",
+      "destino": "Fellise"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Laberintos de Hollín"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "torreón de Tekiel"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Elariel"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Renoux"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Mansión Renoux"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Renoux"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Fellise"
+    },
+    {
+      "origen": "Terris",
+      "tipo": "CERCA_DE",
+      "destino": "Montaña de Verano"
+    },
+    {
+      "origen": "Montañas Lejanas de Terris",
+      "tipo": "CERCA_DE",
+      "destino": "Terris"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "DENTRO_DE",
+      "destino": "Luthadel"
+    },
+    {
+      "origen": "taller de Clubs",
+      "tipo": "CERCA_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Guarnición de Holstep",
+      "tipo": "NORTE_DE",
+      "destino": "Dominio Central"
+    },
+    {
+      "origen": "torreón de Tekiel",
+      "tipo": "DENTRO_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Guarnición de Valtroux",
+      "tipo": "NORTE_DE",
+      "destino": "Holstep"
+    },
+    {
+      "origen": "Guarnición de Valtroux",
+      "tipo": "CERCA_DE",
+      "destino": "Luthadel"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "SUR_DE",
+      "destino": "Holstep"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Fellise"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "DENTRO_DE",
+      "destino": "taller de Clubs"
+    },
+    {
+      "origen": "ciudad de Holstep",
+      "tipo": "SUR_DE",
+      "destino": "ciudad de Valtroux"
+    },
+    {
+      "origen": "salón de baile del Torreón de Lekal",
+      "tipo": "DENTRO_DE",
+      "destino": "Torreón de Lekal"
+    },
+    {
+      "origen": "salón de caballeros del Torreón de Lekal",
+      "tipo": "DENTRO_DE",
+      "destino": "Torreón de Lekal"
+    },
+    {
+      "origen": "Torreón de Lekal",
+      "tipo": "CERCA_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Mansión Renoux",
+      "tipo": "CERCA_DE",
+      "destino": "jardines de la Mansión Renoux"
+    },
+    {
+      "origen": "jardines de la Mansión Renoux",
+      "tipo": "DENTRO_DE",
+      "destino": "Mansión Renoux"
+    },
+    {
+      "origen": "Pozo de la Ascensión",
+      "tipo": "CERCA_DE",
+      "destino": "Mansión Renoux"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Mansión Renoux"
+    },
+    {
+      "origen": "Torreón de Lekal",
+      "tipo": "CERCA_DE",
+      "destino": "Mansión Renoux"
+    },
+    {
+      "origen": "salón de baile Venture",
+      "tipo": "DENTRO_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "refugio de Elend",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Mansión Renoux"
+    },
+    {
+      "origen": "edificio de Clubs",
+      "tipo": "DENTRO_DE",
+      "destino": "guarida de Camon"
+    },
+    {
+      "origen": "Pozos de Hathsin",
+      "tipo": "DENTRO_DE",
+      "destino": "ciudad de Luthadel"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Lekal"
+    },
+    {
+      "origen": "Torreón de Elariel",
+      "tipo": "CONECTA",
+      "destino": "Torreón de Lekal"
+    },
+    {
+      "origen": "Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    }
+  ],
+  "lugares_meta": {
+    "balcón de la Mansión Renoux": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "Dominio Central": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 1,
+      "near_conn": 0,
+      "pivot_score": 5,
+      "radius_hint": 0
+    },
+    "Guarnición": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 88,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 176,
+      "radius_hint": 0
+    },
+    "salón de baile Elariel": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "edificio del Cantón": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "tierras altas de Terris": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "Torreón de Lekal": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 6,
+      "inside_in": 2,
+      "near_conn": 4,
+      "pivot_score": 20,
+      "radius_hint": 0
+    },
+    "ciudad de Kredik Shaw": {
+      "kind": "ciudad",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "Dominio Occidental": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "Casa Venture": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 1,
+      "near_conn": 1,
+      "pivot_score": 7,
+      "radius_hint": 0
+    },
+    "refugio de Elend": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "suburbios skaa de Luthadel": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "Chakath": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 1,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 2,
+      "radius_hint": 0
+    },
+    "Montaña de Verano": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "torreón de Tekiel": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 4,
+      "radius_hint": 0
+    },
+    "Guarnición de Valtroux": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 4,
+      "radius_hint": 0
+    },
+    "jardines de la Mansión Renoux": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 4,
+      "radius_hint": 0
+    },
+    "salón de baile del Torreón de Lekal": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "Holstep": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 7,
+      "deg": 2,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 16,
+      "radius_hint": 0
+    },
+    "guarida de Camon": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 1,
+      "near_conn": 0,
+      "pivot_score": 4,
+      "radius_hint": 0
+    },
+    "Cantón de las Finanzas": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 0,
+      "near_conn": 2,
+      "pivot_score": 6,
+      "radius_hint": 0
+    },
+    "Casa Renoux": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 0,
+      "near_conn": 2,
+      "pivot_score": 6,
+      "radius_hint": 0
+    },
+    "edificio de Clubs": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "Fellise": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 30,
+      "deg": 8,
+      "inside_in": 1,
+      "near_conn": 1,
+      "pivot_score": 73,
+      "radius_hint": 0
+    },
+    "taller de Clubs": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 5,
+      "inside_in": 1,
+      "near_conn": 3,
+      "pivot_score": 14,
+      "radius_hint": 0
+    },
+    "ciudad de Holstep": {
+      "kind": "ciudad",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "plantación de lord Tresting": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "plaza del Superviviente": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "ciudad de Fellise": {
+      "kind": "ciudad",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "salón de baile Venture": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "Pozo de la Ascensión": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 1,
+      "near_conn": 1,
+      "pivot_score": 7,
+      "radius_hint": 0
+    },
+    "salón Venture": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "Laberintos de Hollín": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "ciudad de Valtroux": {
+      "kind": "ciudad",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "Torreón de Erikeller": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "palacio del lord Legislador": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 1,
+      "near_conn": 1,
+      "pivot_score": 7,
+      "radius_hint": 0
+    },
+    "Torreón de Elariel": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 3,
+      "inside_in": 1,
+      "near_conn": 2,
+      "pivot_score": 10,
+      "radius_hint": 0
+    },
+    "Casa Elariel": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "ciudad de Luthadel": {
+      "kind": "ciudad",
+      "is_region": true,
+      "mentions": 0,
+      "deg": 15,
+      "inside_in": 3,
+      "near_conn": 8,
+      "pivot_score": 40,
+      "radius_hint": 118
+    },
+    "ciudad de Kordel": {
+      "kind": "ciudad",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "ciudad de Khlennium": {
+      "kind": "ciudad",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "salón de caballeros del Torreón de Lekal": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "Terris": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 39,
+      "deg": 3,
+      "inside_in": 0,
+      "near_conn": 2,
+      "pivot_score": 85,
+      "radius_hint": 0
+    },
+    "canal de Luth-Davn": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "guarida de Vin": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "Guarnición de Holstep": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 1,
+      "radius_hint": 0
+    },
+    "Guarnición de Luthadel": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 0,
+      "near_conn": 2,
+      "pivot_score": 6,
+      "radius_hint": 0
+    },
+    "jardín de la Mansión Renoux": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "campos de la Mansión Renoux": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "Pozos de Hathsin": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 4,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 4,
+      "radius_hint": 0
+    },
+    "Torreón de Venture": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 10,
+      "inside_in": 1,
+      "near_conn": 7,
+      "pivot_score": 27,
+      "radius_hint": 0
+    },
+    "fortaleza de Hasting": {
+      "kind": "fortaleza",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "calle Kenton": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "Mansión Renoux": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 16,
+      "inside_in": 1,
+      "near_conn": 11,
+      "pivot_score": 41,
+      "radius_hint": 0
+    },
+    "Luthadel": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 156,
+      "deg": 27,
+      "inside_in": 2,
+      "near_conn": 13,
+      "pivot_score": 371,
+      "radius_hint": 0
+    },
+    "Montañas Lejanas de Terris": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 1,
+      "inside_in": 0,
+      "near_conn": 1,
+      "pivot_score": 3,
+      "radius_hint": 0
+    },
+    "palacio de Kredik Shaw": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 0,
+      "inside_in": 0,
+      "near_conn": 0,
+      "pivot_score": 0,
+      "radius_hint": 0
+    },
+    "salón principal Venture": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 1,
+      "near_conn": 0,
+      "pivot_score": 5,
+      "radius_hint": 0
+    },
+    "Montes de Ceniza": {
+      "kind": "otro",
+      "is_region": false,
+      "mentions": 0,
+      "deg": 2,
+      "inside_in": 0,
+      "near_conn": 2,
+      "pivot_score": 6,
+      "radius_hint": 0
+    }
+  },
+  "pivotes": [
+    "Luthadel",
+    "Guarnición",
+    "Terris",
+    "Fellise",
+    "Mansión Renoux",
+    "Torreón de Venture"
+  ],
+  "excluidos": [
+    "tierras altas de Terris",
+    "ciudad de Kredik Shaw",
+    "Dominio Occidental",
+    "Chakath",
+    "plantación de lord Tresting",
+    "plaza del Superviviente",
+    "ciudad de Fellise",
+    "ciudad de Kordel",
+    "ciudad de Khlennium",
+    "canal de Luth-Davn",
+    "fortaleza de Hasting",
+    "palacio de Kredik Shaw"
+  ]
+}
