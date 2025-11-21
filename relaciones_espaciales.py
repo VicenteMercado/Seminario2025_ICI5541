@@ -1,10 +1,10 @@
 # relaciones_espaciales.py
-import json, time, unicodedata, getpass, PyPDF2
+import json, time, unicodedata, getpass, PyPDF2, os
 import re
 from openai import OpenAI
 
 # ============================================================
-# A) EXTRACCIÓN DESDE PDF + LLM + NORMALIZACIÓN
+# A) Extracción desde PDF + LLM + normalización
 # ============================================================
 pdf_path = r"textos\El Imperio Final Ed revisada - Brandon Sanderson.pdf"
 
@@ -67,13 +67,19 @@ def is_relevant(chunk):
 relevant_chunks = [c for c in chunks if is_relevant(c)]
 print("Fragmentos relevantes:", len(relevant_chunks))
 
-# === Limitar la cantidad de fragmentos a procesar ===
+# Limitar la cantidad de fragmentos a procesar
 MAX_CHUNKS = 200
 relevant_chunks = relevant_chunks[:MAX_CHUNKS]
 print(f"Procesando solo los primeros {len(relevant_chunks)} fragmentos relevantes.")
 
-# 4) OpenAI
-api_key = getpass.getpass("Introduce tu API key: ")
+# 4) Configuración de cliente OpenAI
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise RuntimeError(
+        "No se encontró la variable de entorno OPENAI_API_KEY. "
+        "Defínela antes de ejecutar: $env:OPENAI_API_KEY = 'tu_api_key_aquí'"
+    )
+
 client = OpenAI(api_key=api_key)
 
 # 5) Prompt estructurado
@@ -191,9 +197,9 @@ REGLAS ADICIONALES
 - NO incluyas interiores ni salas internas.
 """
 
-# 6) Llamadas al LLM
+# 6) Llamadas al modelo
 results = []
-pivot_raw = []  # lugares_clave reportados por el LLM
+pivot_raw = []  # lugares_clave informados por el modelo
 
 for i, chunk in enumerate(relevant_chunks):
     print(f"Procesando {i+1}/{len(relevant_chunks)}...")
@@ -212,10 +218,10 @@ for i, chunk in enumerate(relevant_chunks):
         pivot_raw.extend(data.get("lugares_clave", []))
     except Exception as e:
         print("Error:", e)
-    time.sleep(0.6)  # anti rate-limit
+    time.sleep(0.6)  # pequeña pausa para evitar rate limits
 
 # ============================================================
-# B) NORMALIZACIÓN Y FILTROS
+# B) Normalización y filtros
 # ============================================================
 ARTS = {"el", "la", "los", "las", "del", "de", "al", "lo"}
 
@@ -242,7 +248,7 @@ GENERIC_TYPES = {
     "salon", "salón", "almacenes", "almacen", "edificio", "plantacion", "plantación", "montes", "cavernas", "pozos"
 }
 
-# Artículos compuestos (para chequear inicios reales)
+# Artículos compuestos (para detectar inicios reales)
 ARTS_MULTI = {"el", "la", "los", "las", "del", "de la", "de los", "de las", "al"}
 
 
@@ -296,7 +302,7 @@ def is_named_place(s: str) -> bool:
     return False
 
 
-# interiores a excluir pase lo que pase
+# Palabras que indican interiores (para excluirlos siempre)
 def es_interior(lugar: str) -> bool:
     exclude_keywords = {
         "ventana", "pasillo", "comedor", "escalera", "sala", "guardarropa",
@@ -308,7 +314,7 @@ def es_interior(lugar: str) -> bool:
     return any(kw in t for kw in exclude_keywords)
 
 
-# ===== Alias específicos (para este libro/mapa) =====
+# Alias específicos adaptados a este libro/mapa
 ALIASES_NORM = {
     # Kredik Shaw / palacio del Lord Legislador
     "palacio del lord legislador": "Kredik Shaw",
@@ -318,7 +324,7 @@ ALIASES_NORM = {
     "guarnicion": "Guarnición de Luthadel",
     "guarnicion de la ciudad": "Guarnición de Luthadel",
 
-    # Casas vs torreones/fortalezas (unificamos en el torreón)
+    # Casas vs torreones/fortalezas (se unifican en el torreón)
     "casa venture": "Torreón de Venture",
     "fortaleza venture": "Torreón de Venture",
     "casa hasting": "Torreón de Hasting",
@@ -328,11 +334,11 @@ ALIASES_NORM = {
     "casa erikell": "Torreón de Erikeller",
     "fortaleza erikeller": "Torreón de Erikeller",
 
-    # Cantones (por si vienen con "sede de...")
+    # Cantones (incluyen variantes tipo "sede de...")
     "sede del canton de la ortodoxia": "Cantón de la Ortodoxia",
     "sede del canton de las finanzas": "Cantón de las Finanzas",
 
-    # Variantes de pozos de Hathsin (si quieres tratarlos como un solo nodo)
+    # Variantes de pozos de Hathsin unificadas en un nodo
     "pozo de la ascension": "Pozos de Hathsin",
     "los pozos de hathsin": "Pozos de Hathsin",
 
@@ -350,7 +356,7 @@ def apply_alias(label: str) -> str:
 # Tipos de relación permitidos
 VALID_TIPOS = {"NORTE_DE", "SUR_DE", "ESTE_DE", "OESTE_DE", "CERCA_DE"}
 
-# 8) Consolidar aplicando filtros duros
+# 8) Consolidar aplicando filtros principales
 all_places, all_relations = set(), []
 
 for r in results:
@@ -379,7 +385,7 @@ cleaned_places = []
 for p in all_places:
     c = norm_place(p)
     if c and c not in canon2label:
-        canon2label[c] = p  # conservar primera etiqueta humana
+        canon2label[c] = p  # se conserva la primera etiqueta humana encontrada
         cleaned_places.append(p)
 
 
@@ -387,7 +393,7 @@ def remap(name: str) -> str:
     return canon2label.get(norm_place(name), name)
 
 
-# normalizar relaciones y deduplicar
+# Normalizar relaciones y deduplicar
 tmp_rel = []
 for r in all_relations:
     o, d = remap(r["origen"]), remap(r["destino"])
@@ -403,7 +409,7 @@ for r in tmp_rel:
         clean_relations.append(r)
 
 # ============================================================
-# C) META-INFO, PIVOTES Y FILTRO LUTH ADEL
+# C) Meta-info, pivotes y filtro Luthadel
 # ============================================================
 
 # Conteo de menciones en el texto completo
@@ -458,7 +464,7 @@ else:
         print(f"{i}. {p}  (score={m['pivot_score']}, menciones={m['mentions']}, grado={m['deg']})")
 
 # ============================================================
-# D) HEURÍSTICA DE PERTENENCIA A LUTHADEL + FILTRO FINAL
+# D) Heurística de pertenencia a Luthadel + filtro final
 # ============================================================
 
 text_plain = strip_accents(text).lower()
@@ -477,8 +483,7 @@ def appears_with_luthadel(label: str, window: int = 250) -> bool:
     return False
 
 
-# Forzamos como "dentro de Luthadel" algunos lugares clave,
-# aunque el contexto no los mencione siempre cerca de la palabra "Luthadel".
+# Algunos lugares se fuerzan como "dentro de Luthadel" aunque no siempre aparezcan cerca de la palabra "Luthadel"
 INSIDE_FORCE_RAW = {
     "kredik shaw",
     "plaza de la fuente",
@@ -516,7 +521,7 @@ for p in cleaned_places:
     else:
         inside_luthadel[p] = appears_with_luthadel(p)
 
-# Lugares FUERA de Luthadel que queremos descartar siempre
+# Lugares fuera de Luthadel que se descartan siempre
 OUTSIDE_LUTHADEL_RAW = {
     "fellise",
     "holstep",
@@ -535,7 +540,7 @@ OUTSIDE_LUTHADEL_RAW = {
 OUTSIDE_LUTHADEL_NORM = {norm_place(s) for s in OUTSIDE_LUTHADEL_RAW}
 
 
-# Lugares "conceptuales" que no queremos como nodo
+# Lugares conceptuales que no se quieren como nodo
 DROP_NORM = {
     "grandes casas",
     "grandes casas de luthadel"
@@ -544,13 +549,10 @@ DROP_NORM = {
 TOP_LEVEL_CITY_NORM = "luthadel"
 SPECIAL_ALWAYS_KEEP = {"kredik shaw", "plaza de la fuente"}
 
-INCLUDE_ISOLATES_POLICY = "all"  # mantenemos todos los lugares de Luthadel, incluso aislados
+INCLUDE_ISOLATES_POLICY = "all"  # se mantienen todos los lugares de Luthadel, incluso aislados
 
-# === Filtro de lugares (post-procesado específico de Luthadel) ===
-
-# Lugares "oficiales" del mapa de Luthadel que quieres conservar sí o sí.
+# Lugares principales del mapa de Luthadel que conviene conservar siempre
 OFFICIAL_PLACES = [
-    # lista que me diste + algunos nombres que salen tal cual en el texto
     "Plaza de la Fuente",
     "Kredik Shaw",
     "Cantón de la Ortodoxia",
@@ -572,7 +574,7 @@ OFFICIAL_PLACES = [
 
 ALLOWLIST_NORM = {norm_place(n) for n in OFFICIAL_PLACES}
 
-# Lugares que NO quieres nunca en el mapa de la ciudad (claramente fuera).
+# Lugares que no se quieren nunca en el mapa de la ciudad (claramente fuera)
 BLOCKLIST_PLACES = [
     "Holstep", "ciudad de Holstep", "Guarnición de Holstep",
     "Valtroux", "ciudad de Valtroux", "Guarnición de Valtroux",
@@ -581,17 +583,16 @@ BLOCKLIST_PLACES = [
     "plantación de lord Tresting", "plantación de Tresting",
     "Montes de Ceniza", "Colina de las Mil Torres"
     "Fellise","Casa de vecinos", "Casa de Clubs", "guarida de Vin",
-    
 ]
 BLOCKLIST_NORM = {norm_place(n) for n in BLOCKLIST_PLACES}
 
-# Aunque en la allowlist ya están, por claridad:
+# Coincide con la allowlist, pero se marca explícitamente
 SPECIAL_ALWAYS_KEEP = {
     norm_place("Kredik Shaw"),
     norm_place("Plaza de la Fuente"),
 }
 
-# Grado por nodo (vuelve a calcularse aquí por si ha cambiado algo en clean_relations)
+# Grado por nodo (recalculado por si clean_relations ha cambiado)
 deg = {p: 0 for p in cleaned_places}
 for rel in clean_relations:
     o, d = rel["origen"], rel["destino"]
@@ -601,13 +602,13 @@ for rel in clean_relations:
 def keep_place(p: str) -> bool:
     np = norm_place(p)
 
-    # 0) Blocklist dura → fuera siempre
+    # 0) Blocklist fuerte → fuera siempre
     if np in BLOCKLIST_NORM:
         return False
     if np in OUTSIDE_LUTHADEL_NORM or np in DROP_NORM:
         return False
 
-    # 1) No queremos el nodo "Luthadel" en este mapa (es la ciudad entera)
+    # 1) No se incluye el nodo "Luthadel" (es la ciudad completa)
     if np == "luthadel":
         return False
 
@@ -621,19 +622,19 @@ def keep_place(p: str) -> bool:
     if np in SPECIAL_ALWAYS_KEEP:
         return True
 
-    # 4) Si está conectado por lo menos a algo, lo mantenemos
+    # 4) Si tiene al menos una relación, se mantiene
     if deg.get(p, 0) > 0:
         return True
 
-    # 5) Nodos muy mencionados pero sin relaciones explícitas:
+    # 5) Nodos muy mencionados pero sin relaciones explícitas
     meta_p = lugares_meta.get(p, {})
     if meta_p.get("mentions", 0) >= 10:
         return True
 
-    # 6) El resto, fuera (ruido: exteriores, genéricos, menciones puntuales)
+    # 6) El resto se considera ruido (exteriores, genéricos, menciones puntuales)
     return False
 
-# Aplicar filtro
+# Aplicar filtro final
 filtered_places = [p for p in cleaned_places if keep_place(p)]
 kept = set(filtered_places)
 filtered_relations = [
@@ -657,7 +658,7 @@ print(f"- Relaciones totales detectadas (antes de filtros): {len(clean_relations
 print(f"- Lugares finales guardados: {len(filtered_places)}")
 print(f"- Relaciones finales guardadas: {len(filtered_relations)} en map_relations.json")
 
-# Guardado JSON final
+# Guardar JSON final
 with open("map_relations.json", "w", encoding="utf-8") as f:
     json.dump(
         {

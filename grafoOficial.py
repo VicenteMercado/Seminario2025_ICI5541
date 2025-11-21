@@ -1,4 +1,3 @@
-# grafoOficial.py (solo nodos en el dibujo, JSON con todas las relaciones)
 import math
 import json
 import pandas as pd
@@ -106,7 +105,6 @@ def draw_official_graph(df: pd.DataFrame):
         font_size=7
     )
 
-    # si quisieras invertir el eje Y para que coincida con el sistema de imagen:
     # ax = plt.gca()
     # ax.invert_yaxis()
 

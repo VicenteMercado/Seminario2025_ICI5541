@@ -1,0 +1,456 @@
+{
+  "lugares": [
+    "cantón de la Ortodoxia",
+    "Torreón de Lekal",
+    "Casa Geffenry",
+    "Casa Renoux",
+    "Torreón de Venture",
+    "Guarida de Camon",
+    "Quiebros",
+    "Laberintos de Hollín",
+    "Ministerio",
+    "Casa Tekiel",
+    "jardines de Tekiel",
+    "taller de Clubs",
+    "Torreón de Elariel",
+    "Colina de las Mil Torres",
+    "Guarnición de Luthadel",
+    "canal de Luth-Davn",
+    "Torreón de Tekiel",
+    "muralla de Luthadel",
+    "Torreón de Erikeller",
+    "plaza de la Fuente",
+    "Cantón de la Inquisición",
+    "Kredik Shaw",
+    "Casa Elariel",
+    "Cantón de las Finanzas",
+    "calle Kenton",
+    "Torreón de Hasting",
+    "suburbios skaa de Luthadel"
+  ],
+  "relaciones": [
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "SUR_DE",
+      "destino": "Cantón de las Finanzas"
+    },
+    {
+      "origen": "Cantón de las Finanzas",
+      "tipo": "CERCA_DE",
+      "destino": "Cantón de la Inquisición"
+    },
+    {
+      "origen": "taller de Clubs",
+      "tipo": "CERCA_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Ministerio"
+    },
+    {
+      "origen": "muralla de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "SUR_DE",
+      "destino": "taller de Clubs"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Renoux"
+    },
+    {
+      "origen": "Torreón de Erikeller",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "CERCA_DE",
+      "destino": "Colina de las Mil Torres"
+    },
+    {
+      "origen": "Torreón de Elariel",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Torreón de Tekiel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Renoux"
+    },
+    {
+      "origen": "Casa Renoux",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Elariel"
+    },
+    {
+      "origen": "jardines de Tekiel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Tekiel"
+    },
+    {
+      "origen": "Casa Geffenry",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Tekiel"
+    },
+    {
+      "origen": "cantón de la Ortodoxia",
+      "tipo": "CERCA_DE",
+      "destino": "Ministerio"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Torreón de Tekiel"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "canal de Luth-Davn",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "plaza de la Fuente"
+    },
+    {
+      "origen": "plaza de la Fuente",
+      "tipo": "CERCA_DE",
+      "destino": "taller de Clubs"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Cantón de la Inquisición",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Torreón de Lekal",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Quiebros",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Torreón de Lekal",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Torreón de Hasting",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Casa Tekiel",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Casa Elariel",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Casa Renoux",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Elariel"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "NORTE_DE",
+      "destino": "Casa Elariel"
+    },
+    {
+      "origen": "Torreón de Hasting",
+      "tipo": "CERCA_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "CERCA_DE",
+      "destino": "plaza de la Fuente"
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Guarnición de Luthadel"
+    }
+  ],
+  "lugares_meta": {
+    "cantón de la Ortodoxia": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Torreón de Lekal": {
+      "mentions": 0,
+      "deg": 3,
+      "near_conn": 3,
+      "pivot_score": 6
+    },
+    "Casa Geffenry": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Casa Renoux": {
+      "mentions": 0,
+      "deg": 4,
+      "near_conn": 4,
+      "pivot_score": 8
+    },
+    "Torreón de Venture": {
+      "mentions": 0,
+      "deg": 13,
+      "near_conn": 11,
+      "pivot_score": 24
+    },
+    "Casa de vecinos": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Guarida de Camon": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Quiebros": {
+      "mentions": 3,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 8
+    },
+    "Encrucijada Cuatropozos": {
+      "mentions": 0,
+      "deg": 0,
+      "near_conn": 0,
+      "pivot_score": 0
+    },
+    "Laberintos de Hollín": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 0,
+      "pivot_score": 1
+    },
+    "Ministerio": {
+      "mentions": 154,
+      "deg": 2,
+      "near_conn": 1,
+      "pivot_score": 311
+    },
+    "los Pozos de Hathsin": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "ciudad de Valtroux": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 0,
+      "pivot_score": 1
+    },
+    "Casa Tekiel": {
+      "mentions": 0,
+      "deg": 3,
+      "near_conn": 3,
+      "pivot_score": 6
+    },
+    "jardines de Tekiel": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "taller de Clubs": {
+      "mentions": 0,
+      "deg": 5,
+      "near_conn": 4,
+      "pivot_score": 9
+    },
+    "Torreón de Elariel": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Colina de las Mil Torres": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Guarnición de Luthadel": {
+      "mentions": 0,
+      "deg": 8,
+      "near_conn": 6,
+      "pivot_score": 14
+    },
+    "ciudad de Holstep": {
+      "mentions": 0,
+      "deg": 2,
+      "near_conn": 0,
+      "pivot_score": 2
+    },
+    "Luthadel": {
+      "mentions": 156,
+      "deg": 11,
+      "near_conn": 9,
+      "pivot_score": 332
+    },
+    "canal de Luth-Davn": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Torreón de Tekiel": {
+      "mentions": 0,
+      "deg": 4,
+      "near_conn": 3,
+      "pivot_score": 7
+    },
+    "Guarnición de Valtroux": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 0,
+      "pivot_score": 1
+    },
+    "muralla de Luthadel": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Torreón de Erikeller": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "plaza de la Fuente": {
+      "mentions": 0,
+      "deg": 3,
+      "near_conn": 3,
+      "pivot_score": 6
+    },
+    "Cantón de la Inquisición": {
+      "mentions": 0,
+      "deg": 2,
+      "near_conn": 2,
+      "pivot_score": 4
+    },
+    "Kredik Shaw": {
+      "mentions": 0,
+      "deg": 15,
+      "near_conn": 12,
+      "pivot_score": 27
+    },
+    "Casa Elariel": {
+      "mentions": 0,
+      "deg": 4,
+      "near_conn": 3,
+      "pivot_score": 7
+    },
+    "Fellise": {
+      "mentions": 30,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 62
+    },
+    "Cantón de las Finanzas": {
+      "mentions": 0,
+      "deg": 3,
+      "near_conn": 2,
+      "pivot_score": 5
+    },
+    "Mansión Renoux": {
+      "mentions": 0,
+      "deg": 6,
+      "near_conn": 6,
+      "pivot_score": 12
+    },
+    "calle Kenton": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "Torreón de Hasting": {
+      "mentions": 0,
+      "deg": 3,
+      "near_conn": 3,
+      "pivot_score": 6
+    },
+    "plaza del Superviviente": {
+      "mentions": 0,
+      "deg": 0,
+      "near_conn": 0,
+      "pivot_score": 0
+    },
+    "Casa de Clubs": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "suburbios skaa de Luthadel": {
+      "mentions": 0,
+      "deg": 1,
+      "near_conn": 1,
+      "pivot_score": 2
+    },
+    "guarida de Vin": {
+      "mentions": 0,
+      "deg": 2,
+      "near_conn": 1,
+      "pivot_score": 3
+    }
+  },
+  "pivotes": [
+    "Kredik Shaw"
+  ],
+  "excluidos": [
+    "Casa de vecinos",
+    "Encrucijada Cuatropozos",
+    "los Pozos de Hathsin",
+    "ciudad de Valtroux",
+    "ciudad de Holstep",
+    "Luthadel",
+    "Guarnición de Valtroux",
+    "Fellise",
+    "Mansión Renoux",
+    "plaza del Superviviente",
+    "Casa de Clubs",
+    "guarida de Vin"
+  ]
+}

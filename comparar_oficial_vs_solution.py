@@ -40,7 +40,7 @@ def normalize_tokens(name: str) -> Set[str]:
         s = s.replace(ch, " ")
     tokens = [t for t in s.split() if t and t not in STOPWORDS]
     if not tokens:
-        # fallback: usar la cadena completa sin acentos/espacios extremos
+        # si todo eran stopwords, usamos la cadena básica como respaldo
         return {s.strip()}
     return set(tokens)
 
@@ -68,7 +68,7 @@ def load_official_graph(path: str) -> Dict[str, Any]:
     official_places: List[str] = []
 
     if isinstance(lugares_raw, dict):
-        # { "Nombre": {...}, ... }
+        # diccionario { "Nombre": {...}, ... }
         official_places = list(lugares_raw.keys())
     elif isinstance(lugares_raw, list):
         # lista de strings o dicts
@@ -126,11 +126,11 @@ def load_solution_coords(path: str) -> Dict[str, Any]:
 
     coords_raw = None
 
-    # Caso 1: tu formato actual -> "coords": { "Nombre": {x,y}, ... }
+    # Caso principal: "coords": { "Nombre": {x,y}, ... }
     if "coords" in data and isinstance(data["coords"], dict):
         coords_raw = data["coords"]
     else:
-        # Casos alternativos si en algún momento usas otro formato:
+        # Alternativa por si en algún momento se guarda con otra clave
         for key in ["lugares", "places", "nodes"]:
             if key in data and isinstance(data[key], dict):
                 coords_raw = data[key]
@@ -223,9 +223,7 @@ def check_relation(tipo: str,
     if tipo == "CONECTA":
         return dist <= dist_connect
 
-    # IMPORTANTE:
-    # Mantengo la convención que ya usaste (que produjo el CSR≈0.206),
-    # donde el eje Y está "invertido" respecto a norte/sur de la narrativa:
+    # Convención de signos:
     # - NORTE_DE(A,B): y_A > y_B + margin_dir
     # - SUR_DE(A,B)  : y_A < y_B - margin_dir
     # - ESTE_DE(A,B) : x_A > x_B + margin_dir
@@ -254,7 +252,7 @@ def compare_graphs(official_path: str,
                    dist_close: float = 66.0,
                    dist_connect: float = 75.0,
                    output_json_path: str = "comparison_official_vs_solution.json") -> None:
-    # Cargar datos
+    # Cargar datos de ambos grafos
     official = load_official_graph(official_path)
     solution = load_solution_coords(solution_path)
 
@@ -267,7 +265,7 @@ def compare_graphs(official_path: str,
     width = official.get("width") or solution.get("width")
     height = official.get("height") or solution.get("height")
 
-    # Mapeo nombres
+    # Mapeo de nombres
     mapping = build_name_mapping(official_places, solver_places)
 
     # Resumen mapeo
@@ -302,7 +300,7 @@ def compare_graphs(official_path: str,
         total_rel += 1
         tipo = r["tipo"].upper()
         if tipo not in stats_por_tipo:
-            # Lo podemos contar igual en "total", pero no evaluamos
+            # si aparece un tipo nuevo lo agregamos al dict para no perderlo
             stats_por_tipo.setdefault(tipo, {"total": 0, "evaluables": 0, "satisfechas": 0})
         stats_por_tipo[tipo]["total"] += 1
 
@@ -341,7 +339,7 @@ def compare_graphs(official_path: str,
 
     csr = satisfechas / evaluables if evaluables > 0 else 0.0
 
-    # Print resumen global
+    # Resumen global
     print("=== Resultados globales ===")
     print(f"Relaciones oficiales totales           : {total_rel}")
     print(f"Relaciones oficiales evaluables       : {evaluables}")
@@ -349,7 +347,7 @@ def compare_graphs(official_path: str,
     print(f"CSR respecto al grafo oficial (solver): {csr:.3f}")
     print()
 
-    # Print por tipo
+    # Detalle por tipo
     print("=== Detalle por tipo de relación ===")
     for t in tipos:
         s = stats_por_tipo[t]

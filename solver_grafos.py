@@ -13,7 +13,7 @@ with open("map_relations.json", "r", encoding="utf-8") as f:
 
 clean_places = data.get("lugares", [])
 clean_relations = data.get("relaciones", [])
-meta = data.get("lugares_meta", {})        # dict opcional por lugar
+meta = data.get("lugares_meta", {})        # meta por lugar (opcional)
 
 # pivotes: distinguir entre “no viene” y “lista vacía”
 if "pivotes" in data:
@@ -56,7 +56,7 @@ WIDTH, HEIGHT = SIDE, SIDE
 
 MARGIN_DIR   = max(8, SIDE // 28)   # N/S/E/O
 DIST_CLOSE   = max(14, SIDE // 9)   # CERCA_DE
-DIST_CONNECT = max(16, SIDE // 8)   # CONECTA (si se usa)
+DIST_CONNECT = max(16, SIDE // 8)   # CONECTA
 MIN_SEP      = max(8, SIDE // 22)   # separación mínima nodos
 
 SOLVE_TIMEOUT_MS = 2500
@@ -217,7 +217,7 @@ else:
     print("\n(No hay pivotes definidos en el JSON)")
 
 # ------------------------------------------------------------
-# 8. Graficar usando SIEMPRE coords del solver
+# 8. Graficar usando coords del solver
 # ------------------------------------------------------------
 FIGSIZE = (20, 10)
 DPI = 240
@@ -226,7 +226,7 @@ FONT_NODES = 8
 FONT_EDGES = 10
 SAVE_SVG = True
 
-# En este punto, no hay concepto de "regiones": todos son nodos normales
+# Todos los nodos se tratan como nodos estándar
 non_region_nodes = list(clean_places)
 
 # map (origen,destino) -> ¿alguna relación satisfecha?
@@ -249,8 +249,8 @@ for r in clean_relations:
 plt.figure(figsize=FIGSIZE, dpi=DPI)
 ax = plt.gca()
 
-# Usamos SIEMPRE las coordenadas de Z3
-ZOOM = 1.0  # si quieres agrandar, pon por ejemplo 3.0
+# Coordenadas del solver (opcionalmente escaladas)
+ZOOM = 1.0
 pos_zoom = {
     p: (solution["coords"][p]["x"] * ZOOM,
         solution["coords"][p]["y"] * ZOOM)
@@ -307,7 +307,7 @@ nx.draw_networkx_labels(
     bbox=dict(facecolor="white", alpha=0.75, edgecolor="none", pad=1.0)
 )
 
-# Etiquetas de aristas violadas (normalmente pocas o ninguna)
+# Etiquetas de aristas violadas
 violadas_labels = {
     (u, v): G2[u][v]["tipo"] for u, v in G2.edges()
     if not G2[u][v]["satisface"]

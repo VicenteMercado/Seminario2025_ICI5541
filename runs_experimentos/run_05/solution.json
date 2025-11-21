@@ -1,0 +1,297 @@
+{
+  "coords": {
+    "Torreón de Elariel": {
+      "x": 393,
+      "y": 312
+    },
+    "Casa Geffenry": {
+      "x": 378,
+      "y": 195
+    },
+    "guarida de Camon": {
+      "x": 600,
+      "y": 408
+    },
+    "Guarnición de Luthadel": {
+      "x": 354,
+      "y": 315
+    },
+    "Kredik Shaw": {
+      "x": 300,
+      "y": 300
+    },
+    "Colina de las Mil Torres": {
+      "x": 249,
+      "y": 339
+    },
+    "Torreón de Venture": {
+      "x": 339,
+      "y": 288
+    },
+    "canal de Luth-Davn": {
+      "x": 351,
+      "y": 261
+    },
+    "Casa Izenry": {
+      "x": 327,
+      "y": 327
+    },
+    "Ministerio": {
+      "x": 405,
+      "y": 222
+    },
+    "Torreón de Erikeller": {
+      "x": 366,
+      "y": 234
+    },
+    "Casa Tekiel": {
+      "x": 315,
+      "y": 261
+    },
+    "Torreón de Tekiel": {
+      "x": 339,
+      "y": 234
+    },
+    "calle Kenton": {
+      "x": 420,
+      "y": 381
+    },
+    "Casa Elariel": {
+      "x": 312,
+      "y": 231
+    },
+    "Cantón de la Inquisición": {
+      "x": 393,
+      "y": 354
+    },
+    "cantón de la Ortodoxia": {
+      "x": 276,
+      "y": 354
+    },
+    "jardines de Tekiel": {
+      "x": 249,
+      "y": 249
+    },
+    "Las Grietas": {
+      "x": 222,
+      "y": 0
+    },
+    "Torreón de Hasting": {
+      "x": 288,
+      "y": 258
+    },
+    "Cantón de las Finanzas": {
+      "x": 195,
+      "y": 0
+    },
+    "taller de Clubs": {
+      "x": 273,
+      "y": 312
+    },
+    "plaza de la Fuente": {
+      "x": 300,
+      "y": 327
+    },
+    "Torreón de Lekal": {
+      "x": 366,
+      "y": 354
+    },
+    "Laberintos de Hollín": {
+      "x": 0,
+      "y": 408
+    },
+    "Casa Renoux": {
+      "x": 273,
+      "y": 285
+    },
+    "muralla de Luthadel": {
+      "x": 303,
+      "y": 366
+    }
+  },
+  "CSR": 1.0,
+  "rel_eval": [
+    {
+      "origen": "taller de Clubs",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture",
+      "satisface": true
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Ministerio",
+      "satisface": true
+    },
+    {
+      "origen": "muralla de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Renoux",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Erikeller",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw",
+      "satisface": true
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "CERCA_DE",
+      "destino": "Colina de las Mil Torres",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Elariel",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Tekiel",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw",
+      "satisface": true
+    },
+    {
+      "origen": "Casa Renoux",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Elariel",
+      "satisface": true
+    },
+    {
+      "origen": "Casa Izenry",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Tekiel",
+      "satisface": true
+    },
+    {
+      "origen": "Casa Geffenry",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Tekiel",
+      "satisface": true
+    },
+    {
+      "origen": "jardines de Tekiel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Tekiel",
+      "satisface": true
+    },
+    {
+      "origen": "cantón de la Ortodoxia",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture",
+      "satisface": true
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Tekiel",
+      "satisface": true
+    },
+    {
+      "origen": "Casa Tekiel",
+      "tipo": "NORTE_DE",
+      "destino": "Torreón de Tekiel",
+      "satisface": true
+    },
+    {
+      "origen": "canal de Luth-Davn",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw",
+      "satisface": true
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "plaza de la Fuente",
+      "satisface": true
+    },
+    {
+      "origen": "plaza de la Fuente",
+      "tipo": "CERCA_DE",
+      "destino": "taller de Clubs",
+      "satisface": true
+    },
+    {
+      "origen": "Cantón de la Inquisición",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Lekal",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Venture",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Hasting",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Hasting",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Elariel",
+      "satisface": true
+    },
+    {
+      "origen": "Casa Elariel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Tekiel",
+      "satisface": true
+    },
+    {
+      "origen": "Casa Tekiel",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Renoux",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Casa Elariel",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Torreón de Elariel",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Hasting",
+      "tipo": "CERCA_DE",
+      "destino": "Guarnición de Luthadel",
+      "satisface": true
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "CERCA_DE",
+      "destino": "Kredik Shaw",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Guarnición de Luthadel",
+      "satisface": true
+    },
+    {
+      "origen": "Torreón de Venture",
+      "tipo": "CERCA_DE",
+      "destino": "Ministerio",
+      "satisface": true
+    }
+  ],
+  "width": 600,
+  "height": 600
+}
