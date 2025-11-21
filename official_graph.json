@@ -1,0 +1,1423 @@
+{
+  "lugares": [
+    "Calle Kenton",
+    "Calle de la Antigua Muralla",
+    "Calle del Canal",
+    "Encrucijada Quince",
+    "Fortaleza Erikeller",
+    "Fortaleza Hasting",
+    "Fortaleza Lekal",
+    "Fortaleza Venture",
+    "Guarida de Camon",
+    "Guarnición de Luthadel",
+    "Kredik Shaw",
+    "Mercado Ska",
+    "Plaza Ahlstrom",
+    "Plaza de la Fuente",
+    "Sede del Cantón de la Ortodoxia",
+    "Sede del Cantón de las Finanzas",
+    "Taller de Clubs"
+  ],
+  "relaciones": [
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "CONECTA",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "OESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Plaza de la Fuente",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "SUR_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "SUR_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Kredik Shaw",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "NORTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "OESTE_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "NORTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "CERCA_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "NORTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "NORTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Sede del Cantón de la Ortodoxia",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "SUR_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "SUR_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "SUR_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Sede del Cantón de las Finanzas",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "ESTE_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "ESTE_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Guarnición de Luthadel",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "NORTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "NORTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Fortaleza Venture",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "SUR_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "SUR_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "NORTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "CONECTA",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "NORTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "SUR_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Fortaleza Lekal",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "SUR_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "OESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "SUR_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "SUR_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Fortaleza Erikeller",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "CONECTA",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "CONECTA",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "NORTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "NORTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Guarida de Camon",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "NORTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "CONECTA",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "SUR_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Calle de la Antigua Muralla",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "CERCA_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "OESTE_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Calle Kenton",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "NORTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "NORTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "NORTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "NORTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "OESTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "CONECTA",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "SUR_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "NORTE_DE",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Encrucijada Quince",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "SUR_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "ESTE_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "SUR_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "NORTE_DE",
+      "destino": "Mercado Ska"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Plaza de la Fuente"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Kredik Shaw"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de la Ortodoxia"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Sede del Cantón de las Finanzas"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Guarnición de Luthadel"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Hasting"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Lekal"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Taller de Clubs"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Guarida de Camon"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Calle de la Antigua Muralla"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Calle Kenton"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Encrucijada Quince"
+    },
+    {
+      "origen": "Mercado Ska",
+      "tipo": "SUR_DE",
+      "destino": "Calle del Canal"
+    }
+  ]
+}
