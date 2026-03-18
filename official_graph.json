@@ -491,6 +491,11 @@
     },
     {
       "origen": "Fortaleza Venture",
+      "tipo": "CONECTA",
+      "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Fortaleza Venture",
       "tipo": "ESTE_DE",
       "destino": "Plaza Ahlstrom"
     },
@@ -548,6 +553,11 @@
       "origen": "Fortaleza Hasting",
       "tipo": "ESTE_DE",
       "destino": "Fortaleza Erikeller"
+    },
+    {
+      "origen": "Fortaleza Hasting",
+      "tipo": "CONECTA",
+      "destino": "Taller de Clubs"
     },
     {
       "origen": "Fortaleza Hasting",
@@ -788,6 +798,11 @@
       "origen": "Taller de Clubs",
       "tipo": "ESTE_DE",
       "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Taller de Clubs",
+      "tipo": "CONECTA",
+      "destino": "Fortaleza Hasting"
     },
     {
       "origen": "Taller de Clubs",
@@ -1121,6 +1136,11 @@
     },
     {
       "origen": "Plaza Ahlstrom",
+      "tipo": "CONECTA",
+      "destino": "Fortaleza Venture"
+    },
+    {
+      "origen": "Plaza Ahlstrom",
       "tipo": "OESTE_DE",
       "destino": "Fortaleza Venture"
     },
@@ -1251,6 +1271,11 @@
     },
     {
       "origen": "Encrucijada Quince",
+      "tipo": "CONECTA",
+      "destino": "Calle del Canal"
+    },
+    {
+      "origen": "Encrucijada Quince",
       "tipo": "NORTE_DE",
       "destino": "Calle del Canal"
     },
@@ -1328,6 +1353,11 @@
       "origen": "Calle del Canal",
       "tipo": "ESTE_DE",
       "destino": "Plaza Ahlstrom"
+    },
+    {
+      "origen": "Calle del Canal",
+      "tipo": "CONECTA",
+      "destino": "Encrucijada Quince"
     },
     {
       "origen": "Calle del Canal",

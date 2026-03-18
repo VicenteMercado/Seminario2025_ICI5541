@@ -1,8 +1,10 @@
 # relaciones_espaciales.py
+from dotenv import load_dotenv
 import json, time, unicodedata, getpass, PyPDF2, os
 import re
 from openai import OpenAI
 
+load_dotenv() # Carga variables de entorno desde .env 
 # ============================================================
 # A) Extracción desde PDF + LLM + normalización
 # ============================================================
@@ -379,6 +381,49 @@ for r in results:
                 and o != d and not es_interior(o) and not es_interior(d):
             all_relations.append({"origen": o, "tipo": t, "destino": d})
 
+def detectar_contradicciones(relations):
+    """
+    Para cada par de nodos, detecta relaciones direccionales contradictorias.
+    Ejemplo: 'A NORTE_DE B' y 'B NORTE_DE A' son imposibles al mismo tiempo.
+    Retorna (relaciones_limpias, relaciones_contradictorias).
+    """
+    from collections import defaultdict
+
+    NS_TIPOS = {"NORTE_DE", "SUR_DE"}
+    EO_TIPOS = {"ESTE_DE", "OESTE_DE"}
+
+    # Para cada par {A,B}, registra quién afirma ser el nodo norte/este
+    ns_claims = defaultdict(set)
+    eo_claims = defaultdict(set)
+
+    for r in relations:
+        o, d, t = r["origen"], r["destino"], r["tipo"].upper()
+        pair = frozenset({o, d})
+        if t == "NORTE_DE":
+            ns_claims[pair].add(o)   # o afirma estar al norte de d
+        elif t == "SUR_DE":
+            ns_claims[pair].add(d)   # d está al norte de o (equivalente)
+        elif t == "ESTE_DE":
+            eo_claims[pair].add(o)
+        elif t == "OESTE_DE":
+            eo_claims[pair].add(d)
+
+    # Pares con más de 1 nodo afirmando ser el "norte" o el "este" -> contradicción
+    pares_ns_conflict = {p for p, c in ns_claims.items() if len(c) > 1}
+    pares_eo_conflict = {p for p, c in eo_claims.items() if len(c) > 1}
+
+    clean, contradictorias = [], []
+    for r in relations:
+        o, d, t = r["origen"], r["destino"], r["tipo"].upper()
+        pair = frozenset({o, d})
+        if (t in NS_TIPOS and pair in pares_ns_conflict) or \
+           (t in EO_TIPOS and pair in pares_eo_conflict):
+            contradictorias.append(r)
+        else:
+            clean.append(r)
+
+    return clean, contradictorias
+
 # 9) Deduplicar y canonizar lugares
 canon2label = {}
 cleaned_places = []
@@ -407,6 +452,14 @@ for r in tmp_rel:
     if key not in rel_set:
         rel_set.add(key)
         clean_relations.append(r)
+
+# Eliminar relaciones contradictorias
+clean_relations, contradicciones = detectar_contradicciones(clean_relations)
+
+if contradicciones:
+    print(f"\n⚠️ Se eliminaron {len(contradicciones)} relaciones contradictorias:")
+    for r in contradicciones:
+        print(f"   {r['origen']} {r['tipo']} {r['destino']}")
 
 # ============================================================
 # C) Meta-info, pivotes y filtro Luthadel

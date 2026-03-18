@@ -155,11 +155,17 @@ def load_solution_coords(path: str) -> Dict[str, Any]:
 
         coords[nombre] = (float(x), float(y))
 
+    thresholds = {
+        "MARGIN_DIR": data.get("MARGIN_DIR"),
+        "DIST_CLOSE": data.get("DIST_CLOSE"),"DIST_CONNECT": data.get("DIST_CONNECT"),
+        }
     return {
         "coords": coords,
         "width": width,
-        "height": height
-    }
+        "height": height,
+        "thresholds": thresholds
+        }
+
 
 
 # -----------------------------------
@@ -214,14 +220,14 @@ def check_relation(tipo: str,
 
     dx = x_o - x_d
     dy = y_o - y_d
-    dist = math.hypot(dx, dy)
+    #dist = math.hypot(dx, dy)
 
     tipo = tipo.upper()
 
     if tipo == "CERCA_DE":
-        return dist <= dist_close
+        return abs(dx) <= dist_close and abs(dy) <= dist_close
     if tipo == "CONECTA":
-        return dist <= dist_connect
+        return abs(dx) <= dist_connect and abs(dy) <= dist_connect
 
     # Convención de signos:
     # - NORTE_DE(A,B): y_A > y_B + margin_dir
@@ -255,6 +261,15 @@ def compare_graphs(official_path: str,
     # Cargar datos de ambos grafos
     official = load_official_graph(official_path)
     solution = load_solution_coords(solution_path)
+    
+    saved_th = solution.get("thresholds", {})
+    if saved_th.get("MARGIN_DIR") is not None:
+        margin_dir = saved_th["MARGIN_DIR"]
+    if saved_th.get("DIST_CLOSE") is not None:
+        dist_close = saved_th["DIST_CLOSE"]
+    if saved_th.get("DIST_CONNECT") is not None:
+        dist_connect = saved_th["DIST_CONNECT"]
+
 
     official_places = official["places"]
     official_relations = official["relations"]

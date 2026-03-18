@@ -11,7 +11,7 @@ NEAR_RATIO = 0.05    # 5% del tamaño -> CERCA_DE
 CONNECT_RATIO = 0.10 # 10% del tamaño -> CONECTA
 
 
-def load_nodes(csv_path: str) -> pd.DataFrame:
+def load_nodes(csv_path: str) -> tuple[pd.DataFrame, float, float]:
     df = pd.read_csv(csv_path)
 
     required_cols = {"name", "x", "y"}
@@ -44,7 +44,7 @@ def build_relations(df: pd.DataFrame, near_th: float, conn_th: float):
 
             dx = b["x"]  - a["x"]
             dy = b["yc"] - a["yc"]
-            dist = math.hypot(dx, dy)
+            dist = max(abs(dx), abs(dy))
 
             # eje dominante para dirección
             if abs(dx) >= abs(dy):

@@ -165,7 +165,9 @@ def solve_with_z3(lugares, relaciones):
             rel_eval = [{"origen": r["origen"], "tipo": r["tipo"], "destino": r["destino"], "satisface": False}
                         for r in relaciones]
             return {"coords": coords, "CSR": 0.0, "rel_eval": rel_eval,
-                    "width": WIDTH, "height": HEIGHT}
+                    "width": WIDTH, "height": HEIGHT,
+                    "MARGIN_DIR": MARGIN_DIR, "DIST_CLOSE": DIST_CLOSE, "DIST_CONNECT": DIST_CONNECT}
+
     m = s.model()
 
     coords = {
@@ -197,7 +199,9 @@ def solve_with_z3(lugares, relaciones):
 
     CSR = sum(1 for r in rel_eval if r["satisface"]) / max(1, len(rel_eval))
     return {"coords": coords, "CSR": CSR, "rel_eval": rel_eval,
-            "width": WIDTH, "height": HEIGHT}
+            "width": WIDTH, "height": HEIGHT,
+            "MARGIN_DIR": MARGIN_DIR, "DIST_CLOSE": DIST_CLOSE, "DIST_CONNECT": DIST_CONNECT}
+
 
 # ------------------------------------------------------------
 # 7. Resolver + guardar
