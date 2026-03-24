@@ -1,11 +1,13 @@
 import math
 import json
+from pathlib import Path
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-CSV_PATH = "official_nodes.csv"       # nodos anotados
-OUTPUT_JSON = "official_graph.json"   # grafo oficial en formato JSON
+_ROOT = Path(__file__).resolve().parent.parent
+CSV_PATH = _ROOT / "csv" / "official_nodes.csv"
+OUTPUT_JSON = _ROOT / "json" / "official_graph.json"
 
 NEAR_RATIO = 0.05    # 5% del tamaño -> CERCA_DE
 CONNECT_RATIO = 0.10 # 10% del tamaño -> CONECTA

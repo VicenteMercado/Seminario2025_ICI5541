@@ -1,10 +1,13 @@
 # graficar_mapa.py
 import json
+from pathlib import Path
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# Cargar el JSON generado por el otro script
-with open("map_relations.json", "r", encoding="utf-8") as f:
+_ROOT = Path(__file__).resolve().parent.parent
+_MAP_JSON = _ROOT / "json" / "map_relations.json"
+
+with open(_MAP_JSON, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 lugares = data["lugares"]

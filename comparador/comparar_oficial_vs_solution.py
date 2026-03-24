@@ -5,7 +5,11 @@ import json
 import math
 import argparse
 import unicodedata
+from pathlib import Path
 from typing import Dict, Tuple, Any, List, Optional, Set
+
+_JSON_DIR = Path(__file__).resolve().parent.parent / "json"
+_DEFAULT_COMPARISON_OUT = str(_JSON_DIR / "comparison_official_vs_solution.json")
 
 
 # -----------------------------------
@@ -257,7 +261,7 @@ def compare_graphs(official_path: str,
                    margin_dir: float = 21.0,
                    dist_close: float = 66.0,
                    dist_connect: float = 75.0,
-                   output_json_path: str = "comparison_official_vs_solution.json") -> None:
+                   output_json_path: str = _DEFAULT_COMPARISON_OUT) -> None:
     # Cargar datos de ambos grafos
     official = load_official_graph(official_path)
     solution = load_solution_coords(solution_path)
@@ -405,6 +409,7 @@ def compare_graphs(official_path: str,
         "detalle": detalle_relaciones
     }
 
+    Path(output_json_path).parent.mkdir(parents=True, exist_ok=True)
     with open(output_json_path, "w", encoding="utf-8") as f:
         json.dump(output_data, f, ensure_ascii=False, indent=2)
 
@@ -427,7 +432,7 @@ def main():
                         help="Umbral de distancia para CERCA_DE")
     parser.add_argument("--dist-connect", type=float, default=75.0,
                         help="Umbral de distancia para CONECTA")
-    parser.add_argument("--output", type=str, default="comparison_official_vs_solution.json",
+    parser.add_argument("--output", type=str, default=_DEFAULT_COMPARISON_OUT,
                         help="Ruta del JSON de salida")
 
     args = parser.parse_args()

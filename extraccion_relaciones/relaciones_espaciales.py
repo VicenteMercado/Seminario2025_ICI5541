@@ -1,14 +1,17 @@
 # relaciones_espaciales.py
 from dotenv import load_dotenv
 import json, time, unicodedata, getpass, PyPDF2, os
+from pathlib import Path
 import re
 from openai import OpenAI
 
 load_dotenv() # Carga variables de entorno desde .env 
+_ROOT = Path(__file__).resolve().parent.parent
+_JSON_DIR = _ROOT / "json"
 # ============================================================
 # A) Extracción desde PDF + LLM + normalización
 # ============================================================
-pdf_path = r"textos\El Imperio Final Ed revisada - Brandon Sanderson.pdf"
+pdf_path = _ROOT / "textos" / "El Imperio Final Ed revisada - Brandon Sanderson.pdf"
 
 # 1) Leer PDF completo
 text = ""
@@ -709,10 +712,12 @@ print("\nResumen:")
 print(f"- Lugares totales detectados (antes de filtros): {len(cleaned_places)}")
 print(f"- Relaciones totales detectadas (antes de filtros): {len(clean_relations)}")
 print(f"- Lugares finales guardados: {len(filtered_places)}")
-print(f"- Relaciones finales guardadas: {len(filtered_relations)} en map_relations.json")
+_map_out = _JSON_DIR / "map_relations.json"
+print(f"- Relaciones finales guardadas: {len(filtered_relations)} en {_map_out}")
 
 # Guardar JSON final
-with open("map_relations.json", "w", encoding="utf-8") as f:
+_JSON_DIR.mkdir(parents=True, exist_ok=True)
+with open(_map_out, "w", encoding="utf-8") as f:
     json.dump(
         {
             "lugares": filtered_places,

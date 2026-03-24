@@ -9,17 +9,20 @@ from datetime import datetime
 # Configuración general
 N_RUNS = 15
 
-# Cambia esto si tu script de extracción tiene otro nombre
+ROOT = Path(__file__).resolve().parent.parent
+JSON_DIR = ROOT / "json"
+EXTRACCION_DIR = ROOT / "extraccion_relaciones"
+SOLVER_DIR = ROOT / "solver"
+COMPARADOR_DIR = ROOT / "comparador"
+
 EXTRACT_CMD = ["python", "relaciones_espaciales.py"]
 SOLVER_CMD = ["python", "solver_grafos.py"]
 
-# comparar_oficial_vs_solution espera: official_graph.json solution.json
-COMPARE_SCRIPT = "comparar_oficial_vs_solution.py"
-OFFICIAL_GRAPH = "official_graph.json"
+COMPARE_SCRIPT = COMPARADOR_DIR / "comparar_oficial_vs_solution.py"
+OFFICIAL_GRAPH = JSON_DIR / "official_graph.json"
 
-# Carpetas de salida
-RUNS_DIR = Path("runs_experimentos")
-RUNS_DIR.mkdir(exist_ok=True)
+RUNS_DIR = ROOT / "runs_experimentos"
+RUNS_DIR.mkdir(parents=True, exist_ok=True)
 
 CSV_PATH = RUNS_DIR / "resultados_experimentos.csv"
 
@@ -83,17 +86,16 @@ def main():
 
         try:
             # 1) EXTRAER RELACIONES ESPACIALES (map_relations.json)
-            ejecutar(EXTRACT_CMD)
+            ejecutar(EXTRACT_CMD, cwd=EXTRACCION_DIR)
 
-            # Copia del map_relations.json usado
-            if Path("map_relations.json").exists():
-                shutil.copyfile("map_relations.json", run_dir / "map_relations.json")
+            map_rel = JSON_DIR / "map_relations.json"
+            if map_rel.exists():
+                shutil.copyfile(map_rel, run_dir / "map_relations.json")
 
             # 2) CORRER SOLVER (solver_grafos.py -> solution.json)
-            ejecutar(SOLVER_CMD)
+            ejecutar(SOLVER_CMD, cwd=SOLVER_DIR)
 
-            # Guardar copia de solution.json
-            sol_src = Path("solution.json")
+            sol_src = JSON_DIR / "solution.json"
             sol_dst = run_dir / "solution.json"
             if sol_src.exists():
                 shutil.copyfile(sol_src, sol_dst)
@@ -107,20 +109,18 @@ def main():
                 solver_CSR = float(sol_data.get("CSR", 0.0))
 
             # 3) COMPARAR CON GRAFO OFICIAL
+            comp_dst = run_dir / "comparison_official_vs_solution.json"
             comparar_cmd = [
                 "python",
-                COMPARE_SCRIPT,
-                OFFICIAL_GRAPH,
-                str(sol_dst)  # usar la solution de esta run
+                str(COMPARE_SCRIPT),
+                str(OFFICIAL_GRAPH),
+                str(sol_dst),
+                "--output",
+                str(comp_dst),
             ]
-            ejecutar(comparar_cmd)
+            ejecutar(comparar_cmd, cwd=COMPARADOR_DIR)
 
-            # Guardar copia del JSON de comparación
-            comp_src = Path("comparison_official_vs_solution.json")
-            comp_dst = run_dir / "comparison_official_vs_solution.json"
-            if comp_src.exists():
-                shutil.copyfile(comp_src, comp_dst)
-            else:
+            if not comp_dst.exists():
                 print("⚠️ No se encontró comparison_official_vs_solution.json tras comparar.")
 
             # Leer métricas globales de la comparación

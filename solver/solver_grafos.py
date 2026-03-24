@@ -1,14 +1,19 @@
 # solver_grafos.py
 import json
 import random
+from pathlib import Path
 import networkx as nx
 import matplotlib.pyplot as plt
 from z3 import *
 
+_ROOT = Path(__file__).resolve().parent.parent
+_JSON_DIR = _ROOT / "json"
+_IMG_DIR = _ROOT / "img"
+
 # ------------------------------------------------------------
 # 1. Cargar datos desde JSON (con meta y pivotes si existen)
 # ------------------------------------------------------------
-with open("map_relations.json", "r", encoding="utf-8") as f:
+with open(_JSON_DIR / "map_relations.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 clean_places = data.get("lugares", [])
@@ -209,9 +214,10 @@ def solve_with_z3(lugares, relaciones):
 solution = solve_with_z3(clean_places, clean_relations)
 print(f"CSR: {solution['CSR']:.3f}")
 
-with open("solution.json", "w", encoding="utf-8") as f:
+_sol_path = _JSON_DIR / "solution.json"
+with open(_sol_path, "w", encoding="utf-8") as f:
     json.dump(solution, f, indent=2, ensure_ascii=False)
-print("Solución (coordenadas del solver) guardada en solution.json")
+print(f"Solución (coordenadas del solver) guardada en {_sol_path}")
 
 if pivotes_list:
     print("\n=== Pivotes usados (desde extractor) ===")
@@ -328,6 +334,7 @@ plt.axis("off")
 plt.tight_layout()
 
 if SAVE_SVG:
-    plt.savefig("mapa.svg", format="svg", bbox_inches="tight")
+    _IMG_DIR.mkdir(parents=True, exist_ok=True)
+    plt.savefig(_IMG_DIR / "mapa.svg", format="svg", bbox_inches="tight")
 
 plt.show()

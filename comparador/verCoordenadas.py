@@ -1,8 +1,9 @@
+from pathlib import Path
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-CSV_PATH = "official_nodes.csv"
+CSV_PATH = Path(__file__).resolve().parent.parent / "csv" / "official_nodes.csv"
 
 df = pd.read_csv(CSV_PATH)
 
