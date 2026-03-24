@@ -210,15 +210,17 @@ for i, chunk in enumerate(relevant_chunks):
     print(f"Procesando {i+1}/{len(relevant_chunks)}...")
     try:
         resp = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-5.4-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": chunk}
             ],
-            temperature=0.2,
             response_format={"type": "json_object"}
         )
-        data = json.loads(resp.choices[0].message.content)
+        content = resp.choices[0].message.content
+        if content is None:
+            raise ValueError("Respuesta vacía del modelo")
+        data = json.loads(content)
         results.append(data)
         pivot_raw.extend(data.get("lugares_clave", []))
     except Exception as e:
@@ -364,7 +366,7 @@ VALID_TIPOS = {"NORTE_DE", "SUR_DE", "ESTE_DE", "OESTE_DE", "CERCA_DE"}
 # 8) Consolidar aplicando filtros principales
 all_places, all_relations = set(), []
 
-for r in results:
+for chunk_idx, r in enumerate(results):
     # lugares
     for p in r.get("lugares", []):
         p = apply_alias(p)
@@ -382,38 +384,63 @@ for r in results:
 
         if t in VALID_TIPOS and is_named_place(o) and is_named_place(d) \
                 and o != d and not es_interior(o) and not es_interior(d):
-            all_relations.append({"origen": o, "tipo": t, "destino": d})
+            all_relations.append({"origen": o, "tipo": t, "destino": d, "chunk_idx": chunk_idx})
 
 def detectar_contradicciones(relations):
     """
     Para cada par de nodos, detecta relaciones direccionales contradictorias.
     Ejemplo: 'A NORTE_DE B' y 'B NORTE_DE A' son imposibles al mismo tiempo.
-    Retorna (relaciones_limpias, relaciones_contradictorias).
+    Retorna (relaciones_limpias, relaciones_contradictorias, reporte_agrupado).
+    El reporte agrupa cada conflicto por par e incluye el chunk de origen de cada relación.
     """
     from collections import defaultdict
 
     NS_TIPOS = {"NORTE_DE", "SUR_DE"}
     EO_TIPOS = {"ESTE_DE", "OESTE_DE"}
 
-    # Para cada par {A,B}, registra quién afirma ser el nodo norte/este
     ns_claims = defaultdict(set)
     eo_claims = defaultdict(set)
+    ns_rels   = defaultdict(list)
+    eo_rels   = defaultdict(list)
 
     for r in relations:
         o, d, t = r["origen"], r["destino"], r["tipo"].upper()
         pair = frozenset({o, d})
         if t == "NORTE_DE":
-            ns_claims[pair].add(o)   # o afirma estar al norte de d
+            ns_claims[pair].add(o)
+            ns_rels[pair].append(r)
         elif t == "SUR_DE":
-            ns_claims[pair].add(d)   # d está al norte de o (equivalente)
+            ns_claims[pair].add(d)
+            ns_rels[pair].append(r)
         elif t == "ESTE_DE":
             eo_claims[pair].add(o)
+            eo_rels[pair].append(r)
         elif t == "OESTE_DE":
             eo_claims[pair].add(d)
+            eo_rels[pair].append(r)
 
-    # Pares con más de 1 nodo afirmando ser el "norte" o el "este" -> contradicción
     pares_ns_conflict = {p for p, c in ns_claims.items() if len(c) > 1}
     pares_eo_conflict = {p for p, c in eo_claims.items() if len(c) > 1}
+
+    # Construir reporte agrupado e imprimir en consola
+    reporte = []
+    for pair in pares_ns_conflict:
+        rels = sorted(ns_rels[pair], key=lambda x: x.get("chunk_idx") or 0)
+        nombres = sorted(pair)
+        reporte.append({"par": nombres, "eje": "NS", "relaciones": rels})
+        print(f"\n⚠️  Contradicción N/S: \"{nombres[0]}\" vs \"{nombres[1]}\"")
+        for r in rels:
+            cap = (r.get("chunk_idx") or 0) + 1
+            print(f"   Cap.{cap:>3} → {r['origen']} {r['tipo']} {r['destino']}")
+
+    for pair in pares_eo_conflict:
+        rels = sorted(eo_rels[pair], key=lambda x: x.get("chunk_idx") or 0)
+        nombres = sorted(pair)
+        reporte.append({"par": nombres, "eje": "EO", "relaciones": rels})
+        print(f"\n⚠️  Contradicción E/O: \"{nombres[0]}\" vs \"{nombres[1]}\"")
+        for r in rels:
+            cap = (r.get("chunk_idx") or 0) + 1
+            print(f"   Cap.{cap:>3} → {r['origen']} {r['tipo']} {r['destino']}")
 
     clean, contradictorias = [], []
     for r in relations:
@@ -425,7 +452,7 @@ def detectar_contradicciones(relations):
         else:
             clean.append(r)
 
-    return clean, contradictorias
+    return clean, contradictorias, reporte
 
 # 9) Deduplicar y canonizar lugares
 canon2label = {}
@@ -446,7 +473,7 @@ tmp_rel = []
 for r in all_relations:
     o, d = remap(r["origen"]), remap(r["destino"])
     if o in cleaned_places and d in cleaned_places and o != d:
-        tmp_rel.append({"origen": o, "tipo": r["tipo"], "destino": d})
+        tmp_rel.append({"origen": o, "tipo": r["tipo"], "destino": d, "chunk_idx": r.get("chunk_idx")})
 
 rel_set = set()
 clean_relations = []
@@ -457,12 +484,13 @@ for r in tmp_rel:
         clean_relations.append(r)
 
 # Eliminar relaciones contradictorias
-clean_relations, contradicciones = detectar_contradicciones(clean_relations)
+clean_relations, contradicciones, reporte_contradicciones = detectar_contradicciones(clean_relations)
 
-if contradicciones:
-    print(f"\n⚠️ Se eliminaron {len(contradicciones)} relaciones contradictorias:")
-    for r in contradicciones:
-        print(f"   {r['origen']} {r['tipo']} {r['destino']}")
+print(f"\nTotal: {len(contradicciones)} relaciones contradictorias eliminadas ({len(reporte_contradicciones)} pares en conflicto).")
+
+with open("contradicciones.json", "w", encoding="utf-8") as f:
+    json.dump(reporte_contradicciones, f, indent=2, ensure_ascii=False)
+print("Reporte de contradicciones guardado en contradicciones.json")
 
 # ============================================================
 # C) Meta-info, pivotes y filtro Luthadel
