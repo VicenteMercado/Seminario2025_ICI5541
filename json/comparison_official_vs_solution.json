@@ -1,23 +1,24 @@
 {
-  "width": 600,
-  "height": 600,
-  "MARGIN_DIR": 21,
-  "DIST_CLOSE": 66,
-  "DIST_CONNECT": 75,
+  "width": 720,
+  "height": 720,
+  "MARGIN_DIR": 25,
+  "DIST_CLOSE": 80,
+  "DIST_CONNECT": 90,
   "resumen_global": {
     "lugares_oficiales": 17,
-    "lugares_solution": 28,
-    "lugares_oficiales_mapeados": 13,
+    "lugares_solution": 35,
+    "lugares_oficiales_mapeados": 12,
     "lugares_oficiales_sin_mapa": [
       "Calle de la Antigua Muralla",
       "Calle del Canal",
       "Encrucijada Quince",
+      "Guarida de Camon",
       "Mercado Ska"
     ],
     "relaciones_oficiales_total": 286,
-    "relaciones_oficiales_evaluables": 164,
-    "relaciones_oficiales_satisfechas": 70,
-    "csr_oficial": 0.4268292682926829
+    "relaciones_oficiales_evaluables": 140,
+    "relaciones_oficiales_satisfechas": 50,
+    "csr_oficial": 0.35714285714285715
   },
   "mapeo_lugares": {
     "Calle Kenton": "calle Kenton",
@@ -28,14 +29,14 @@
     "Fortaleza Hasting": "Torreón de Hasting",
     "Fortaleza Lekal": "Torreón de Lekal",
     "Fortaleza Venture": "Torreón de Venture",
-    "Guarida de Camon": "guarida de Camon",
+    "Guarida de Camon": null,
     "Guarnición de Luthadel": "Guarnición de Luthadel",
     "Kredik Shaw": "Kredik Shaw",
     "Mercado Ska": null,
-    "Plaza Ahlstrom": "Plaza Ahlstrom",
+    "Plaza Ahlstrom": "plaza Ahlstrom",
     "Plaza de la Fuente": "plaza de la Fuente",
-    "Sede del Cantón de la Ortodoxia": "cantón de la Ortodoxia",
-    "Sede del Cantón de las Finanzas": "Canton de las Finanzas",
+    "Sede del Cantón de la Ortodoxia": "Cantón de la Ortodoxia",
+    "Sede del Cantón de las Finanzas": "Cantón de las Finanzas",
     "Taller de Clubs": "taller de Clubs"
   },
   "resumen_tipo": {
@@ -53,27 +54,27 @@
     },
     "ESTE_DE": {
       "total": 74,
-      "evaluables": 46,
-      "satisfechas": 18,
-      "csr": 0.391304347826087
+      "evaluables": 35,
+      "satisfechas": 13,
+      "csr": 0.37142857142857144
     },
     "NORTE_DE": {
       "total": 62,
-      "evaluables": 32,
-      "satisfechas": 16,
-      "csr": 0.5
+      "evaluables": 31,
+      "satisfechas": 11,
+      "csr": 0.3548387096774194
     },
     "OESTE_DE": {
       "total": 74,
-      "evaluables": 46,
-      "satisfechas": 18,
-      "csr": 0.391304347826087
+      "evaluables": 35,
+      "satisfechas": 13,
+      "csr": 0.37142857142857144
     },
     "SUR_DE": {
       "total": 62,
-      "evaluables": 32,
-      "satisfechas": 16,
-      "csr": 0.5
+      "evaluables": 31,
+      "satisfechas": 11,
+      "csr": 0.3548387096774194
     }
   },
   "detalle": [
@@ -91,18 +92,18 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "SUR_DE",
       "origen_solver": "plaza de la Fuente",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Plaza de la Fuente",
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "NORTE_DE",
       "origen_solver": "plaza de la Fuente",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza de la Fuente",
@@ -111,7 +112,7 @@
       "origen_solver": "plaza de la Fuente",
       "destino_solver": "Guarnición de Luthadel",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Plaza de la Fuente",
@@ -120,7 +121,7 @@
       "origen_solver": "plaza de la Fuente",
       "destino_solver": "Torreón de Venture",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Plaza de la Fuente",
@@ -129,7 +130,7 @@
       "origen_solver": "plaza de la Fuente",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza de la Fuente",
@@ -138,7 +139,7 @@
       "origen_solver": "plaza de la Fuente",
       "destino_solver": "Torreón de Lekal",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Plaza de la Fuente",
@@ -147,7 +148,7 @@
       "origen_solver": "plaza de la Fuente",
       "destino_solver": "Torreón de Erikeller",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza de la Fuente",
@@ -172,9 +173,9 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": "plaza de la Fuente",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Plaza de la Fuente",
@@ -192,14 +193,14 @@
       "origen_solver": "plaza de la Fuente",
       "destino_solver": "calle Kenton",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Plaza de la Fuente",
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
       "origen_solver": "plaza de la Fuente",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
       "satisface": false
     },
@@ -244,7 +245,7 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "OESTE_DE",
       "origen_solver": "Kredik Shaw",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
       "satisface": true
     },
@@ -253,7 +254,7 @@
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "OESTE_DE",
       "origen_solver": "Kredik Shaw",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
       "satisface": true
     },
@@ -264,7 +265,7 @@
       "origen_solver": "Kredik Shaw",
       "destino_solver": "Guarnición de Luthadel",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Kredik Shaw",
@@ -273,7 +274,7 @@
       "origen_solver": "Kredik Shaw",
       "destino_solver": "Torreón de Venture",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Kredik Shaw",
@@ -282,7 +283,7 @@
       "origen_solver": "Kredik Shaw",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Kredik Shaw",
@@ -300,7 +301,7 @@
       "origen_solver": "Kredik Shaw",
       "destino_solver": "Torreón de Erikeller",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Kredik Shaw",
@@ -309,16 +310,16 @@
       "origen_solver": "Kredik Shaw",
       "destino_solver": "taller de Clubs",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Kredik Shaw",
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": "Kredik Shaw",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Kredik Shaw",
@@ -343,7 +344,7 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "SUR_DE",
       "origen_solver": "Kredik Shaw",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
       "satisface": false
     },
@@ -378,16 +379,16 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Plaza de la Fuente",
       "tipo": "NORTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Kredik Shaw",
       "tipo": "ESTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "Kredik Shaw",
       "evaluado": true,
       "satisface": true
@@ -396,52 +397,52 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "NORTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
-      "destino_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de la Ortodoxia",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Guarnición de Luthadel",
       "tipo": "OESTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "Guarnición de Luthadel",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Fortaleza Venture",
       "tipo": "ESTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "Torreón de Venture",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Fortaleza Hasting",
       "tipo": "NORTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Fortaleza Lekal",
       "tipo": "ESTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "Torreón de Lekal",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Fortaleza Erikeller",
       "tipo": "NORTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "Torreón de Erikeller",
       "evaluado": true,
       "satisface": false
@@ -450,7 +451,7 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Taller de Clubs",
       "tipo": "NORTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "taller de Clubs",
       "evaluado": true,
       "satisface": false
@@ -459,16 +460,16 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "origen_solver": "Cantón de la Ortodoxia",
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Calle de la Antigua Muralla",
       "tipo": "ESTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -477,7 +478,7 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Calle Kenton",
       "tipo": "CERCA_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "calle Kenton",
       "evaluado": true,
       "satisface": false
@@ -486,7 +487,7 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Calle Kenton",
       "tipo": "SUR_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": "calle Kenton",
       "evaluado": true,
       "satisface": true
@@ -495,8 +496,8 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
-      "destino_solver": "Plaza Ahlstrom",
+      "origen_solver": "Cantón de la Ortodoxia",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
       "satisface": true
     },
@@ -504,7 +505,7 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Encrucijada Quince",
       "tipo": "NORTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -513,7 +514,7 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Calle del Canal",
       "tipo": "NORTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -522,7 +523,7 @@
       "origen_oficial": "Sede del Cantón de la Ortodoxia",
       "destino_oficial": "Mercado Ska",
       "tipo": "NORTE_DE",
-      "origen_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de la Ortodoxia",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -531,16 +532,16 @@
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Plaza de la Fuente",
       "tipo": "SUR_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Kredik Shaw",
       "tipo": "ESTE_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": "Kredik Shaw",
       "evaluado": true,
       "satisface": true
@@ -549,79 +550,79 @@
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "SUR_DE",
-      "origen_solver": "Canton de las Finanzas",
-      "destino_solver": "cantón de la Ortodoxia",
+      "origen_solver": "Cantón de las Finanzas",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Guarnición de Luthadel",
       "tipo": "SUR_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": "Guarnición de Luthadel",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Fortaleza Venture",
       "tipo": "SUR_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": "Torreón de Venture",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Fortaleza Hasting",
       "tipo": "SUR_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Fortaleza Lekal",
       "tipo": "ESTE_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": "Torreón de Lekal",
-      "evaluado": true,
-      "satisface": false
-    },
-    {
-      "origen_oficial": "Sede del Cantón de las Finanzas",
-      "destino_oficial": "Fortaleza Erikeller",
-      "tipo": "ESTE_DE",
-      "origen_solver": "Canton de las Finanzas",
-      "destino_solver": "Torreón de Erikeller",
-      "evaluado": true,
-      "satisface": false
-    },
-    {
-      "origen_oficial": "Sede del Cantón de las Finanzas",
-      "destino_oficial": "Taller de Clubs",
-      "tipo": "SUR_DE",
-      "origen_solver": "Canton de las Finanzas",
-      "destino_solver": "taller de Clubs",
       "evaluado": true,
       "satisface": true
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
-      "destino_oficial": "Guarida de Camon",
-      "tipo": "OESTE_DE",
-      "origen_solver": "Canton de las Finanzas",
-      "destino_solver": "guarida de Camon",
+      "destino_oficial": "Fortaleza Erikeller",
+      "tipo": "ESTE_DE",
+      "origen_solver": "Cantón de las Finanzas",
+      "destino_solver": "Torreón de Erikeller",
+      "evaluado": true,
+      "satisface": true
+    },
+    {
+      "origen_oficial": "Sede del Cantón de las Finanzas",
+      "destino_oficial": "Taller de Clubs",
+      "tipo": "SUR_DE",
+      "origen_solver": "Cantón de las Finanzas",
+      "destino_solver": "taller de Clubs",
       "evaluado": true,
       "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
+      "destino_oficial": "Guarida de Camon",
+      "tipo": "OESTE_DE",
+      "origen_solver": "Cantón de las Finanzas",
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
+    },
+    {
+      "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Calle de la Antigua Muralla",
       "tipo": "ESTE_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -630,25 +631,25 @@
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Calle Kenton",
       "tipo": "SUR_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": "calle Kenton",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "SUR_DE",
-      "origen_solver": "Canton de las Finanzas",
-      "destino_solver": "Plaza Ahlstrom",
+      "origen_solver": "Cantón de las Finanzas",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Encrucijada Quince",
       "tipo": "OESTE_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -657,7 +658,7 @@
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Calle del Canal",
       "tipo": "OESTE_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -666,7 +667,7 @@
       "origen_oficial": "Sede del Cantón de las Finanzas",
       "destino_oficial": "Mercado Ska",
       "tipo": "NORTE_DE",
-      "origen_solver": "Canton de las Finanzas",
+      "origen_solver": "Cantón de las Finanzas",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -678,7 +679,7 @@
       "origen_solver": "Guarnición de Luthadel",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Guarnición de Luthadel",
@@ -687,25 +688,25 @@
       "origen_solver": "Guarnición de Luthadel",
       "destino_solver": "Kredik Shaw",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Guarnición de Luthadel",
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "ESTE_DE",
       "origen_solver": "Guarnición de Luthadel",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Guarnición de Luthadel",
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "NORTE_DE",
       "origen_solver": "Guarnición de Luthadel",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Guarnición de Luthadel",
@@ -714,7 +715,7 @@
       "origen_solver": "Guarnición de Luthadel",
       "destino_solver": "Torreón de Venture",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Guarnición de Luthadel",
@@ -750,16 +751,16 @@
       "origen_solver": "Guarnición de Luthadel",
       "destino_solver": "taller de Clubs",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Guarnición de Luthadel",
       "destino_oficial": "Guarida de Camon",
       "tipo": "NORTE_DE",
       "origen_solver": "Guarnición de Luthadel",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarnición de Luthadel",
@@ -784,9 +785,9 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
       "origen_solver": "Guarnición de Luthadel",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Guarnición de Luthadel",
@@ -822,7 +823,7 @@
       "origen_solver": "Torreón de Venture",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Venture",
@@ -831,25 +832,25 @@
       "origen_solver": "Torreón de Venture",
       "destino_solver": "Kredik Shaw",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Venture",
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Venture",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Venture",
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "NORTE_DE",
       "origen_solver": "Torreón de Venture",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Venture",
@@ -858,7 +859,7 @@
       "origen_solver": "Torreón de Venture",
       "destino_solver": "Guarnición de Luthadel",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Venture",
@@ -867,7 +868,7 @@
       "origen_solver": "Torreón de Venture",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Venture",
@@ -901,9 +902,9 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Venture",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Fortaleza Venture",
@@ -928,31 +929,22 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "CONECTA",
       "origen_solver": "Torreón de Venture",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Venture",
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
       "origen_solver": "Torreón de Venture",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Venture",
       "destino_oficial": "Encrucijada Quince",
-      "tipo": "OESTE_DE",
-      "origen_solver": "Torreón de Venture",
-      "destino_solver": null,
-      "evaluado": false,
-      "satisface": null
-    },
-    {
-      "origen_oficial": "Fortaleza Venture",
-      "destino_oficial": "Calle del Canal",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Venture",
       "destino_solver": null,
@@ -961,6 +953,15 @@
     },
     {
       "origen_oficial": "Fortaleza Venture",
+      "destino_oficial": "Calle del Canal",
+      "tipo": "OESTE_DE",
+      "origen_solver": "Torreón de Venture",
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
+    },
+    {
+      "origen_oficial": "Fortaleza Venture",
       "destino_oficial": "Mercado Ska",
       "tipo": "NORTE_DE",
       "origen_solver": "Torreón de Venture",
@@ -975,7 +976,7 @@
       "origen_solver": "Torreón de Hasting",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Hasting",
@@ -984,25 +985,25 @@
       "origen_solver": "Torreón de Hasting",
       "destino_solver": "Kredik Shaw",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Hasting",
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "SUR_DE",
       "origen_solver": "Torreón de Hasting",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Hasting",
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "NORTE_DE",
       "origen_solver": "Torreón de Hasting",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Hasting",
@@ -1020,7 +1021,7 @@
       "origen_solver": "Torreón de Hasting",
       "destino_solver": "Torreón de Venture",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Hasting",
@@ -1038,7 +1039,7 @@
       "origen_solver": "Torreón de Hasting",
       "destino_solver": "Torreón de Erikeller",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Hasting",
@@ -1047,7 +1048,7 @@
       "origen_solver": "Torreón de Hasting",
       "destino_solver": "taller de Clubs",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Hasting",
@@ -1056,16 +1057,16 @@
       "origen_solver": "Torreón de Hasting",
       "destino_solver": "taller de Clubs",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Hasting",
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Hasting",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Fortaleza Hasting",
@@ -1090,9 +1091,9 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
       "origen_solver": "Torreón de Hasting",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Hasting",
@@ -1128,7 +1129,7 @@
       "origen_solver": "Torreón de Lekal",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Lekal",
@@ -1144,18 +1145,18 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Lekal",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Lekal",
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Lekal",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Lekal",
@@ -1207,9 +1208,9 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Lekal",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Fortaleza Lekal",
@@ -1236,14 +1237,14 @@
       "origen_solver": "Torreón de Lekal",
       "destino_solver": "calle Kenton",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Lekal",
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "SUR_DE",
       "origen_solver": "Torreón de Lekal",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
       "satisface": false
     },
@@ -1281,7 +1282,7 @@
       "origen_solver": "Torreón de Erikeller",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Erikeller",
@@ -1290,14 +1291,14 @@
       "origen_solver": "Torreón de Erikeller",
       "destino_solver": "Kredik Shaw",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Erikeller",
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "SUR_DE",
       "origen_solver": "Torreón de Erikeller",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
       "satisface": false
     },
@@ -1306,9 +1307,9 @@
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Erikeller",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Fortaleza Erikeller",
@@ -1335,7 +1336,7 @@
       "origen_solver": "Torreón de Erikeller",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Fortaleza Erikeller",
@@ -1360,9 +1361,9 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": "Torreón de Erikeller",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Fortaleza Erikeller",
@@ -1387,7 +1388,7 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "SUR_DE",
       "origen_solver": "Torreón de Erikeller",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
       "satisface": false
     },
@@ -1443,14 +1444,14 @@
       "origen_solver": "taller de Clubs",
       "destino_solver": "Kredik Shaw",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Taller de Clubs",
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "SUR_DE",
       "origen_solver": "taller de Clubs",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
       "satisface": false
     },
@@ -1459,9 +1460,9 @@
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "NORTE_DE",
       "origen_solver": "taller de Clubs",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Taller de Clubs",
@@ -1470,7 +1471,7 @@
       "origen_solver": "taller de Clubs",
       "destino_solver": "Guarnición de Luthadel",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Taller de Clubs",
@@ -1488,7 +1489,7 @@
       "origen_solver": "taller de Clubs",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Taller de Clubs",
@@ -1497,7 +1498,7 @@
       "origen_solver": "taller de Clubs",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Taller de Clubs",
@@ -1522,9 +1523,9 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": "taller de Clubs",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Taller de Clubs",
@@ -1549,7 +1550,7 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
       "origen_solver": "taller de Clubs",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
       "satisface": false
     },
@@ -1584,97 +1585,97 @@
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Plaza de la Fuente",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "plaza de la Fuente",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Kredik Shaw",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "Kredik Shaw",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
-      "destino_solver": "cantón de la Ortodoxia",
-      "evaluado": true,
-      "satisface": false
+      "origen_solver": null,
+      "destino_solver": "Cantón de la Ortodoxia",
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
-      "destino_solver": "Canton de las Finanzas",
-      "evaluado": true,
-      "satisface": false
+      "origen_solver": null,
+      "destino_solver": "Cantón de las Finanzas",
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Guarnición de Luthadel",
       "tipo": "SUR_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "Guarnición de Luthadel",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Fortaleza Venture",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "Torreón de Venture",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Fortaleza Hasting",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "Torreón de Hasting",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Fortaleza Lekal",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "Torreón de Lekal",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Fortaleza Erikeller",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "Torreón de Erikeller",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Taller de Clubs",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "taller de Clubs",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Calle de la Antigua Muralla",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -1683,25 +1684,25 @@
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Calle Kenton",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": "calle Kenton",
-      "evaluado": true,
-      "satisface": false
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
-      "origen_solver": "guarida de Camon",
-      "destino_solver": "Plaza Ahlstrom",
-      "evaluado": true,
-      "satisface": false
+      "origen_solver": null,
+      "destino_solver": "plaza Ahlstrom",
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Encrucijada Quince",
       "tipo": "CONECTA",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -1710,7 +1711,7 @@
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Encrucijada Quince",
       "tipo": "NORTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -1719,7 +1720,7 @@
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Calle del Canal",
       "tipo": "NORTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -1728,7 +1729,7 @@
       "origen_oficial": "Guarida de Camon",
       "destino_oficial": "Mercado Ska",
       "tipo": "NORTE_DE",
-      "origen_solver": "guarida de Camon",
+      "origen_solver": null,
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -1756,7 +1757,7 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "OESTE_DE",
       "origen_solver": null,
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": false,
       "satisface": null
     },
@@ -1765,7 +1766,7 @@
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "OESTE_DE",
       "origen_solver": null,
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": false,
       "satisface": null
     },
@@ -1837,7 +1838,7 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": null,
-      "destino_solver": "guarida de Camon",
+      "destino_solver": null,
       "evaluado": false,
       "satisface": null
     },
@@ -1855,7 +1856,7 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": false,
       "satisface": null
     },
@@ -1893,7 +1894,7 @@
       "origen_solver": "calle Kenton",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Calle Kenton",
@@ -1909,7 +1910,7 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "CERCA_DE",
       "origen_solver": "calle Kenton",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
       "satisface": false
     },
@@ -1918,7 +1919,7 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "NORTE_DE",
       "origen_solver": "calle Kenton",
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
       "satisface": true
     },
@@ -1927,9 +1928,9 @@
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "NORTE_DE",
       "origen_solver": "calle Kenton",
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Calle Kenton",
@@ -1965,7 +1966,7 @@
       "origen_solver": "calle Kenton",
       "destino_solver": "Torreón de Lekal",
       "evaluado": true,
-      "satisface": false
+      "satisface": true
     },
     {
       "origen_oficial": "Calle Kenton",
@@ -1990,9 +1991,9 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
       "origen_solver": "calle Kenton",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Calle Kenton",
@@ -2008,9 +2009,9 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
       "origen_solver": "calle Kenton",
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Calle Kenton",
@@ -2043,7 +2044,7 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Plaza de la Fuente",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "plaza de la Fuente",
       "evaluado": true,
       "satisface": false
@@ -2052,7 +2053,7 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Kredik Shaw",
       "tipo": "NORTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "Kredik Shaw",
       "evaluado": true,
       "satisface": false
@@ -2061,8 +2062,8 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
-      "destino_solver": "cantón de la Ortodoxia",
+      "origen_solver": "plaza Ahlstrom",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": true,
       "satisface": true
     },
@@ -2070,52 +2071,52 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "NORTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
-      "destino_solver": "Canton de las Finanzas",
+      "origen_solver": "plaza Ahlstrom",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Guarnición de Luthadel",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "Guarnición de Luthadel",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Fortaleza Venture",
       "tipo": "CONECTA",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "Torreón de Venture",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Fortaleza Venture",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "Torreón de Venture",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Fortaleza Hasting",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "Torreón de Hasting",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Fortaleza Lekal",
       "tipo": "NORTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "Torreón de Lekal",
       "evaluado": true,
       "satisface": false
@@ -2124,7 +2125,7 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Fortaleza Erikeller",
       "tipo": "NORTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "Torreón de Erikeller",
       "evaluado": true,
       "satisface": false
@@ -2133,7 +2134,7 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Taller de Clubs",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "taller de Clubs",
       "evaluado": true,
       "satisface": false
@@ -2142,16 +2143,16 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Guarida de Camon",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
-      "destino_solver": "guarida de Camon",
-      "evaluado": true,
-      "satisface": false
+      "origen_solver": "plaza Ahlstrom",
+      "destino_solver": null,
+      "evaluado": false,
+      "satisface": null
     },
     {
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Calle de la Antigua Muralla",
       "tipo": "NORTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -2160,16 +2161,16 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Calle Kenton",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": "calle Kenton",
       "evaluado": true,
-      "satisface": true
+      "satisface": false
     },
     {
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Encrucijada Quince",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -2178,7 +2179,7 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Calle del Canal",
       "tipo": "OESTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -2187,7 +2188,7 @@
       "origen_oficial": "Plaza Ahlstrom",
       "destino_oficial": "Mercado Ska",
       "tipo": "NORTE_DE",
-      "origen_solver": "Plaza Ahlstrom",
+      "origen_solver": "plaza Ahlstrom",
       "destino_solver": null,
       "evaluado": false,
       "satisface": null
@@ -2215,7 +2216,7 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": false,
       "satisface": null
     },
@@ -2224,7 +2225,7 @@
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "ESTE_DE",
       "origen_solver": null,
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": false,
       "satisface": null
     },
@@ -2287,7 +2288,7 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "CONECTA",
       "origen_solver": null,
-      "destino_solver": "guarida de Camon",
+      "destino_solver": null,
       "evaluado": false,
       "satisface": null
     },
@@ -2296,7 +2297,7 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "guarida de Camon",
+      "destino_solver": null,
       "evaluado": false,
       "satisface": null
     },
@@ -2323,7 +2324,7 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
       "origen_solver": null,
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": false,
       "satisface": null
     },
@@ -2377,7 +2378,7 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": false,
       "satisface": null
     },
@@ -2386,7 +2387,7 @@
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "ESTE_DE",
       "origen_solver": null,
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": false,
       "satisface": null
     },
@@ -2449,7 +2450,7 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "guarida de Camon",
+      "destino_solver": null,
       "evaluado": false,
       "satisface": null
     },
@@ -2476,7 +2477,7 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "ESTE_DE",
       "origen_solver": null,
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": false,
       "satisface": null
     },
@@ -2530,7 +2531,7 @@
       "destino_oficial": "Sede del Cantón de la Ortodoxia",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "cantón de la Ortodoxia",
+      "destino_solver": "Cantón de la Ortodoxia",
       "evaluado": false,
       "satisface": null
     },
@@ -2539,7 +2540,7 @@
       "destino_oficial": "Sede del Cantón de las Finanzas",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "Canton de las Finanzas",
+      "destino_solver": "Cantón de las Finanzas",
       "evaluado": false,
       "satisface": null
     },
@@ -2602,7 +2603,7 @@
       "destino_oficial": "Guarida de Camon",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "guarida de Camon",
+      "destino_solver": null,
       "evaluado": false,
       "satisface": null
     },
@@ -2629,7 +2630,7 @@
       "destino_oficial": "Plaza Ahlstrom",
       "tipo": "SUR_DE",
       "origen_solver": null,
-      "destino_solver": "Plaza Ahlstrom",
+      "destino_solver": "plaza Ahlstrom",
       "evaluado": false,
       "satisface": null
     },

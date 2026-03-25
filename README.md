@@ -8,7 +8,7 @@ Proyecto de Seminario de Título: GENERACIÓN DE MAPAS A PARTIR DE NARRACIONES L
 3. comparar_oficial_vs_solution.py se encarga de comparar el grafo generado por el modelo y pasado por el solver con el grafo oficial 
 
 EJECUTAR DE ESTA MANERA:
-`python comparar_oficial_vs_solution.py official_graph.json solution.json`
+`python comparador/comparar_oficial_vs_solution.py json/official_graph.json json/solution.json`
 
 4. official_nodes.csv Corresponde a las coordenadas puestas a mano de los lugares dentro de la ciudad de Luthadel.  
 
