@@ -9,7 +9,11 @@ from pathlib import Path
 from typing import Dict, Tuple, Any, List, Optional, Set
 
 _JSON_DIR = Path(__file__).resolve().parent.parent / "json"
+_DEFAULT_OFFICIAL = str(_JSON_DIR / "official_graph.json")
+_DEFAULT_SOLUTION = str(_JSON_DIR / "solution.json")
 _DEFAULT_COMPARISON_OUT = str(_JSON_DIR / "comparison_official_vs_solution.json")
+_DEFAULT_ALIASES = str(_JSON_DIR / "aliases.json")
+_DEFAULT_OFFICIAL_CSV = str(Path(__file__).resolve().parent.parent / "csv" / "official_nodes.csv")
 
 
 # -----------------------------------
@@ -47,6 +51,13 @@ def normalize_tokens(name: str) -> Set[str]:
         # si todo eran stopwords, usamos la cadena básica como respaldo
         return {s.strip()}
     return set(tokens)
+
+
+def canonical_text(name: str) -> str:
+    s = strip_accents((name or "").lower())
+    for ch in ",.;:¡!¿?()[]{}-_/'\"":
+        s = s.replace(ch, " ")
+    return " ".join(s.split())
 
 
 # -----------------------------------
@@ -147,8 +158,12 @@ def load_solution_coords(path: str) -> Dict[str, Any]:
 
     for nombre, val in coords_raw.items():
         if isinstance(val, dict):
-            x = val.get("x") or val.get("X")
-            y = val.get("y") or val.get("Y")
+            x = val.get("x", None)
+            if x is None:
+                x = val.get("X", None)
+            y = val.get("y", None)
+            if y is None:
+                y = val.get("Y", None)
         elif isinstance(val, (list, tuple)) and len(val) == 2:
             x, y = val
         else:
@@ -171,6 +186,45 @@ def load_solution_coords(path: str) -> Dict[str, Any]:
         }
 
 
+def load_aliases(path: Optional[str]) -> Dict[str, str]:
+    if not path:
+        return {}
+    p = Path(path)
+    if not p.exists():
+        return {}
+    data = load_json(str(p))
+    aliases_raw = data.get("aliases", data) if isinstance(data, dict) else {}
+    aliases: Dict[str, str] = {}
+    if isinstance(aliases_raw, dict):
+        for k, v in aliases_raw.items():
+            if isinstance(k, str) and isinstance(v, str):
+                aliases[canonical_text(k)] = canonical_text(v)
+    return aliases
+
+
+def load_official_positions_csv(path: Optional[str]) -> Dict[str, Tuple[float, float]]:
+    if not path:
+        return {}
+    p = Path(path)
+    if not p.exists():
+        return {}
+    import csv
+    out: Dict[str, Tuple[float, float]] = {}
+    with open(p, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            name = row.get("name")
+            x = row.get("x")
+            y = row.get("y")
+            if not name or x is None or y is None:
+                continue
+            try:
+                out[name] = (float(x), float(y))
+            except ValueError:
+                continue
+    return out
+
+
 
 # -----------------------------------
 # Mapeo de nombres oficial -> solver
@@ -178,33 +232,51 @@ def load_solution_coords(path: str) -> Dict[str, Any]:
 
 def build_name_mapping(official_places: List[str],
                        solver_places: List[str],
+                       aliases: Optional[Dict[str, str]] = None,
                        min_jaccard: float = 0.4) -> Dict[str, Optional[str]]:
-    solver_index = [(name, normalize_tokens(name)) for name in solver_places]
-    mapping: Dict[str, Optional[str]] = {}
+    aliases = aliases or {}
+    mapping: Dict[str, Optional[str]] = {name: None for name in official_places}
+    solver_by_canon: Dict[str, str] = {canonical_text(s): s for s in solver_places}
 
+    used_solver: Set[str] = set()
+
+    # 1) Alias exacto (prioridad alta)
     for off_name in official_places:
+        off_c = canonical_text(off_name)
+        target_c = aliases.get(off_c)
+        if target_c and target_c in solver_by_canon:
+            sol_name = solver_by_canon[target_c]
+            mapping[off_name] = sol_name
+            used_solver.add(sol_name)
+
+    # 2) Matching 1-a-1 por similitud global (greedy)
+    candidates: List[Tuple[float, str, str]] = []
+    for off_name in official_places:
+        if mapping[off_name] is not None:
+            continue
         off_tokens = normalize_tokens(off_name)
         if not off_tokens:
-            mapping[off_name] = None
             continue
-
-        best_label = None
-        best_score = 0.0
-
-        for sol_name, sol_tokens in solver_index:
+        for sol_name in solver_places:
+            if sol_name in used_solver:
+                continue
+            sol_tokens = normalize_tokens(sol_name)
             if not sol_tokens:
                 continue
             inter = len(off_tokens & sol_tokens)
             union = len(off_tokens | sol_tokens)
             jaccard = inter / union if union > 0 else 0.0
-            if jaccard > best_score:
-                best_score = jaccard
-                best_label = sol_name
+            if jaccard >= min_jaccard:
+                candidates.append((jaccard, off_name, sol_name))
 
-        if best_label is not None and best_score >= min_jaccard:
-            mapping[off_name] = best_label
-        else:
-            mapping[off_name] = None
+    candidates.sort(key=lambda x: x[0], reverse=True)
+    used_official: Set[str] = set()
+    for _score, off_name, sol_name in candidates:
+        if off_name in used_official or sol_name in used_solver:
+            continue
+        mapping[off_name] = sol_name
+        used_official.add(off_name)
+        used_solver.add(sol_name)
 
     return mapping
 
@@ -258,6 +330,8 @@ def check_relation(tipo: str,
 
 def compare_graphs(official_path: str,
                    solution_path: str,
+                   aliases_path: Optional[str] = _DEFAULT_ALIASES,
+                   official_csv_path: Optional[str] = _DEFAULT_OFFICIAL_CSV,
                    margin_dir: float = 21.0,
                    dist_close: float = 66.0,
                    dist_connect: float = 75.0,
@@ -284,8 +358,9 @@ def compare_graphs(official_path: str,
     width = official.get("width") or solution.get("width")
     height = official.get("height") or solution.get("height")
 
-    # Mapeo de nombres
-    mapping = build_name_mapping(official_places, solver_places)
+    # Mapeo de nombres (aliases + similitud, forzando 1-a-1)
+    aliases = load_aliases(aliases_path)
+    mapping = build_name_mapping(official_places, solver_places, aliases=aliases)
 
     # Resumen mapeo
     lugares_mapeados = {k: v for k, v in mapping.items() if v is not None}
@@ -366,6 +441,15 @@ def compare_graphs(official_path: str,
     print(f"CSR respecto al grafo oficial (solver): {csr:.3f}")
     print()
 
+    cobertura_lugares = len(lugares_mapeados) / len(official_places) if official_places else 0.0
+    csr_total_rel = satisfechas / total_rel if total_rel > 0 else 0.0
+    score_combinado = csr * cobertura_lugares
+
+    print(f"Cobertura de mapeo de lugares         : {cobertura_lugares:.3f}")
+    print(f"CSR penalizado por no-evaluables      : {csr_total_rel:.3f}")
+    print(f"Score combinado (CSR*cobertura)       : {score_combinado:.3f}")
+    print()
+
     # Detalle por tipo
     print("=== Detalle por tipo de relación ===")
     for t in tipos:
@@ -373,6 +457,95 @@ def compare_graphs(official_path: str,
         csr_t = s["satisfechas"] / s["evaluables"] if s["evaluables"] > 0 else 0.0
         print(f"- {t:<7} -> total={s['total']:3d}, eval={s['evaluables']:3d}, ok={s['satisfechas']:3d}, CSR={csr_t:.3f}")
     print()
+
+    # Comparación simétrica por tipo (official vs solver)
+    mapped_official = {off: sol for off, sol in mapping.items() if sol is not None}
+    inverse_mapping = {sol: off for off, sol in mapped_official.items()}
+
+    official_sets_by_type: Dict[str, Set[Tuple[str, str]]] = {}
+    for r in official_relations:
+        t = r["tipo"].upper()
+        o = r["origen"]
+        d = r["destino"]
+        if o in mapped_official and d in mapped_official:
+            official_sets_by_type.setdefault(t, set()).add((o, d))
+
+    full_solution_data = load_json(solution_path)
+    rel_eval = full_solution_data.get("rel_eval", [])
+    solver_sets_by_type: Dict[str, Set[Tuple[str, str]]] = {}
+    for r in rel_eval:
+        t = str(r.get("tipo", "")).upper()
+        o_sol = r.get("origen")
+        d_sol = r.get("destino")
+        if not o_sol or not d_sol:
+            continue
+        o_off = inverse_mapping.get(o_sol)
+        d_off = inverse_mapping.get(d_sol)
+        if not o_off or not d_off:
+            continue
+        solver_sets_by_type.setdefault(t, set()).add((o_off, d_off))
+
+    comparacion_simetrica_por_tipo: Dict[str, Dict[str, float]] = {}
+    tipos_union = sorted(set(official_sets_by_type.keys()) | set(solver_sets_by_type.keys()))
+    all_tp = all_fp = all_fn = 0
+    for t in tipos_union:
+        set_off = official_sets_by_type.get(t, set())
+        set_sol = solver_sets_by_type.get(t, set())
+        tp = len(set_off & set_sol)
+        fp = len(set_sol - set_off)
+        fn = len(set_off - set_sol)
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+        f1 = (2 * precision * recall / (precision + recall)) if (precision + recall) > 0 else 0.0
+        comparacion_simetrica_por_tipo[t] = {
+            "tp": tp,
+            "fp": fp,
+            "fn": fn,
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+        }
+        all_tp += tp
+        all_fp += fp
+        all_fn += fn
+
+    precision_micro = all_tp / (all_tp + all_fp) if (all_tp + all_fp) > 0 else 0.0
+    recall_micro = all_tp / (all_tp + all_fn) if (all_tp + all_fn) > 0 else 0.0
+    f1_micro = (2 * precision_micro * recall_micro / (precision_micro + recall_micro)) if (precision_micro + recall_micro) > 0 else 0.0
+
+    # Distancia official-vs-solver por nodo mapeado (coordenadas normalizadas por bbox)
+    distancia_nodos_mapeados = {"pares": 0, "mae": 0.0, "rmse": 0.0}
+    official_pos = load_official_positions_csv(official_csv_path)
+    if official_pos and mapped_official:
+        pairs: List[Tuple[Tuple[float, float], Tuple[float, float]]] = []
+        for off_name, sol_name in mapped_official.items():
+            if off_name in official_pos and sol_name in coords:
+                pairs.append((official_pos[off_name], coords[sol_name]))
+
+        if pairs:
+            off_xs = [p[0][0] for p in pairs]
+            off_ys = [p[0][1] for p in pairs]
+            sol_xs = [p[1][0] for p in pairs]
+            sol_ys = [p[1][1] for p in pairs]
+            off_dx = max(max(off_xs) - min(off_xs), 1e-9)
+            off_dy = max(max(off_ys) - min(off_ys), 1e-9)
+            sol_dx = max(max(sol_xs) - min(sol_xs), 1e-9)
+            sol_dy = max(max(sol_ys) - min(sol_ys), 1e-9)
+            off_min_x, off_min_y = min(off_xs), min(off_ys)
+            sol_min_x, sol_min_y = min(sol_xs), min(sol_ys)
+
+            dists = []
+            for (ox, oy), (sx, sy) in pairs:
+                oxn = (ox - off_min_x) / off_dx
+                oyn = (oy - off_min_y) / off_dy
+                sxn = (sx - sol_min_x) / sol_dx
+                syn = (sy - sol_min_y) / sol_dy
+                dists.append(math.hypot(oxn - sxn, oyn - syn))
+
+            if dists:
+                mae = sum(dists) / len(dists)
+                rmse = math.sqrt(sum(d * d for d in dists) / len(dists))
+                distancia_nodos_mapeados = {"pares": len(dists), "mae": mae, "rmse": rmse}
 
     # Construir JSON de salida
     resumen_tipo_json = {}
@@ -390,11 +563,18 @@ def compare_graphs(official_path: str,
         "lugares_oficiales": len(official_places),
         "lugares_solution": len(coords),
         "lugares_oficiales_mapeados": len(lugares_mapeados),
+        "cobertura_lugares": cobertura_lugares,
         "lugares_oficiales_sin_mapa": lugares_sin_mapa,
         "relaciones_oficiales_total": total_rel,
         "relaciones_oficiales_evaluables": evaluables,
         "relaciones_oficiales_satisfechas": satisfechas,
-        "csr_oficial": csr
+        "csr_oficial": csr,
+        "csr_total_rel": csr_total_rel,
+        "score_combinado": score_combinado,
+        "precision_micro": precision_micro,
+        "recall_micro": recall_micro,
+        "f1_micro": f1_micro,
+        "distancia_nodos_mapeados": distancia_nodos_mapeados,
     }
 
     output_data = {
@@ -406,6 +586,7 @@ def compare_graphs(official_path: str,
         "resumen_global": resumen_global,
         "mapeo_lugares": mapping,
         "resumen_tipo": resumen_tipo_json,
+        "comparacion_simetrica_por_tipo": comparacion_simetrica_por_tipo,
         "detalle": detalle_relaciones
     }
 
@@ -424,8 +605,22 @@ def main():
     parser = argparse.ArgumentParser(
         description="Comparar grafo oficial (relaciones textuales) con solución de coords (solution.json)."
     )
-    parser.add_argument("official", help="Ruta a official_graph.json")
-    parser.add_argument("solution", help="Ruta a solution.json (con 'coords')")
+    parser.add_argument(
+        "official",
+        nargs="?",
+        default=_DEFAULT_OFFICIAL,
+        help=f"Ruta a official_graph.json (por defecto: {_DEFAULT_OFFICIAL})",
+    )
+    parser.add_argument(
+        "solution",
+        nargs="?",
+        default=_DEFAULT_SOLUTION,
+        help=f"Ruta a solution.json con coords (por defecto: {_DEFAULT_SOLUTION})",
+    )
+    parser.add_argument("--aliases", type=str, default=_DEFAULT_ALIASES,
+                        help=f"Ruta a aliases.json (opcional, por defecto: {_DEFAULT_ALIASES})")
+    parser.add_argument("--official-csv", type=str, default=_DEFAULT_OFFICIAL_CSV,
+                        help=f"Ruta a official_nodes.csv para métricas de distancia (por defecto: {_DEFAULT_OFFICIAL_CSV})")
     parser.add_argument("--margin-dir", type=float, default=21.0,
                         help="Umbral de píxeles para relaciones direccionales (NORTE/SUR/ESTE/OESTE)")
     parser.add_argument("--dist-close", type=float, default=66.0,
@@ -440,6 +635,8 @@ def main():
     compare_graphs(
         official_path=args.official,
         solution_path=args.solution,
+        aliases_path=args.aliases,
+        official_csv_path=args.official_csv,
         margin_dir=args.margin_dir,
         dist_close=args.dist_close,
         dist_connect=args.dist_connect,
