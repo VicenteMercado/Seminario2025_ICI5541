@@ -11,7 +11,7 @@ _JSON_DIR = _ROOT / "json"
 # ============================================================
 # A) Extracción desde PDF + LLM + normalización
 # ============================================================
-pdf_path = _ROOT / "textos" / "El Imperio Final Ed revisada - Brandon Sanderson.pdf"
+pdf_path = _ROOT / "textos" / "Historia de Roma Libro 1 al 10 - Tito Livio.pdf"
 
 # 1) Leer PDF completo
 text = ""
@@ -27,22 +27,34 @@ print("Texto cargado, longitud:", len(text))
 # 2) Separar capítulos completos
 def split_text_by_chapters(text):
     """
-    Divide el texto en chunks por capítulos (empieza en Capítulo 1).
-    Si hay Prólogo u otro material antes del Cap. 1, se DESCARTA.
+    Divide el texto en chunks por capítulos. Detecta automáticamente el formato:
+      - Marcadores [libro,cap] como [1,1], [2,3], etc. (ej.: Tito Livio)
+      - Números solos en línea como separadores (ej.: El Imperio Final)
+    Si hay prólogo u otro material antes del primer marcador, se descarta.
     """
     text = text.replace("\r\n", "\n").strip()
 
-    # Encuentra el primer capítulo numérico y corta todo lo de antes
+    # Formato 1: marcadores [libro,cap] — ej. [1,1], [2,3], [10,40]
+    markers = list(re.finditer(r"\[\d+,\d+\]", text))
+    if len(markers) >= 3:
+        chunks = []
+        for i, m in enumerate(markers):
+            start = m.end()
+            end = markers[i + 1].start() if i + 1 < len(markers) else len(text)
+            chunk = text[start:end].strip()
+            if chunk:
+                chunks.append(chunk)
+        return chunks
+
+    # Formato 2: números solos en línea — ej. \n 1 \n ... \n 2 \n
     m_first = re.search(r"\n\s*1\s*\n", text)
     if m_first:
         text = text[m_first.start():]
 
-    # Divide por números de capítulo en línea
     chapter_splits = re.split(r"\n\s*(\d+)\s*\n", text)
 
     chunks = []
     if chapter_splits:
-        # chapter_splits = ["", "1", cap1_text, "2", cap2_text, ...]
         for i in range(1, len(chapter_splits), 2):
             chapter_text = chapter_splits[i + 1].strip() if i + 1 < len(chapter_splits) else ""
             if chapter_text:
@@ -87,100 +99,81 @@ if not api_key:
 
 client = OpenAI(api_key=api_key)
 
-# 5) Prompt estructurado
+# 5) Prompt estructurado (genérico para cualquier texto narrativo)
 system_prompt = """
 Eres un extractor de relaciones espaciales entre lugares en un texto narrativo.
-Ahora debes ser MENOS estricto que antes: es preferible capturar más lugares y más relaciones,
-aunque algunas sean aproximadas, siempre que:
+Tu objetivo es identificar TODOS los lugares geográficos con nombre propio y las
+relaciones espaciales explícitas entre ellos.
 
-- Estén claramente dentro o en la ciudad de Luthadel, o formen parte directa de ella.
-- Tengan UN NOMBRE CLARO y no sean simplemente objetos o habitaciones internas.
-
-========================
-ÁMBITO DEL MAPA
-========================
-Nos interesa SOLO la ciudad de Luthadel, capital del Imperio Final, y sus componentes urbanos.
-Incluye:
-- Fortalezas, casas nobles, torreones y lugares urbanos importantes dentro de Luthadel.
-- Plazas, calles, canales, guarniciones, cantones, mercados y zonas urbanas claramente dentro de la ciudad.
-- Periferias urbanas, barrios o zonas como "suburbios skaa de Luthadel", si se describen como parte de la ciudad.
-
-EXCLUYE (NO los incluyas, aunque tengan nombre propio):
-- Otras ciudades, dominios, plantaciones, montes, cavernas lejanas, etc.
-- Ejemplos concretos que DEBES excluir:
-  "Montes de Ceniza", "plantación de lord Tresting",
-  "Dominio Central", "Dominio Extremo", "Fellise",
-  "Holstep", "Valtroux", "Guarnición de Holstep",
-  "Pozos de Hathsin", "Pozo de Hathsin", "Pozos de Hathsin",
-  "cavernas Arguois" (y cualquier lugar claramente lejano de Luthadel).
+Debes capturar la mayor cantidad posible de lugares y relaciones, aunque algunas
+sean aproximadas, siempre que:
+- Los lugares tengan UN NOMBRE PROPIO o topónimo claro.
+- Las relaciones espaciales estén indicadas explícitamente en el texto.
 
 ========================
-INTERIORES (MUY IMPORTANTE)
+LUGARES VÁLIDOS
 ========================
-NO incluyas salas internas, habitaciones ni sub-espacios interiores de edificios:
-- Ejemplos:
-  "salón de baile Venture", "salón principal Venture",
-  "salón de caballeros del Torreón de Lekal",
-  "almacenes de Renoux", "edificio de los Quiebros".
-Estos NO deben aparecer como lugares en la salida. Solo importa el edificio o complejo principal:
-por ejemplo, "Casa Venture", "Torreón de Lekal", "Casa Elariel", etc.
-
-========================
-INSTRUCCIONES PRINCIPALES
-========================
-
-1) Lugares válidos
 Incluye lugares solo si:
-  A. Tienen nombre propio o topónimo claro (ej.: "Plaza Ahlstrom", "calle Kenton").
-  B. Son combinaciones de genérico + nombre propio ("Torreón de Hasting", "canal de Luth-Davn").
-  C. Son entidades urbanas significativas dentro de Luthadel: plazas, calles, fuertes, canales, guarniciones,
-     cantones, fortalezas, torreones, casas nobles, plazas importantes, mercados.
+  A. Tienen nombre propio o topónimo claro
+     (ej.: "Roma", "río Tíber", "Plaza Ahlstrom", "Monte Aventino").
+  B. Son combinaciones de genérico + nombre propio
+     (ej.: "Templo de Júpiter", "Torreón de Hasting", "Puerta de Capena").
+  C. Son entidades geográficas significativas: ciudades, ríos, montes, regiones,
+     colinas, templos, plazas, fortalezas, puentes, calles, lagos, puertos,
+     bosques, valles, islas, mares, caminos, etc.
 
 Excluye:
-  - Términos completamente genéricos sin nombre específico ("la plaza", "la calle", "el canal").
-  - Interiores y salas internas (salones, almacenes, edificios internos, despachos, habitaciones).
-  - Objetos pequeños (mesas, pasillos, habitaciones).
-  - Regiones lejanas, dominios o ciudades externas.
+  - Términos completamente genéricos SIN nombre específico
+    ("la plaza", "la calle", "el río", "el monte", "la ciudad", "el templo").
+  - Interiores y sub-espacios de edificios: salones, habitaciones, almacenes,
+    despachos, pasillos, cocinas. Solo importa el edificio o complejo principal.
+  - Objetos pequeños (mesas, sillas, puertas internas).
+  - Personas, dioses o conceptos abstractos usados como si fueran lugares.
+  - Gentilicios o nombres de pueblos como grupo social (ej.: "los romanos",
+    "los etruscos", "los skaa"), a menos que nombren un territorio concreto.
 
-2) Relaciones espaciales
-Extrae TODAS las relaciones espaciales explícitas que encuentres entre lugares válidos:
+========================
+RELACIONES ESPACIALES
+========================
+Extrae TODAS las relaciones espaciales explícitas entre lugares válidos:
   - NORTE_DE, SUR_DE, ESTE_DE, OESTE_DE
   - CERCA_DE
 
 "Explícitas" significa que el texto indica claramente una relación espacial,
-aunque sea aproximada (por ejemplo, "cerca de", "junto a", "al norte de", etc.).
-
-Está permitido usar frases como:
+aunque sea aproximada. Frases válidas incluyen:
   - "X se encontraba cerca de Y" → {"tipo":"CERCA_DE"}
   - "X quedaba al norte de Y" → {"tipo":"NORTE_DE"}
+  - "X estaba junto a Y" / "X, vecina de Y" → {"tipo":"CERCA_DE"}
+  - "al sur de X se hallaba Y" → {"tipo":"SUR_DE"} (origen=Y, destino=X)
+  - "entre X e Y" → {"tipo":"CERCA_DE"} para ambos pares si aplica
+  - "a orillas de X estaba Y" → {"tipo":"CERCA_DE"}
+  - "cruzando el río X se llegaba a Y" → {"tipo":"CERCA_DE"}
 
 Si la relación es muy ambigua o puramente narrativa sin referencia espacial, no la uses.
 
-3) Luthadel y macro-lugares
-No incluyas "Luthadel" como nodo/lugar final: úsalo solo mentalmente como contexto.
-No incluyas "Grandes Casas" ni "Grandes Casas de Luthadel" como lugar independiente:
-es una categoría social, no una ubicación puntual del mapa.
-
-4) Identificación de pivotes
-Si aparece "Kredik Shaw", añádelo siempre como lugar y considéralo como pivote central.
+========================
+LUGARES CLAVE (PIVOTES)
+========================
+En "lugares_clave", incluye los lugares que aparecen como referencia central o
+punto de anclaje geográfico en el fragmento (el lugar más mencionado o que sirve
+de referencia para ubicar a los demás). Puede estar vacío si no hay uno claro.
 
 ========================
 LISTA NEGRA DE GENÉRICOS (si aparecen sin nombre propio → EXCLUIR)
 ========================
 plaza, calle, avenida, puente, canal, muralla, puerta, barrio, distrito, mercado,
-palacio, templo, fortaleza, torre, castillo, taberna, posada, campamento, edificio, casa,
-salon, salón, almacenes, plantación, montes, montañas, cavernas, pozos
-
-(Esta lista se suma a cualquier filtro interno de genéricos que uses.)
+palacio, templo, fortaleza, torre, castillo, taberna, posada, campamento, edificio,
+casa, salón, almacenes, plantación, montes, montañas, cavernas, pozos, río, monte,
+colina, lago, puerto, campo, valle, bosque, región, territorio, isla, mar, camino
 
 ========================
 SALIDA JSON
 ========================
-Devuelve SIEMPRE un JSON estricto:
+Devuelve SIEMPRE un JSON estricto con esta estructura:
 
 {
-  "lugares_clave": ["..."],     // ej. ["Kredik Shaw"]
-  "lugares": ["..."],          // lista de lugares válidos dentro de Luthadel
+  "lugares_clave": ["..."],
+  "lugares": ["..."],
   "relaciones": [
     {"origen":"X","tipo":"NORTE_DE","destino":"Y"},
     {"origen":"A","tipo":"SUR_DE","destino":"B"},
@@ -190,7 +183,7 @@ Devuelve SIEMPRE un JSON estricto:
   ]
 }
 
-Si en el fragmento no hay lugares válidos dentro de Luthadel:
+Si en el fragmento no hay lugares válidos:
 {"lugares_clave": [], "lugares": [], "relaciones": []}
 
 ========================
@@ -198,8 +191,8 @@ REGLAS ADICIONALES
 ========================
 - Es mejor incluir una relación dudosa pero plausible que omitir demasiadas.
 - NO uses conocimiento externo al fragmento proporcionado.
-- No incluyas lugares fuera de Luthadel (ni dominios, ni montes, ni otras ciudades).
-- NO incluyas interiores ni salas internas.
+- NO incluyas interiores ni salas internas de edificios.
+- Usa siempre el nombre tal como aparece en el texto (no traduzcas ni normalices).
 """
 
 # 6) Llamadas al modelo
@@ -532,16 +525,14 @@ for p in cleaned_places:
         "pivot_score": int(score),
     }
 
-# Pivote: solo Kredik Shaw si aparece
-SPECIAL_PIVOTS_NORM = {"kredik shaw"}
-pivotes = []
-for p in cleaned_places:
-    if norm_place(p) in SPECIAL_PIVOTS_NORM and p not in pivotes:
-        pivotes.append(p)
+# Pivotes: los lugares_clave más reportados por el LLM
+from collections import Counter
+pivot_counts = Counter(apply_alias(p) for p in pivot_raw)
+pivotes = [p for p, _ in pivot_counts.most_common() if p in cleaned_places]
 
 print("\n=== Pivotes seleccionados (extractor) ===")
 if not pivotes:
-    print("(ninguno; no se detectó 'Kredik Shaw' en los lugares finales)")
+    print("(ninguno; el LLM no reportó lugares_clave en los fragmentos)")
 else:
     for i, p in enumerate(pivotes, 1):
         m = lugares_meta[p]
