@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "par": [
+      "Roma",
+      "Veyes"
+    ],
+    "eje": "NS",
+    "relaciones": [
+      {
+        "origen": "Veyes",
+        "tipo": "SUR_DE",
+        "destino": "Roma",
+        "chunk_idx": 22
+      },
+      {
+        "origen": "Veyes",
+        "tipo": "NORTE_DE",
+        "destino": "Roma",
+        "chunk_idx": 29
+      }
+    ]
+  }
+]

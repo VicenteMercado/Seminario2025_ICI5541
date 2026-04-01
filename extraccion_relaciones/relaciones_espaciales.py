@@ -152,6 +152,23 @@ aunque sea aproximada. Frases válidas incluyen:
 Si la relación es muy ambigua o puramente narrativa sin referencia espacial, no la uses.
 
 ========================
+DISTANCIAS (OPCIONAL)
+========================
+Si el texto menciona una distancia numérica explícita entre dos lugares, inclúyela
+en la relación con los campos "distancia" (valor numérico) y "unidad" (la unidad
+tal como aparece en el texto).
+
+Ejemplos:
+  - "Roma estaba a 12 millas de Veyes"
+    → {"origen":"Roma","tipo":"CERCA_DE","destino":"Veyes","distancia":12,"unidad":"millas"}
+  - "a 300 estadios al norte de Capua"
+    → {"origen":"...","tipo":"NORTE_DE","destino":"Capua","distancia":300,"unidad":"estadios"}
+  - "a dos jornadas de camino de Antium"
+    → {"origen":"...","tipo":"CERCA_DE","destino":"Antium","distancia":2,"unidad":"jornadas"}
+
+Si NO hay distancia numérica explícita, simplemente omite los campos "distancia" y "unidad".
+
+========================
 LUGARES CLAVE (PIVOTES)
 ========================
 En "lugares_clave", incluye los lugares que aparecen como referencia central o
@@ -176,9 +193,8 @@ Devuelve SIEMPRE un JSON estricto con esta estructura:
   "lugares": ["..."],
   "relaciones": [
     {"origen":"X","tipo":"NORTE_DE","destino":"Y"},
-    {"origen":"A","tipo":"SUR_DE","destino":"B"},
+    {"origen":"A","tipo":"CERCA_DE","destino":"B","distancia":12,"unidad":"millas"},
     {"origen":"C","tipo":"ESTE_DE","destino":"D"},
-    {"origen":"E","tipo":"OESTE_DE","destino":"F"},
     {"origen":"G","tipo":"CERCA_DE","destino":"H"}
   ]
 }
@@ -219,6 +235,53 @@ for i, chunk in enumerate(relevant_chunks):
     except Exception as e:
         print("Error:", e)
     time.sleep(0.6)  # pequeña pausa para evitar rate limits
+
+# ============================================================
+# B-0) Diccionario de conversión de unidades a metros
+# ============================================================
+UNIDADES_A_METROS = {
+    # Métricas
+    "m": 1, "metro": 1, "metros": 1,
+    "km": 1000, "kilometro": 1000, "kilómetro": 1000,
+    "kilometros": 1000, "kilómetros": 1000,
+
+    # Romanas / antiguas
+    "milla": 1480, "millas": 1480,                       # milla romana (mille passus)
+    "milla romana": 1480, "millas romanas": 1480,
+    "estadio": 185, "estadios": 185,                      # stadion griego/romano
+    "paso": 1.48, "pasos": 1.48,                          # passus romano
+    "pie": 0.296, "pies": 0.296,                          # pes romano
+
+    # Imperiales / anglosajonas
+    "milla inglesa": 1609, "millas inglesas": 1609,
+    "mile": 1609, "miles": 1609,
+    "yarda": 0.9144, "yardas": 0.9144,
+    "yard": 0.9144, "yards": 0.9144,
+    "pie ingles": 0.3048, "pies ingleses": 0.3048,
+    "foot": 0.3048, "feet": 0.3048,
+
+    # Medievales / hispanas
+    "legua": 5572, "leguas": 5572,                        # legua castellana
+    "league": 5556, "leagues": 5556,
+
+    # Aproximaciones de tiempo como distancia
+    "jornada": 30000, "jornadas": 30000,                  # ~30 km/día a pie
+    "dia de camino": 30000, "dias de camino": 30000,
+    "día de camino": 30000, "días de camino": 30000,
+}
+
+
+def convertir_a_metros(distancia, unidad):
+    """Convierte una distancia con unidad textual a metros. Retorna None si no se reconoce."""
+    if distancia is None or unidad is None:
+        return None
+    clave = strip_accents(str(unidad).strip().lower())
+    factor = UNIDADES_A_METROS.get(clave)
+    if factor is None:
+        print(f"  ⚠️ Unidad no reconocida: '{unidad}' (distancia={distancia})")
+        return None
+    return round(float(distancia) * factor, 1)
+
 
 # ============================================================
 # B) Normalización y filtros
@@ -377,7 +440,16 @@ for chunk_idx, r in enumerate(results):
 
         if t in VALID_TIPOS and is_named_place(o) and is_named_place(d) \
                 and o != d and not es_interior(o) and not es_interior(d):
-            all_relations.append({"origen": o, "tipo": t, "destino": d, "chunk_idx": chunk_idx})
+            entry = {"origen": o, "tipo": t, "destino": d, "chunk_idx": chunk_idx}
+            # Convertir distancia a metros si el LLM la extrajo
+            dist_raw = rel.get("distancia")
+            unit_raw = rel.get("unidad")
+            if dist_raw is not None and unit_raw is not None:
+                dist_m = convertir_a_metros(dist_raw, unit_raw)
+                if dist_m is not None:
+                    entry["distancia_m"] = dist_m
+                    entry["distancia_orig"] = f"{dist_raw} {unit_raw}"
+            all_relations.append(entry)
 
 def detectar_contradicciones(relations):
     """
@@ -466,7 +538,11 @@ tmp_rel = []
 for r in all_relations:
     o, d = remap(r["origen"]), remap(r["destino"])
     if o in cleaned_places and d in cleaned_places and o != d:
-        tmp_rel.append({"origen": o, "tipo": r["tipo"], "destino": d, "chunk_idx": r.get("chunk_idx")})
+        entry = {"origen": o, "tipo": r["tipo"], "destino": d, "chunk_idx": r.get("chunk_idx")}
+        if "distancia_m" in r:
+            entry["distancia_m"] = r["distancia_m"]
+            entry["distancia_orig"] = r.get("distancia_orig")
+        tmp_rel.append(entry)
 
 rel_set = set()
 clean_relations = []
@@ -527,8 +603,9 @@ for p in cleaned_places:
 
 # Pivotes: los lugares_clave más reportados por el LLM
 from collections import Counter
+MAX_PIVOTES = 5
 pivot_counts = Counter(apply_alias(p) for p in pivot_raw)
-pivotes = [p for p, _ in pivot_counts.most_common() if p in cleaned_places]
+pivotes = [p for p, _ in pivot_counts.most_common() if p in cleaned_places][:MAX_PIVOTES]
 
 print("\n=== Pivotes seleccionados (extractor) ===")
 if not pivotes:
@@ -727,12 +804,20 @@ if excluidos:
     print("Descartados (muestra):", ", ".join(excluidos[:10]), ("..." if len(excluidos) > 10 else ""))
 
 
+# Resumen de distancias extraídas
+rels_con_dist = [r for r in filtered_relations if "distancia_m" in r]
+
 print("\nResumen:")
 print(f"- Lugares totales detectados (antes de filtros): {len(cleaned_places)}")
 print(f"- Relaciones totales detectadas (antes de filtros): {len(clean_relations)}")
 print(f"- Lugares finales guardados: {len(filtered_places)}")
 _map_out = _JSON_DIR / "map_relations.json"
 print(f"- Relaciones finales guardadas: {len(filtered_relations)} en {_map_out}")
+print(f"- Relaciones con distancia concreta: {len(rels_con_dist)}")
+if rels_con_dist:
+    print("\n=== Distancias extraídas ===")
+    for r in rels_con_dist:
+        print(f"  {r['origen']} ↔ {r['destino']}: {r['distancia_m']}m ({r.get('distancia_orig', '?')})")
 
 # Guardar JSON final
 _JSON_DIR.mkdir(parents=True, exist_ok=True)
