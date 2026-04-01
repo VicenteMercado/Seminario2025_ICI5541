@@ -4,7 +4,7 @@ import random
 from pathlib import Path
 import networkx as nx
 import matplotlib.pyplot as plt
-from z3 import *
+from z3 import Solver, Int, And, Or, sat  # type: ignore[import-untyped]
 
 _ROOT = Path(__file__).resolve().parent.parent
 _JSON_DIR = _ROOT / "json"
@@ -64,8 +64,25 @@ DIST_CLOSE   = max(14, SIDE // 9)   # CERCA_DE
 DIST_CONNECT = max(16, SIDE // 8)   # CONECTA
 MIN_SEP      = max(8, SIDE // 22)   # separación mínima nodos
 
-SOLVE_TIMEOUT_MS = 2500
+SOLVE_TIMEOUT_MS = 30000
 REL_LIMIT = 900
+
+# ------------------------------------------------------------
+# 4b. Escala metros → píxeles (si hay distancias concretas)
+# ------------------------------------------------------------
+all_dist_m = [r["distancia_m"] for r in clean_relations if "distancia_m" in r]
+if all_dist_m:
+    max_dist_m = max(all_dist_m)
+    METROS_POR_PIXEL = max_dist_m / (SIDE * 0.4)
+    print(f"Escala: {METROS_POR_PIXEL:.1f} m/px (dist. máx: {max_dist_m:.0f}m, lienzo: {SIDE}px)")
+else:
+    METROS_POR_PIXEL = None
+
+def dist_m_to_px(metros):
+    """Convierte metros a píxeles del lienzo. Retorna None si no hay escala."""
+    if METROS_POR_PIXEL is None or metros is None:
+        return None
+    return max(MIN_SEP + 1, int(metros / METROS_POR_PIXEL))
 
 # ------------------------------------------------------------
 # 5. Utilidades Z3
@@ -76,17 +93,20 @@ def add_abs_le(s, expr, bound):
 def add_min_sep(s, dx, dy, d):
     s.add(Or(dx >= d, dx <= -d, dy >= d, dy <= -d))
 
-def rel_to_constraints(A, B, tipo, x, y):
+def rel_to_constraints(A, B, tipo, x, y, distancia_px=None):
     dx, dy = x[A] - x[B], y[A] - y[B]
     cons = []
-    if   tipo == "NORTE_DE": cons.append(dy >= MARGIN_DIR)
-    elif tipo == "SUR_DE":   cons.append(dy <= -MARGIN_DIR)
-    elif tipo == "ESTE_DE":  cons.append(dx >= MARGIN_DIR)
-    elif tipo == "OESTE_DE": cons.append(dx <= -MARGIN_DIR)
+    margin = distancia_px if distancia_px else MARGIN_DIR
+    if   tipo == "NORTE_DE": cons.append(dy >= margin)
+    elif tipo == "SUR_DE":   cons.append(dy <= -margin)
+    elif tipo == "ESTE_DE":  cons.append(dx >= margin)
+    elif tipo == "OESTE_DE": cons.append(dx <= -margin)
     elif tipo == "CERCA_DE":
-        cons += [("abs_le", dx, DIST_CLOSE), ("abs_le", dy, DIST_CLOSE)]
+        bound = int((distancia_px if distancia_px else DIST_CLOSE) * 1.2)
+        cons += [("abs_le", dx, bound), ("abs_le", dy, bound)]
     elif tipo == "CONECTA":
-        cons += [("abs_le", dx, DIST_CONNECT), ("abs_le", dy, DIST_CONNECT)]
+        bound = int((distancia_px if distancia_px else DIST_CONNECT) * 1.2)
+        cons += [("abs_le", dx, bound), ("abs_le", dy, bound)]
     return cons
 
 def priority(rel):
@@ -123,18 +143,23 @@ def solve_with_z3(lugares, relaciones):
             p0 = lugares[0]
             s.add(x[p0] == WIDTH // 2, y[p0] == HEIGHT // 2)
 
-    # Separación mínima global
-    for i in range(len(lugares)):
-        for j in range(i + 1, len(lugares)):
-            A, B = lugares[i], lugares[j]
-            add_min_sep(s, x[A] - x[B], y[A] - y[B], MIN_SEP)
+    # Separación mínima (solo entre nodos conectados por alguna relación)
+    sep_pairs = set()
+    for rel in rels:
+        A, B = rel["origen"], rel["destino"]
+        if A in x and B in x:
+            pair = (min(A, B), max(A, B))
+            sep_pairs.add(pair)
+    for A, B in sep_pairs:
+        add_min_sep(s, x[A] - x[B], y[A] - y[B], MIN_SEP)
 
     # Añadir relaciones incrementalmente
     for rel in rels:
         A, B, t = rel["origen"], rel["destino"], rel["tipo"].upper()
         if A not in x or B not in x:
             continue
-        cons = rel_to_constraints(A, B, t, x, y)
+        dpx = dist_m_to_px(rel.get("distancia_m"))
+        cons = rel_to_constraints(A, B, t, x, y, distancia_px=dpx)
         if not cons:
             continue
         s.push()
@@ -186,13 +211,19 @@ def solve_with_z3(lugares, relaciones):
     def satisfied(rel):
         A, B, t = rel["origen"], rel["destino"], rel["tipo"].upper()
         dx, dy = coords[A]["x"] - coords[B]["x"], coords[A]["y"] - coords[B]["y"]
+        dpx = dist_m_to_px(rel.get("distancia_m"))
+        margin = dpx if dpx else MARGIN_DIR
         ok = True
-        if t == "NORTE_DE": ok &= (dy >= MARGIN_DIR)
-        elif t == "SUR_DE": ok &= (dy <= -MARGIN_DIR)
-        elif t == "ESTE_DE": ok &= (dx >= MARGIN_DIR)
-        elif t == "OESTE_DE": ok &= (dx <= -MARGIN_DIR)
-        elif t == "CERCA_DE": ok &= (abs(dx) <= DIST_CLOSE and abs(dy) <= DIST_CLOSE)
-        elif t == "CONECTA": ok &= (abs(dx) <= DIST_CONNECT and abs(dy) <= DIST_CONNECT)
+        if t == "NORTE_DE": ok &= (dy >= margin)
+        elif t == "SUR_DE": ok &= (dy <= -margin)
+        elif t == "ESTE_DE": ok &= (dx >= margin)
+        elif t == "OESTE_DE": ok &= (dx <= -margin)
+        elif t == "CERCA_DE":
+            bound = int((dpx if dpx else DIST_CLOSE) * 1.2)
+            ok &= (abs(dx) <= bound and abs(dy) <= bound)
+        elif t == "CONECTA":
+            bound = int((dpx if dpx else DIST_CONNECT) * 1.2)
+            ok &= (abs(dx) <= bound and abs(dy) <= bound)
         return bool(ok)
 
     rel_eval = [{
@@ -203,9 +234,12 @@ def solve_with_z3(lugares, relaciones):
     } for r in relaciones]
 
     CSR = sum(1 for r in rel_eval if r["satisface"]) / max(1, len(rel_eval))
-    return {"coords": coords, "CSR": CSR, "rel_eval": rel_eval,
-            "width": WIDTH, "height": HEIGHT,
-            "MARGIN_DIR": MARGIN_DIR, "DIST_CLOSE": DIST_CLOSE, "DIST_CONNECT": DIST_CONNECT}
+    result = {"coords": coords, "CSR": CSR, "rel_eval": rel_eval,
+              "width": WIDTH, "height": HEIGHT,
+              "MARGIN_DIR": MARGIN_DIR, "DIST_CLOSE": DIST_CLOSE, "DIST_CONNECT": DIST_CONNECT}
+    if METROS_POR_PIXEL is not None:
+        result["metros_por_pixel"] = round(METROS_POR_PIXEL, 2)
+    return result
 
 
 # ------------------------------------------------------------
@@ -328,7 +362,8 @@ nx.draw_networkx_edge_labels(
     bbox=dict(alpha=0.35, facecolor="white", edgecolor="none")
 )
 
-plt.title(f"Mapa de Luthadel · CSR={solution['CSR']:.3f}\nVerde=satisfechas · Rojo=violadas")
+scale_info = f" · {solution['metros_por_pixel']:.0f} m/px" if "metros_por_pixel" in solution else ""
+plt.title(f"Mapa generado · CSR={solution['CSR']:.3f}{scale_info}\nVerde=satisfechas · Rojo=violadas")
 plt.axis("equal")
 plt.axis("off")
 plt.tight_layout()
