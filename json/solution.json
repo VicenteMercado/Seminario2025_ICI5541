@@ -1,282 +1,86 @@
 {
   "coords": {
-    "Torreón de Erikeller": {
-      "x": 285,
-      "y": 342
+    "el Cantón de la Ortodoxia": {
+      "x": 165,
+      "y": 0
     },
-    "Torreón de Elariel": {
-      "x": 243,
-      "y": 369
+    "el Cantón de las Finanzas": {
+      "x": 246,
+      "y": 54
     },
     "Torreón de Lekal": {
-      "x": 204,
-      "y": 315
+      "x": 84,
+      "y": 27
     },
-    "Plaza del Superviviente": {
-      "x": 366,
-      "y": 288
+    "plaza Ahlstrom": {
+      "x": 327,
+      "y": 0
     },
     "Guarnición de Luthadel": {
-      "x": 600,
-      "y": 261
-    },
-    "Cantón de las Finanzas": {
-      "x": 378,
-      "y": 207
-    },
-    "Casa Elariel": {
-      "x": 177,
-      "y": 303
-    },
-    "Grietas": {
       "x": 354,
-      "y": 234
-    },
-    "Plaza Ahlstrom": {
-      "x": 339,
-      "y": 396
-    },
-    "Cantón de la Inquisición": {
-      "x": 312,
-      "y": 273
-    },
-    "Ministerio": {
-      "x": 285,
-      "y": 273
-    },
-    "encrucijada Quince": {
-      "x": 258,
-      "y": 330
+      "y": 0
     },
     "Kredik Shaw": {
       "x": 300,
       "y": 300
     },
-    "Casa de Camon": {
-      "x": 231,
-      "y": 276
-    },
-    "Casa Tekiel": {
-      "x": 381,
-      "y": 369
-    },
-    "Encrucijada Cuatropozos": {
-      "x": 204,
-      "y": 180
-    },
-    "Taller": {
-      "x": 150,
-      "y": 276
-    },
-    "calle Kenton": {
-      "x": 123,
-      "y": 396
-    },
-    "Casa Geffenry": {
-      "x": 327,
-      "y": 423
-    },
-    "Cantón de la Ortodoxia": {
-      "x": 366,
-      "y": 261
-    },
-    "Casa Aime": {
-      "x": 177,
-      "y": 207
-    },
-    "Torreón de Hasting": {
-      "x": 216,
-      "y": 249
-    },
-    "guarida de Camon": {
-      "x": 141,
-      "y": 246
-    },
-    "Torreón de Venture": {
-      "x": 234,
-      "y": 303
-    },
-    "Casa Renoux": {
-      "x": 168,
-      "y": 246
-    },
-    "Laberintos de Hollín": {
-      "x": 189,
-      "y": 273
-    },
-    "plaza de la Fuente": {
-      "x": 96,
+    "el taller de Clubs": {
+      "x": 273,
       "y": 0
     },
-    "jardines de Tekiel": {
-      "x": 354,
-      "y": 369
+    "calle Kenton": {
+      "x": 219,
+      "y": 0
     },
-    "taller de Clubs": {
-      "x": 69,
+    "Ministerio": {
+      "x": 192,
+      "y": 0
+    },
+    "Torreón de Venture": {
+      "x": 30,
+      "y": 0
+    },
+    "plaza de la Fuente": {
+      "x": 138,
+      "y": 54
+    },
+    "Torreón de Hasting": {
+      "x": 111,
+      "y": 0
+    },
+    "Torreón de Erikeller": {
+      "x": 57,
       "y": 0
     }
   },
   "CSR": 1.0,
   "rel_eval": [
     {
-      "origen": "Cantón de la Inquisición",
+      "origen": "el Cantón de las Finanzas",
       "tipo": "CERCA_DE",
-      "destino": "Cantón de las Finanzas",
-      "satisface": true
-    },
-    {
-      "origen": "Cantón de la Ortodoxia",
-      "tipo": "CERCA_DE",
-      "destino": "Cantón de las Finanzas",
+      "destino": "Ministerio",
       "satisface": true
     },
     {
       "origen": "Torreón de Venture",
-      "tipo": "NORTE_DE",
-      "destino": "Casa de Camon",
-      "satisface": true
-    },
-    {
-      "origen": "Grietas",
-      "tipo": "CERCA_DE",
-      "destino": "Kredik Shaw",
-      "satisface": true
-    },
-    {
-      "origen": "guarida de Camon",
-      "tipo": "CERCA_DE",
-      "destino": "Encrucijada Cuatropozos",
-      "satisface": true
-    },
-    {
-      "origen": "Torreón de Venture",
-      "tipo": "CERCA_DE",
+      "tipo": "OESTE_DE",
       "destino": "Kredik Shaw",
       "satisface": true
     },
     {
       "origen": "Torreón de Erikeller",
-      "tipo": "CERCA_DE",
-      "destino": "Kredik Shaw",
-      "satisface": true
-    },
-    {
-      "origen": "Torreón de Elariel",
-      "tipo": "NORTE_DE",
-      "destino": "Torreón de Venture",
-      "satisface": true
-    },
-    {
-      "origen": "Torreón de Elariel",
-      "tipo": "CERCA_DE",
-      "destino": "Torreón de Venture",
-      "satisface": true
-    },
-    {
-      "origen": "Casa Elariel",
-      "tipo": "CERCA_DE",
-      "destino": "Torreón de Elariel",
-      "satisface": true
-    },
-    {
-      "origen": "Laberintos de Hollín",
       "tipo": "ESTE_DE",
-      "destino": "Casa Renoux",
-      "satisface": true
-    },
-    {
-      "origen": "Plaza Ahlstrom",
-      "tipo": "ESTE_DE",
-      "destino": "Laberintos de Hollín",
-      "satisface": true
-    },
-    {
-      "origen": "Casa Renoux",
-      "tipo": "CERCA_DE",
       "destino": "Torreón de Venture",
       "satisface": true
     },
     {
-      "origen": "Torreón de Elariel",
+      "origen": "el Cantón de la Ortodoxia",
       "tipo": "CERCA_DE",
-      "destino": "Casa Elariel",
-      "satisface": true
-    },
-    {
-      "origen": "Torreón de Lekal",
-      "tipo": "CERCA_DE",
-      "destino": "Torreón de Hasting",
-      "satisface": true
-    },
-    {
-      "origen": "Casa Geffenry",
-      "tipo": "CERCA_DE",
-      "destino": "Casa Tekiel",
-      "satisface": true
-    },
-    {
-      "origen": "jardines de Tekiel",
-      "tipo": "CERCA_DE",
-      "destino": "Casa Tekiel",
-      "satisface": true
-    },
-    {
-      "origen": "Torreón de Hasting",
-      "tipo": "CERCA_DE",
-      "destino": "Torreón de Venture",
-      "satisface": true
-    },
-    {
-      "origen": "Ministerio",
-      "tipo": "CERCA_DE",
-      "destino": "Cantón de la Inquisición",
+      "destino": "Ministerio",
       "satisface": true
     },
     {
       "origen": "Torreón de Venture",
-      "tipo": "CERCA_DE",
-      "destino": "Casa Elariel",
-      "satisface": true
-    },
-    {
-      "origen": "Casa Aime",
-      "tipo": "CERCA_DE",
-      "destino": "Torreón de Hasting",
-      "satisface": true
-    },
-    {
-      "origen": "Casa Elariel",
-      "tipo": "CERCA_DE",
-      "destino": "Torreón de Venture",
-      "satisface": true
-    },
-    {
-      "origen": "Plaza del Superviviente",
-      "tipo": "CERCA_DE",
-      "destino": "Kredik Shaw",
-      "satisface": true
-    },
-    {
-      "origen": "Torreón de Lekal",
-      "tipo": "CERCA_DE",
-      "destino": "Torreón de Venture",
-      "satisface": true
-    },
-    {
-      "origen": "Cantón de la Ortodoxia",
-      "tipo": "CERCA_DE",
-      "destino": "Kredik Shaw",
-      "satisface": true
-    },
-    {
-      "origen": "Cantón de la Inquisición",
-      "tipo": "CERCA_DE",
-      "destino": "Kredik Shaw",
-      "satisface": true
-    },
-    {
-      "origen": "Torreón de Elariel",
       "tipo": "CERCA_DE",
       "destino": "Torreón de Lekal",
       "satisface": true

@@ -89,117 +89,56 @@ client = OpenAI(api_key=api_key)
 
 # 5) Prompt estructurado
 system_prompt = """
-Eres un extractor de relaciones espaciales entre lugares en un texto narrativo.
-Ahora debes ser MENOS estricto que antes: es preferible capturar más lugares y más relaciones,
-aunque algunas sean aproximadas, siempre que:
+Eres un extractor de relaciones espaciales en texto narrativo.
 
-- Estén claramente dentro o en la ciudad de Luthadel, o formen parte directa de ella.
-- Tengan UN NOMBRE CLARO y no sean simplemente objetos o habitaciones internas.
+TAREA:
+Extraer lugares y relaciones espaciales dentro de la ciudad de Luthadel.
 
 ========================
-ÁMBITO DEL MAPA
-========================
-Nos interesa SOLO la ciudad de Luthadel, capital del Imperio Final, y sus componentes urbanos.
-Incluye:
-- Fortalezas, casas nobles, torreones y lugares urbanos importantes dentro de Luthadel.
-- Plazas, calles, canales, guarniciones, cantones, mercados y zonas urbanas claramente dentro de la ciudad.
-- Periferias urbanas, barrios o zonas como "suburbios skaa de Luthadel", si se describen como parte de la ciudad.
-
-EXCLUYE (NO los incluyas, aunque tengan nombre propio):
-- Otras ciudades, dominios, plantaciones, montes, cavernas lejanas, etc.
-- Ejemplos concretos que DEBES excluir:
-  "Montes de Ceniza", "plantación de lord Tresting",
-  "Dominio Central", "Dominio Extremo", "Fellise",
-  "Holstep", "Valtroux", "Guarnición de Holstep",
-  "Pozos de Hathsin", "Pozo de Hathsin", "Pozos de Hathsin",
-  "cavernas Arguois" (y cualquier lugar claramente lejano de Luthadel).
-
-========================
-INTERIORES (MUY IMPORTANTE)
-========================
-NO incluyas salas internas, habitaciones ni sub-espacios interiores de edificios:
-- Ejemplos:
-  "salón de baile Venture", "salón principal Venture",
-  "salón de caballeros del Torreón de Lekal",
-  "almacenes de Renoux", "edificio de los Quiebros".
-Estos NO deben aparecer como lugares en la salida. Solo importa el edificio o complejo principal:
-por ejemplo, "Casa Venture", "Torreón de Lekal", "Casa Elariel", etc.
-
-========================
-INSTRUCCIONES PRINCIPALES
+ÁMBITO
 ========================
 
-1) Lugares válidos
-Incluye lugares solo si:
-  A. Tienen nombre propio o topónimo claro (ej.: "Plaza Ahlstrom", "calle Kenton").
-  B. Son combinaciones de genérico + nombre propio ("Torreón de Hasting", "canal de Luth-Davn").
-  C. Son entidades urbanas significativas dentro de Luthadel: plazas, calles, fuertes, canales, guarniciones,
-     cantones, fortalezas, torreones, casas nobles, plazas importantes, mercados.
-
-Excluye:
-  - Términos completamente genéricos sin nombre específico ("la plaza", "la calle", "el canal").
-  - Interiores y salas internas (salones, almacenes, edificios internos, despachos, habitaciones).
-  - Objetos pequeños (mesas, pasillos, habitaciones).
-  - Regiones lejanas, dominios o ciudades externas.
-
-2) Relaciones espaciales
-Extrae TODAS las relaciones espaciales explícitas que encuentres entre lugares válidos:
-  - NORTE_DE, SUR_DE, ESTE_DE, OESTE_DE
-  - CERCA_DE
-
-"Explícitas" significa que el texto indica claramente una relación espacial,
-aunque sea aproximada (por ejemplo, "cerca de", "junto a", "al norte de", etc.).
-
-Está permitido usar frases como:
-  - "X se encontraba cerca de Y" → {"tipo":"CERCA_DE"}
-  - "X quedaba al norte de Y" → {"tipo":"NORTE_DE"}
-
-Si la relación es muy ambigua o puramente narrativa sin referencia espacial, no la uses.
-
-3) Luthadel y macro-lugares
-No incluyas "Luthadel" como nodo/lugar final: úsalo solo mentalmente como contexto.
-No incluyas "Grandes Casas" ni "Grandes Casas de Luthadel" como lugar independiente:
-es una categoría social, no una ubicación puntual del mapa.
-
-4) Identificación de pivotes
-Si aparece "Kredik Shaw", añádelo siempre como lugar y considéralo como pivote central.
+- Prioriza lugares dentro de Luthadel.
+- Si un lugar probablemente pertenece a la ciudad por el contexto, puedes incluirlo.
 
 ========================
-LISTA NEGRA DE GENÉRICOS (si aparecen sin nombre propio → EXCLUIR)
+LUGARES
 ========================
-plaza, calle, avenida, puente, canal, muralla, puerta, barrio, distrito, mercado,
-palacio, templo, fortaleza, torre, castillo, taberna, posada, campamento, edificio, casa,
-salon, salón, almacenes, plantación, montes, montañas, cavernas, pozos
 
-(Esta lista se suma a cualquier filtro interno de genéricos que uses.)
+- Incluye lugares con nombre propio (ej: "Kredik Shaw", "Plaza Ahlstrom").
+- Incluye estructuras urbanas relevantes (calles, plazas, torreones, canales).
+- NO incluyas interiores (salas, habitaciones, etc.).
 
 ========================
-SALIDA JSON
+RELACIONES
 ========================
-Devuelve SIEMPRE un JSON estricto:
+
+Extrae relaciones espaciales explícitas:
+- NORTE_DE, SUR_DE, ESTE_DE, OESTE_DE, CERCA_DE
+
+Además:
+
+- Si varios lugares aparecen en la misma zona o contexto cercano, puedes agregar relaciones CERCA_DE adicionales.
+- Prioriza capturar múltiples relaciones entre lugares para reflejar su posición relativa.
+
+========================
+IMPORTANTE
+========================
+
+- Usa solo el texto como base
+- No inventes lugares
+- Puedes incluir relaciones aproximadas si el texto sugiere proximidad
+
+========================
+FORMATO JSON
+========================
 
 {
-  "lugares_clave": ["..."],     // ej. ["Kredik Shaw"]
-  "lugares": ["..."],          // lista de lugares válidos dentro de Luthadel
+  "lugares": ["..."],
   "relaciones": [
-    {"origen":"X","tipo":"NORTE_DE","destino":"Y"},
-    {"origen":"A","tipo":"SUR_DE","destino":"B"},
-    {"origen":"C","tipo":"ESTE_DE","destino":"D"},
-    {"origen":"E","tipo":"OESTE_DE","destino":"F"},
-    {"origen":"G","tipo":"CERCA_DE","destino":"H"}
+    {"origen":"X","tipo":"NORTE_DE","destino":"Y"}
   ]
 }
-
-Si en el fragmento no hay lugares válidos dentro de Luthadel:
-{"lugares_clave": [], "lugares": [], "relaciones": []}
-
-========================
-REGLAS ADICIONALES
-========================
-- Es mejor incluir una relación dudosa pero plausible que omitir demasiadas.
-- NO uses conocimiento externo al fragmento proporcionado.
-- No incluyas lugares fuera de Luthadel (ni dominios, ni montes, ni otras ciudades).
-- NO incluyas interiores ni salas internas.
 """
 
 # 6) Llamadas al modelo
