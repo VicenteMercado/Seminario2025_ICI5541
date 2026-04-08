@@ -31,10 +31,10 @@ SIDE = max(600, 20 * N)
 WIDTH = SIDE
 HEIGHT = SIDE
 
-MARGIN_DIR   = max(8, SIDE // 28)    # N/S/E/O: margen mínimo direccional
-RADIUS_DIR   = max(20, SIDE // 3)    # N/S/E/O: radio máximo de cercanía (~33% del lienzo)
-DIST_CLOSE   = max(14, SIDE // 7)    # CERCA_DE: radio de proximidad (~14% del lienzo)
-DIST_CONNECT = max(16, SIDE // 5)    # CONECTA: radio de conexión (~20% del lienzo)
+MARGIN_DIR   = max(8, SIDE // 28)    # N/S/E/O margen mínimo direccional
+RADIUS_DIR   = max(20, SIDE // 3)    # N/S/E/O radio máximo de cercanía
+DIST_CLOSE   = max(14, SIDE // 7)    # CERCA_DE
+DIST_CONNECT = max(16, SIDE // 5)    # CONECTA
 MIN_SEP      = max(8, SIDE // 22)    # separación mínima nodos
 
 # ------------------------------------------------------------

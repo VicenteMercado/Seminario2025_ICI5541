@@ -573,46 +573,6 @@ for p in cleaned_places:
         "pivot_score": int(score),
     }
 
-# ============================================================
-# D) Selección genérica de pivotes
-# ============================================================
-
-from collections import Counter
-
-MAX_PIVOTES = 5
-
-# Primero usar lugares_clave sugeridos por el LLM
-pivot_counts = Counter(apply_alias(p) for p in pivot_raw)
-pivotes = [
-    p for p, _ in pivot_counts.most_common()
-    if p in cleaned_places
-][:MAX_PIVOTES]
-
-# Si faltan pivotes, completar por score histórico
-if len(pivotes) < MAX_PIVOTES:
-    usados = set(pivotes)
-
-    extra = [
-        p for p, _ in sorted(
-            (
-                (p, lugares_meta[p]["pivot_score"])
-                for p in cleaned_places
-                if p not in usados
-            ),
-            key=lambda x: x[1],
-            reverse=True
-        )
-    ]
-
-    pivotes.extend(extra[:MAX_PIVOTES - len(pivotes)])
-
-print("\n=== Pivotes seleccionados ===")
-for i, p in enumerate(pivotes, 1):
-    m = lugares_meta[p]
-    print(
-        f"{i}. {p} "
-        f"(score={m['pivot_score']}, menciones={m['mentions']}, grado={m['deg']})"
-    )
 
 # ============================================================
 # E) Filtro final genérico para textos históricos
@@ -658,6 +618,23 @@ filtered_relations = [
     if r["origen"] in kept and r["destino"] in kept
 ]
 
+# ============================================================
+# D) Selección simple de pivotes por frecuencia de menciones
+# ============================================================
+
+MAX_PIVOTES = 5
+
+pivotes = [
+    p for p, _ in sorted(
+        (
+            (p, mentions[p])
+            for p in filtered_places
+        ),
+        key=lambda x: x[1],
+        reverse=True
+    )[:MAX_PIVOTES]
+]
+
 excluidos = [p for p in cleaned_places if p not in kept]
 
 print("\n=== Lugares finales incluidos en el grafo ===")
@@ -693,6 +670,10 @@ if rels_con_dist:
             f"{r['distancia_m']}m "
             f"({r.get('distancia_orig', '?')})"
         )
+
+print("\n=== Pivotes seleccionados ===")
+for i, p in enumerate(pivotes, 1):
+    print(f"{i}. {p} -> {mentions[p]} menciones")
 
 # Guardar JSON final
 _JSON_DIR.mkdir(parents=True, exist_ok=True)
