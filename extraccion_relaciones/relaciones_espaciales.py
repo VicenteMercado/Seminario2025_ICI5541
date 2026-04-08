@@ -562,12 +562,11 @@ with open("contradicciones.json", "w", encoding="utf-8") as f:
 print("Reporte de contradicciones guardado en contradicciones.json")
 
 # ============================================================
-# C) Meta-info, pivotes y filtro Luthadel
+# C) Meta-info y pivotes genéricos
 # ============================================================
 
 # Conteo de menciones en el texto completo
 text_norm_full = strip_accents(text).lower()
-
 
 def count_mentions(label: str) -> int:
     base = re.escape(norm_place(label))
@@ -575,17 +574,20 @@ def count_mentions(label: str) -> int:
         return 0
     return len(re.findall(rf"\b{base}\b", text_norm_full))
 
-
 mentions = {p: count_mentions(p) for p in cleaned_places}
 
-# Grado y conexiones por CERCA_DE
+# Grado y conexiones CERCA_DE
 deg = {p: 0 for p in cleaned_places}
 near_conn = {p: 0 for p in cleaned_places}
 
 for rel in clean_relations:
     o, d, t = rel["origen"], rel["destino"], rel["tipo"].upper()
-    deg[o] += 1
-    deg[d] += 1
+
+    if o in deg:
+        deg[o] += 1
+    if d in deg:
+        deg[d] += 1
+
     if t == "CERCA_DE":
         near_conn[o] += 1
         near_conn[d] += 1
@@ -594,6 +596,7 @@ for rel in clean_relations:
 lugares_meta = {}
 for p in cleaned_places:
     score = (2 * mentions[p]) + deg[p] + near_conn[p]
+
     lugares_meta[p] = {
         "mentions": int(mentions[p]),
         "deg": int(deg[p]),
@@ -601,226 +604,130 @@ for p in cleaned_places:
         "pivot_score": int(score),
     }
 
-# Pivotes: los lugares_clave más reportados por el LLM
+# ============================================================
+# D) Selección genérica de pivotes
+# ============================================================
+
 from collections import Counter
+
 MAX_PIVOTES = 5
+
+# Primero usar lugares_clave sugeridos por el LLM
 pivot_counts = Counter(apply_alias(p) for p in pivot_raw)
-pivotes = [p for p, _ in pivot_counts.most_common() if p in cleaned_places][:MAX_PIVOTES]
+pivotes = [
+    p for p, _ in pivot_counts.most_common()
+    if p in cleaned_places
+][:MAX_PIVOTES]
 
-print("\n=== Pivotes seleccionados (extractor) ===")
-if not pivotes:
-    print("(ninguno; el LLM no reportó lugares_clave en los fragmentos)")
-else:
-    for i, p in enumerate(pivotes, 1):
-        m = lugares_meta[p]
-        print(f"{i}. {p}  (score={m['pivot_score']}, menciones={m['mentions']}, grado={m['deg']})")
+# Si faltan pivotes, completar por score histórico
+if len(pivotes) < MAX_PIVOTES:
+    usados = set(pivotes)
+
+    extra = [
+        p for p, _ in sorted(
+            (
+                (p, lugares_meta[p]["pivot_score"])
+                for p in cleaned_places
+                if p not in usados
+            ),
+            key=lambda x: x[1],
+            reverse=True
+        )
+    ]
+
+    pivotes.extend(extra[:MAX_PIVOTES - len(pivotes)])
+
+print("\n=== Pivotes seleccionados ===")
+for i, p in enumerate(pivotes, 1):
+    m = lugares_meta[p]
+    print(
+        f"{i}. {p} "
+        f"(score={m['pivot_score']}, menciones={m['mentions']}, grado={m['deg']})"
+    )
 
 # ============================================================
-# D) Heurística de pertenencia a Luthadel + filtro final
+# E) Filtro final genérico para textos históricos
 # ============================================================
 
-text_plain = strip_accents(text).lower()
+MIN_MENTIONS_KEEP = 2
+KEEP_ISOLATED_HIGH_MENTION = True
 
-
-def appears_with_luthadel(label: str, window: int = 250) -> bool:
-    base = strip_accents(label).lower().strip()
-    if not base or len(base) < 4:
-        return False
-    pattern = re.escape(base)
-    for m in re.finditer(pattern, text_plain):
-        start = max(0, m.start() - window)
-        end = min(len(text_plain), m.end() + window)
-        if "luthadel" in text_plain[start:end]:
-            return True
-    return False
-
-
-# Algunos lugares se fuerzan como "dentro de Luthadel" aunque no siempre aparezcan cerca de la palabra "Luthadel"
-INSIDE_FORCE_RAW = {
-    "kredik shaw",
-    "plaza de la fuente",
-    "guarnicion de luthadel",
-    "cantón de las finanzas",
-    "cantón de la ortodoxia",
-    "cantón de la inquisicion",
-    "cantón de la inquisición",
-    "calle kenton",
-    "taller de clubs",
-    "plaza ahlstrom",
-    "colina de las mil torres",
-    "torreon de venture",
-    "torreon de hasting",
-    "torreon de lekal",
-    "torreon de erikeller",
-    "fortaleza venture",
-    "fortaleza hasting",
-    "fortaleza lekal",
-    "fortaleza erikeller",
-    "suburbios skaa de luthadel",
-    "mercado ska",
-}
-
-INSIDE_FORCE_NORM = {norm_place(s) for s in INSIDE_FORCE_RAW}
-
-inside_luthadel = {}
-for p in cleaned_places:
-    np = norm_place(p)
-    if np in INSIDE_FORCE_NORM:
-        inside_luthadel[p] = True
-    elif "luthadel" in np:
-        # cualquier "X de Luthadel"
-        inside_luthadel[p] = True
-    else:
-        inside_luthadel[p] = appears_with_luthadel(p)
-
-# Lugares fuera de Luthadel que se descartan siempre
-OUTSIDE_LUTHADEL_RAW = {
-    "fellise",
-    "holstep",
-    "valtroux",
-    "dominio central",
-    "dominio extremo",
-    "montes de ceniza",
-    "plantación de lord tresting",
-    "cavernas arguois",
-    "pozos de hathsin",
-    "los pozos de hathsin",
-    "guarnición de holstep",
-    "guarnición de valtroux",
-}
-
-OUTSIDE_LUTHADEL_NORM = {norm_place(s) for s in OUTSIDE_LUTHADEL_RAW}
-
-
-# Lugares conceptuales que no se quieren como nodo
-DROP_NORM = {
-    "grandes casas",
-    "grandes casas de luthadel"
-}
-
-TOP_LEVEL_CITY_NORM = "luthadel"
-SPECIAL_ALWAYS_KEEP = {"kredik shaw", "plaza de la fuente"}
-
-INCLUDE_ISOLATES_POLICY = "all"  # se mantienen todos los lugares de Luthadel, incluso aislados
-
-# Lugares principales del mapa de Luthadel que conviene conservar siempre
-OFFICIAL_PLACES = [
-    "Plaza de la Fuente",
-    "Kredik Shaw",
-    "Cantón de la Ortodoxia",
-    "Cantón de las Finanzas",
-    "Guarnición de Luthadel",
-    "Torreón de Venture",
-    "Torreón de Hasting",
-    "Torreón de Lekal",
-    "Torreón de Erikeller",
-    "taller de Clubs",
-    "guarida de Camon",
-    "Calle de la Antigua Muralla",
-    "calle Kenton",
-    "Plaza Ahlstrom",
-    "Encrucijada Quince",
-    "Calle del Canal",
-    "Mercado Ska",
-]
-
-ALLOWLIST_NORM = {norm_place(n) for n in OFFICIAL_PLACES}
-
-# Lugares que no se quieren nunca en el mapa de la ciudad (claramente fuera)
-BLOCKLIST_PLACES = [
-    "Holstep", "ciudad de Holstep", "Guarnición de Holstep",
-    "Valtroux", "ciudad de Valtroux", "Guarnición de Valtroux",
-    "Dominio Central", "Dominio Extremo",
-    "Mansión Renoux", "mansión de Renoux", "almacenes de Renoux",
-    "plantación de lord Tresting", "plantación de Tresting",
-    "Montes de Ceniza", "Colina de las Mil Torres"
-    "Fellise","Casa de vecinos", "Casa de Clubs", "guarida de Vin",
-]
-BLOCKLIST_NORM = {norm_place(n) for n in BLOCKLIST_PLACES}
-
-# Coincide con la allowlist, pero se marca explícitamente
-SPECIAL_ALWAYS_KEEP = {
-    norm_place("Kredik Shaw"),
-    norm_place("Plaza de la Fuente"),
-}
-
-# Grado por nodo (recalculado por si clean_relations ha cambiado)
+# Recalcular grado
 deg = {p: 0 for p in cleaned_places}
 for rel in clean_relations:
     o, d = rel["origen"], rel["destino"]
-    if o in deg: deg[o] += 1
-    if d in deg: deg[d] += 1
+
+    if o in deg:
+        deg[o] += 1
+    if d in deg:
+        deg[d] += 1
 
 def keep_place(p: str) -> bool:
-    np = norm_place(p)
-
-    # 0) Blocklist fuerte → fuera siempre
-    if np in BLOCKLIST_NORM:
-        return False
-    if np in OUTSIDE_LUTHADEL_NORM or np in DROP_NORM:
-        return False
-
-    # 1) No se incluye el nodo "Luthadel" (es la ciudad completa)
-    if np == "luthadel":
-        return False
-
-    # 2) Interiores (salones, habitaciones, etc.) → fuera
+    """
+    Política genérica para textos históricos:
+    - mantener nodos con relaciones
+    - mantener lugares muy mencionados
+    - eliminar interiores y ruido
+    """
     if es_interior(p):
         return False
 
-    # 3) Allowlist y pivotes importantes → siempre dentro
-    if np in ALLOWLIST_NORM:
-        return True
-    if np in SPECIAL_ALWAYS_KEEP:
-        return True
-
-    # 4) Si tiene al menos una relación, se mantiene
     if deg.get(p, 0) > 0:
         return True
 
-    # 5) Nodos muy mencionados pero sin relaciones explícitas
-    meta_p = lugares_meta.get(p, {})
-    if meta_p.get("mentions", 0) >= 10:
-        return True
+    if KEEP_ISOLATED_HIGH_MENTION:
+        if lugares_meta[p]["mentions"] >= MIN_MENTIONS_KEEP:
+            return True
 
-    # 6) El resto se considera ruido (exteriores, genéricos, menciones puntuales)
     return False
 
-# Aplicar filtro final
 filtered_places = [p for p in cleaned_places if keep_place(p)]
 kept = set(filtered_places)
+
 filtered_relations = [
     r for r in clean_relations
     if r["origen"] in kept and r["destino"] in kept
 ]
+
 excluidos = [p for p in cleaned_places if p not in kept]
 
-print("\n=== Lugares finales incluidos en el grafo (después de filtros) ===")
+print("\n=== Lugares finales incluidos en el grafo ===")
 for i, p in enumerate(filtered_places, 1):
     print(f"{i}. {p}")
 
-print(f"\nFiltrado final: mantuve {len(filtered_places)} lugares, descarté {len(excluidos)}.")
-if excluidos:
-    print("Descartados (muestra):", ", ".join(excluidos[:10]), ("..." if len(excluidos) > 10 else ""))
+print(
+    f"\nFiltrado final: mantuve {len(filtered_places)} lugares, "
+    f"descarté {len(excluidos)}."
+)
 
+# ============================================================
+# F) Resumen y guardado final
+# ============================================================
 
-# Resumen de distancias extraídas
 rels_con_dist = [r for r in filtered_relations if "distancia_m" in r]
 
 print("\nResumen:")
-print(f"- Lugares totales detectados (antes de filtros): {len(cleaned_places)}")
-print(f"- Relaciones totales detectadas (antes de filtros): {len(clean_relations)}")
+print(f"- Lugares detectados (antes de filtros): {len(cleaned_places)}")
+print(f"- Relaciones detectadas (antes de filtros): {len(clean_relations)}")
 print(f"- Lugares finales guardados: {len(filtered_places)}")
+
 _map_out = _JSON_DIR / "map_relations.json"
-print(f"- Relaciones finales guardadas: {len(filtered_relations)} en {_map_out}")
+
+print(f"- Relaciones finales guardadas: {len(filtered_relations)}")
 print(f"- Relaciones con distancia concreta: {len(rels_con_dist)}")
+
 if rels_con_dist:
     print("\n=== Distancias extraídas ===")
     for r in rels_con_dist:
-        print(f"  {r['origen']} ↔ {r['destino']}: {r['distancia_m']}m ({r.get('distancia_orig', '?')})")
+        print(
+            f"  {r['origen']} ↔ {r['destino']}: "
+            f"{r['distancia_m']}m "
+            f"({r.get('distancia_orig', '?')})"
+        )
 
 # Guardar JSON final
 _JSON_DIR.mkdir(parents=True, exist_ok=True)
+
 with open(_map_out, "w", encoding="utf-8") as f:
     json.dump(
         {
@@ -834,3 +741,5 @@ with open(_map_out, "w", encoding="utf-8") as f:
         indent=2,
         ensure_ascii=False
     )
+
+print(f"\nJSON final guardado en: {_map_out}")
