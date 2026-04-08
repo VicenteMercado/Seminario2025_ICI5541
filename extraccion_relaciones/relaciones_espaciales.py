@@ -378,38 +378,7 @@ def es_interior(lugar: str) -> bool:
 
 
 # Alias específicos adaptados a este libro/mapa
-ALIASES_NORM = {
-    # Kredik Shaw / palacio del Lord Legislador
-    "palacio del lord legislador": "Kredik Shaw",
-    "palacio del legislador": "Kredik Shaw",
-
-    # Guarniciones
-    "guarnicion": "Guarnición de Luthadel",
-    "guarnicion de la ciudad": "Guarnición de Luthadel",
-
-    # Casas vs torreones/fortalezas (se unifican en el torreón)
-    "casa venture": "Torreón de Venture",
-    "fortaleza venture": "Torreón de Venture",
-    "casa hasting": "Torreón de Hasting",
-    "fortaleza hasting": "Torreón de Hasting",
-    "casa lekal": "Torreón de Lekal",
-    "fortaleza lekal": "Torreón de Lekal",
-    "casa erikell": "Torreón de Erikeller",
-    "fortaleza erikeller": "Torreón de Erikeller",
-
-    # Cantones (incluyen variantes tipo "sede de...")
-    "sede del canton de la ortodoxia": "Cantón de la Ortodoxia",
-    "sede del canton de las finanzas": "Cantón de las Finanzas",
-
-    # Variantes de pozos de Hathsin unificadas en un nodo
-    "pozo de la ascension": "Pozos de Hathsin",
-    "los pozos de hathsin": "Pozos de Hathsin",
-
-    "barrios skaa de luthadel": "suburbios skaa de Luthadel",
-    "cantón de las finanzas": "Cantón de las finanzas"
-
-}
-
+ALIASES_NORM = {}
 
 def apply_alias(label: str) -> str:
     np = norm_place(label)
