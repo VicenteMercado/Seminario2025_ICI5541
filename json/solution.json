@@ -1,1458 +1,1266 @@
 {
   "coords": {
-    "Apio": {
-      "x": 3933,
-      "y": 3091
-    },
-    "Duronia": {
-      "x": 4613,
-      "y": 2411
-    },
-    "colina del Palatino": {
-      "x": 0,
-      "y": 0
-    },
-    "Crotona": {
-      "x": 4090,
-      "y": 1752
-    },
-    "Fidenenses": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Volturno": {
-      "x": 3933,
-      "y": 2019
-    },
-    "Ecetra": {
-      "x": 4409,
-      "y": 2772
-    },
-    "el Tesoro": {
-      "x": 0,
-      "y": 0
-    },
-    "Suessa": {
-      "x": 3933,
-      "y": 2019
-    },
-    "Vicus Cyprius": {
-      "x": 3933,
-      "y": 2092
-    },
-    "Roma": {
-      "x": 3750,
-      "y": 3750
-    },
-    "Polusca": {
-      "x": 3750,
-      "y": 2411
-    },
-    "Circei": {
-      "x": 4932,
-      "y": 3431
-    },
-    "Volsinia": {
-      "x": 340,
-      "y": 0
-    },
-    "Nuceria Alfaterna": {
-      "x": 4273,
-      "y": 2411
-    },
-    "Estado": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Campo de Marte": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Vescia": {
-      "x": 3593,
-      "y": 3431
-    },
-    "Fortuna de las Mujeres": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Lucio Valerio": {
-      "x": 0,
-      "y": 0
-    },
-    "territorio de Veyes": {
-      "x": 5251,
-      "y": 4090
-    },
-    "Cingilia": {
-      "x": 340,
-      "y": 0
-    },
-    "Minturnas": {
-      "x": 3593,
-      "y": 1433
-    },
-    "Veseris": {
-      "x": 0,
-      "y": 0
-    },
     "Rómulo": {
-      "x": 2249,
-      "y": 2751
-    },
-    "Cutina": {
-      "x": 0,
-      "y": 0
-    },
-    "Ameriola": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Papirio": {
-      "x": 2908,
-      "y": 3091
-    },
-    "Apolinar": {
-      "x": 340,
-      "y": 0
-    },
-    "Asamblea": {
-      "x": 3248,
-      "y": 4090
-    },
-    "Tíbur": {
-      "x": 3729,
-      "y": 1752
-    },
-    "Columen": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Ad Mecium": {
-      "x": 4409,
-      "y": 3091
-    },
-    "Clivus Urbius": {
-      "x": 4932,
-      "y": 3091
-    },
-    "Templos de Júpiter y Minerva": {
-      "x": 2249,
-      "y": 2092
-    },
-    "Comicio": {
-      "x": 3933,
-      "y": 3091
-    },
-    "el Aventino": {
-      "x": 4252,
-      "y": 3091
-    },
-    "reina Juno": {
-      "x": 5251,
-      "y": 2751
-    },
-    "Terminus": {
-      "x": 2589,
-      "y": 1093
-    },
-    "Numitor": {
-      "x": 3431,
-      "y": 1752
-    },
-    "Láutulas": {
-      "x": 3750,
-      "y": 3091
-    },
-    "Regilo": {
-      "x": 0,
-      "y": 0
-    },
-    "gens Claudia": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Boiano": {
-      "x": 4592,
-      "y": 2411
-    },
-    "Viminal": {
-      "x": 2751,
-      "y": 4090
-    },
-    "Capena": {
-      "x": 5251,
-      "y": 2751
-    },
-    "Vulturno": {
-      "x": 2934,
-      "y": 2411
-    },
-    "Arezzo": {
-      "x": 1930,
-      "y": 2751
-    },
-    "Romúlea": {
-      "x": 4273,
-      "y": 2411
-    },
-    "templo de Diana de Éfeso": {
-      "x": 2751,
-      "y": 4090
-    },
-    "Troya": {
-      "x": 1909,
-      "y": 1093
-    },
-    "Aricia": {
-      "x": 4749,
-      "y": 2751
-    },
-    "Vía Nomentana": {
-      "x": 2913,
-      "y": 2092
-    },
-    "Vía Apia": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Corbión": {
-      "x": 4430,
-      "y": 2751
-    },
-    "Tívoli": {
-      "x": 3389,
-      "y": 2751
-    },
-    "los campos de Roma": {
-      "x": 2751,
-      "y": 4090
-    },
-    "Perugia": {
-      "x": 910,
-      "y": 2751
-    },
-    "Sinuessa": {
-      "x": 2934,
-      "y": 1433
-    },
-    "bosque de Címino": {
-      "x": 251,
-      "y": 4090
-    },
-    "Palatina": {
-      "x": 2589,
-      "y": 1752
-    },
-    "Fidenas": {
-      "x": 4252,
-      "y": 3091
-    },
-    "Juno Moneta": {
-      "x": 2254,
-      "y": 2432
-    },
-    "Formia": {
-      "x": 4592,
-      "y": 4430
-    },
-    "Lanuvio": {
-      "x": 4069,
-      "y": 4090
-    },
-    "granja de Tito Quincio": {
-      "x": 2751,
-      "y": 4090
-    },
-    "Sassoferrato": {
-      "x": 340,
-      "y": 0
-    },
-    "Tarento": {
-      "x": 3091,
-      "y": 753
-    },
-    "Crustumerium": {
-      "x": 3091,
-      "y": 3091
-    },
-    "Murgancia": {
-      "x": 4273,
-      "y": 2411
-    },
-    "Capua": {
-      "x": 4932,
-      "y": 3018
-    },
-    "el Senado": {
-      "x": 3389,
-      "y": 3091
-    },
-    "Camilo": {
-      "x": 5251,
-      "y": 4749
-    },
-    "Caudio": {
-      "x": 4613,
-      "y": 1412
-    },
-    "Samnio": {
-      "x": 3933,
-      "y": 3410
-    },
-    "Quinto Servilio": {
-      "x": 0,
-      "y": 0
-    },
-    "Milionia": {
-      "x": 0,
-      "y": 0
-    },
-    "Amulio": {
-      "x": 3771,
-      "y": 753
-    },
-    "Ferentina": {
-      "x": 3750,
-      "y": 1752
-    },
-    "Tarquinia": {
-      "x": 4749,
-      "y": 2751
-    },
-    "Ostia": {
-      "x": 983,
-      "y": 4090
-    },
-    "Vénetos": {
-      "x": 0,
-      "y": 0
-    },
-    "Capaccio-Paestum": {
-      "x": 4273,
-      "y": 2411
-    },
-    "Vesta": {
-      "x": 2249,
-      "y": 2092
-    },
-    "templo de Júpiter Óptimo Máximo": {
-      "x": 2751,
-      "y": 2751
-    },
-    "templo de Quirino": {
-      "x": 2908,
-      "y": 3091
-    },
-    "Anzio": {
-      "x": 4749,
-      "y": 3771
-    },
-    "Nomento": {
-      "x": 3253,
-      "y": 2092
+      "x": 3300,
+      "y": 3960
     },
     "Apio Claudio": {
       "x": 0,
       "y": 0
     },
-    "Marco Fabio": {
-      "x": 2908,
-      "y": 3091
-    },
-    "Suesa Pomecia": {
-      "x": 1590,
-      "y": 94
-    },
-    "Signium": {
-      "x": 2254,
-      "y": 2019
-    },
-    "Ardea": {
-      "x": 4090,
-      "y": 3091
-    },
-    "Norba": {
-      "x": 4247,
-      "y": 2019
-    },
-    "Antemnae": {
-      "x": 4090,
-      "y": 3091
-    },
-    "Ferentino": {
-      "x": 4069,
-      "y": 2411
-    },
-    "Juno": {
-      "x": 3248,
-      "y": 1412
-    },
-    "Gabii": {
-      "x": 4749,
-      "y": 3091
-    },
-    "Sabina": {
-      "x": 0,
-      "y": 0
-    },
-    "Ereto": {
-      "x": 3912,
-      "y": 3431
-    },
-    "higuera Ruminal": {
-      "x": 4252,
-      "y": 3091
-    },
-    "territorio de Pomptina": {
-      "x": 3248,
-      "y": 1020
-    },
-    "Terracina": {
-      "x": 4252,
-      "y": 1752
-    },
-    "Veyes": {
-      "x": 6250,
-      "y": 3750
-    },
-    "Aurunca": {
-      "x": 340,
-      "y": 0
-    },
-    "Suessa Pomecia": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Adriático": {
-      "x": 340,
-      "y": 0
-    },
-    "Tirreno": {
-      "x": 4069,
-      "y": 2019
-    },
-    "Tusculo": {
-      "x": 4409,
-      "y": 4090
-    },
-    "Comicios": {
-      "x": 0,
-      "y": 0
-    },
-    "Monte de Alba": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Prados Mucianos": {
-      "x": 5591,
-      "y": 2453
-    },
-    "Cerceii": {
-      "x": 4592,
-      "y": 3018
-    },
-    "Bacchiglione": {
-      "x": 340,
-      "y": 0
-    },
-    "Caenina": {
-      "x": 3091,
-      "y": 4090
-    },
-    "templo de Castor": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Quirino": {
-      "x": 2751,
-      "y": 4090
-    },
-    "templo de Carmentis": {
-      "x": 2249,
-      "y": 2092
-    },
-    "Crustumerio": {
-      "x": 4749,
-      "y": 4090
-    },
-    "Longula": {
-      "x": 4409,
-      "y": 2772
-    },
-    "Contenebra": {
-      "x": 5429,
-      "y": 1752
-    },
-    "Faleria": {
-      "x": 5251,
-      "y": 4090
-    },
-    "Peloponeso": {
-      "x": 251,
-      "y": 753
-    },
-    "Marte": {
-      "x": 0,
-      "y": 0
-    },
-    "Quincio": {
-      "x": 340,
-      "y": 0
-    },
-    "Lábico": {
-      "x": 4111,
-      "y": 2092
-    },
-    "Pallantium": {
-      "x": 340,
-      "y": 0
-    },
-    "Palestrina": {
-      "x": 4252,
-      "y": 3431
-    },
-    "Presenzano": {
-      "x": 2275,
-      "y": 413
-    },
-    "Segni": {
-      "x": 3253,
-      "y": 3018
-    },
-    "Sora": {
-      "x": 2934,
-      "y": 4090
-    },
-    "Caco": {
-      "x": 5591,
-      "y": 2453
-    },
-    "Siponto": {
-      "x": 3614,
-      "y": 413
-    },
-    "Ancio": {
-      "x": 4749,
-      "y": 2751
-    },
-    "Feritro": {
-      "x": 340,
-      "y": 0
-    },
-    "Apolo": {
-      "x": 3431,
-      "y": 2092
-    },
-    "Heraclea": {
-      "x": 3431,
-      "y": 1752
-    },
-    "Macedonia": {
-      "x": 5931,
-      "y": 1454
-    },
-    "Remo": {
-      "x": 2589,
-      "y": 1752
-    },
-    "selva Ciminia": {
-      "x": 251,
-      "y": 2751
-    },
-    "Callifae": {
-      "x": 3274,
-      "y": 1412
+    "Saxa Rubra": {
+      "x": 4476,
+      "y": 1726
     },
     "Esquilino": {
-      "x": 4592,
-      "y": 4090
-    },
-    "Delfos": {
-      "x": 3091,
-      "y": 3091
-    },
-    "Rostra": {
-      "x": 2568,
-      "y": 2092
-    },
-    "Trebio": {
-      "x": 3771,
-      "y": 1093
-    },
-    "Collatia": {
-      "x": 4090,
-      "y": 3091
-    },
-    "Perusia": {
-      "x": 251,
-      "y": 2751
-    },
-    "Dodona": {
-      "x": 0,
-      "y": 0
-    },
-    "Lucio Papirio": {
-      "x": 0,
-      "y": 0
-    },
-    "Vía Labicana": {
-      "x": 340,
-      "y": 0
-    },
-    "Anciates": {
-      "x": 0,
-      "y": 0
-    },
-    "Cora": {
-      "x": 4587,
-      "y": 1020
-    },
-    "Mater Matuta": {
-      "x": 4592,
-      "y": 4090
-    },
-    "Vicus Tusco": {
-      "x": 2751,
-      "y": 4090
-    },
-    "fosas Cluilias": {
-      "x": 2094,
-      "y": 1456
-    },
-    "Eubea": {
-      "x": 3750,
-      "y": 753
-    },
-    "Fregellas": {
-      "x": 4592,
-      "y": 2772
-    },
-    "Galia": {
-      "x": 3567,
-      "y": 2751
-    },
-    "Ceccano": {
-      "x": 340,
-      "y": 0
+      "x": 4186,
+      "y": 2386
     },
     "San Felice Circeo": {
-      "x": 3593,
-      "y": 2019
-    },
-    "Épiro": {
-      "x": 0,
+      "x": 2942,
       "y": 0
     },
-    "Selva Maliciosa": {
-      "x": 3750,
-      "y": 3091
-    },
-    "Vitelia": {
-      "x": 2751,
-      "y": 4090
-    },
-    "Sessa Aurunca": {
-      "x": 0,
-      "y": 0
-    },
-    "Ciudadela": {
-      "x": 3253,
-      "y": 3431
-    },
-    "Capitolio": {
-      "x": 3248,
-      "y": 3091
-    },
-    "Ticino": {
-      "x": 0,
-      "y": 0
-    },
-    "carretera de Gabii": {
-      "x": 4252,
-      "y": 2113
-    },
-    "Volterra": {
-      "x": 251,
-      "y": 2751
-    },
-    "Aquilonia": {
-      "x": 4932,
-      "y": 2411
-    },
-    "Vetelia": {
-      "x": 3431,
-      "y": 1752
-    },
-    "Tiendas Nuevas": {
-      "x": 2934,
-      "y": 2092
-    },
-    "Ardeatinos": {
-      "x": 2751,
-      "y": 4090
-    },
-    "Cayo Fabio": {
-      "x": 3593,
-      "y": 3091
-    },
-    "Colacia": {
-      "x": 4592,
-      "y": 4090
-    },
-    "Quincio Cincinato": {
-      "x": 0,
-      "y": 0
-    },
-    "Aquerusia": {
-      "x": 680,
-      "y": 0
-    },
-    "Civita Castellana": {
-      "x": 1590,
-      "y": 2751
-    },
-    "Lacio": {
-      "x": 4252,
-      "y": 4017
-    },
-    "Padua": {
-      "x": 0,
-      "y": 0
-    },
-    "Monte Vesubio": {
-      "x": 340,
-      "y": 0
-    },
-    "Numicius": {
-      "x": 0,
-      "y": 0
-    },
-    "Horcas Caudinas": {
-      "x": 3954,
-      "y": 413
-    },
-    "Tito Quincio": {
-      "x": 0,
-      "y": 0
-    },
-    "Arcadia": {
-      "x": 0,
-      "y": 0
-    },
-    "casa de Sestio": {
-      "x": 2249,
-      "y": 3091
-    },
-    "Clusium": {
-      "x": 2908,
-      "y": 4090
-    },
-    "Interamna Sucasina": {
-      "x": 340,
-      "y": 0
-    },
-    "Verona": {
-      "x": 0,
-      "y": 0
-    },
-    "Alia": {
-      "x": 5251,
-      "y": 3112
-    },
-    "Fabio": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Curia Hostilia": {
-      "x": 4388,
-      "y": 3091
-    },
-    "Arpos": {
-      "x": 4613,
-      "y": 1412
-    },
-    "templo de Minerva": {
-      "x": 2411,
-      "y": 1752
-    },
-    "templos de Venus Cloacina": {
-      "x": 2594,
-      "y": 3091
-    },
-    "Venus Murcia": {
-      "x": 2411,
-      "y": 3091
-    },
-    "templo de Moneta": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Tarquinios": {
-      "x": 2751,
-      "y": 3091
-    },
-    "Liga Latina": {
-      "x": 2751,
-      "y": 753
-    },
-    "Vicus Sceleratus": {
-      "x": 3593,
-      "y": 1093
-    },
-    "Lavinio": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Arienzo": {
-      "x": 5272,
-      "y": 2019
-    },
-    "Ciudadela del Capitolio": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Tiber": {
-      "x": 5251,
-      "y": 3452
-    },
-    "Sutri": {
-      "x": 1590,
-      "y": 2751
-    },
-    "templo de Diana": {
-      "x": 2934,
-      "y": 1093
-    },
-    "Cerveteri": {
-      "x": 591,
-      "y": 1752
-    },
-    "Cales": {
-      "x": 4932,
-      "y": 2071
-    },
-    "bosque de Arsia": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Sepino": {
-      "x": 2934,
-      "y": 2751
-    },
-    "Medullia": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Sicilia": {
-      "x": 5591,
-      "y": 2453
-    },
-    "Palatino": {
-      "x": 3410,
-      "y": 4090
-    },
-    "Eneas": {
-      "x": 340,
-      "y": 0
-    },
-    "Tarquinio": {
-      "x": 4388,
-      "y": 4090
-    },
-    "Astura": {
-      "x": 4409,
-      "y": 4770
-    },
-    "Cornículo": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Palatium": {
-      "x": 340,
-      "y": 0
-    },
-    "Chiusi": {
-      "x": 1909,
-      "y": 3091
-    },
-    "Liris": {
-      "x": 3274,
-      "y": 434
-    },
-    "Janículo": {
-      "x": 4252,
-      "y": 2793
-    },
-    "el templo de Juno": {
-      "x": 5251,
-      "y": 4090
-    },
-    "Anio": {
-      "x": 4749,
-      "y": 4090
-    },
-    "Quirites": {
-      "x": 4090,
-      "y": 2751
-    },
-    "templo de Apolo": {
-      "x": 0,
-      "y": 0
-    },
-    "Sol": {
-      "x": 0,
-      "y": 0
-    },
-    "Marco Furio Camilo": {
-      "x": 0,
-      "y": 0
-    },
-    "Vía Nova": {
-      "x": 1250,
-      "y": 2432
-    },
-    "Metaponto": {
-      "x": 3431,
-      "y": 1752
-    },
-    "Turno": {
-      "x": 0,
-      "y": 0
-    },
-    "Normento": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Curia": {
-      "x": 3907,
-      "y": 3410
-    },
-    "Mecencio": {
-      "x": 1909,
-      "y": 3018
-    },
-    "Celia": {
-      "x": 2751,
-      "y": 4090
-    },
-    "Hércules": {
-      "x": 5591,
-      "y": 2453
-    },
-    "Cures": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Circo": {
-      "x": 5591,
-      "y": 2453
-    },
-    "Velletri": {
-      "x": 4592,
-      "y": 4430
-    },
-    "Gabinia": {
-      "x": 4749,
-      "y": 3091
-    },
-    "Nepi": {
-      "x": 591,
-      "y": 4090
-    },
-    "Sentino": {
-      "x": 0,
-      "y": 0
-    },
-    "la ciudadela de Veyes": {
-      "x": 4252,
-      "y": 3091
-    },
-    "Cortuosa": {
-      "x": 5089,
-      "y": 1752
-    },
-    "Luca": {
-      "x": 0,
-      "y": 0
-    },
-    "Prados Quincios": {
-      "x": 5591,
-      "y": 2453
-    },
-    "Alba Longa": {
-      "x": 4430,
-      "y": 1752
-    },
-    "Quirinal": {
-      "x": 2908,
-      "y": 4090
-    },
-    "Cominio": {
-      "x": 4252,
-      "y": 1412
-    },
-    "Fabios": {
-      "x": 0,
-      "y": 0
-    },
-    "estrecho de Mesina": {
-      "x": 251,
-      "y": 4090
-    },
-    "Apiolas": {
-      "x": 4090,
-      "y": 2751
-    },
-    "los Galos": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Fondi": {
-      "x": 5591,
-      "y": 3431
-    },
-    "Júpiter": {
-      "x": 2908,
-      "y": 2411
-    },
-    "Cumas": {
-      "x": 4409,
-      "y": 2751
-    },
-    "Apulia": {
-      "x": 4613,
-      "y": 2411
-    },
-    "capilla de Sancus": {
-      "x": 2568,
-      "y": 3091
+    "Lautulas": {
+      "x": 3856,
+      "y": 2056
     },
     "Euganos": {
-      "x": 2908,
-      "y": 2092
-    },
-    "Inbrinio": {
-      "x": 4273,
-      "y": 2411
-    },
-    "Faliscos": {
       "x": 0,
       "y": 0
     },
-    "Luceria": {
-      "x": 4273,
-      "y": 2411
+    "Clusium": {
+      "x": 3960,
+      "y": 2716
     },
-    "Circo Máximo": {
-      "x": 2751,
-      "y": 4090
+    "Fidenenses": {
+      "x": 2386,
+      "y": 2386
     },
-    "santuario de Quietas": {
+    "Aurunca": {
+      "x": 330,
+      "y": 0
+    },
+    "Anio": {
+      "x": 4476,
+      "y": 2386
+    },
+    "Crustumerio": {
+      "x": 3562,
+      "y": 0
+    },
+    "Cayo Marcio": {
       "x": 0,
       "y": 0
     },
-    "Pupinia": {
-      "x": 3750,
-      "y": 3091
+    "Cortuosa": {
+      "x": 5136,
+      "y": 3046
     },
-    "Fuente Ferentina": {
-      "x": 2751,
-      "y": 753
+    "Viminal": {
+      "x": 2386,
+      "y": 3960
     },
-    "templo de Nortia": {
+    "Numicius": {
+      "x": 1870,
+      "y": 1472
+    },
+    "Capena": {
+      "x": 4874,
+      "y": 3630
+    },
+    "Quinto Servilio": {
       "x": 0,
       "y": 0
     },
-    "Cortona": {
-      "x": 1590,
-      "y": 2751
+    "Pomecia": {
+      "x": 3960,
+      "y": 2386
     },
-    "Lucio Minucio": {
+    "Po": {
       "x": 0,
+      "y": 3960
+    },
+    "Fabio": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Monte Címino": {
+      "x": 330,
       "y": 0
-    },
-    "Vía Latina": {
-      "x": 0,
-      "y": 0
-    },
-    "casa de Numitor": {
-      "x": 1590,
-      "y": 753
-    },
-    "Ortona": {
-      "x": 4090,
-      "y": 2751
-    },
-    "campamento de Ardea": {
-      "x": 2751,
-      "y": 2751
-    },
-    "murallas de Roma": {
-      "x": 3750,
-      "y": 4090
-    },
-    "Calcis": {
-      "x": 4749,
-      "y": 1752
-    },
-    "fortaleza de Carvento": {
-      "x": 2751,
-      "y": 4090
-    },
-    "Votumna": {
-      "x": 251,
-      "y": 2751
-    },
-    "Nápoles": {
-      "x": 4592,
-      "y": 1412
-    },
-    "Sezze": {
-      "x": 3567,
-      "y": 3018
-    },
-    "Campania": {
-      "x": 4592,
-      "y": 3070
-    },
-    "Nepete": {
-      "x": 5251,
-      "y": 4090
-    },
-    "Alejandría": {
-      "x": 340,
-      "y": 0
-    },
-    "Anxur": {
-      "x": 5251,
-      "y": 2751
-    },
-    "Brixia": {
-      "x": 340,
-      "y": 0
-    },
-    "Foro": {
-      "x": 3593,
-      "y": 4090
-    },
-    "Paleópolis": {
-      "x": 4252,
-      "y": 2411
-    },
-    "Cere": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Etruria": {
-      "x": 1250,
-      "y": 3750
-    },
-    "Volsines": {
-      "x": 5591,
-      "y": 1752
-    },
-    "Priverno": {
-      "x": 5251,
-      "y": 4090
-    },
-    "Pedum": {
-      "x": 3729,
-      "y": 3091
-    },
-    "Prados Flaminios": {
-      "x": 340,
-      "y": 0
-    },
-    "Taurinos": {
-      "x": 2908,
-      "y": 2092
-    },
-    "Lucio Valerio Potito": {
-      "x": 0,
-      "y": 0
-    },
-    "Juegos": {
-      "x": 0,
-      "y": 0
-    },
-    "Crémera": {
-      "x": 4252,
-      "y": 4111
-    },
-    "Paflagonia": {
-      "x": 0,
-      "y": 0
-    },
-    "Epidauro": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Ausona": {
-      "x": 3933,
-      "y": 2432
-    },
-    "Lucera": {
-      "x": 3614,
-      "y": 1412
-    },
-    "Falerno": {
-      "x": 3933,
-      "y": 2432
-    },
-    "Calacia": {
-      "x": 4953,
-      "y": 413
-    },
-    "Pandosia": {
-      "x": 340,
-      "y": 0
-    },
-    "Estado de Veyes": {
-      "x": 1590,
-      "y": 2751
-    },
-    "Caere": {
-      "x": 2249,
-      "y": 2751
-    },
-    "Alpes": {
-      "x": 3907,
-      "y": 3091
-    },
-    "Ficulea Vieja": {
-      "x": 2751,
-      "y": 2751
-    },
-    "Evandro": {
-      "x": 591,
-      "y": 1752
-    },
-    "Corioli": {
-      "x": 4090,
-      "y": 3410
-    },
-    "Sutrio": {
-      "x": 251,
-      "y": 4090
-    },
-    "templo de Júpiter": {
-      "x": 2249,
-      "y": 2092
-    },
-    "Corfú": {
-      "x": 340,
-      "y": 0
-    },
-    "Setia": {
-      "x": 3907,
-      "y": 2019
-    },
-    "Júpiter Feretrio": {
-      "x": 2249,
-      "y": 2092
-    },
-    "Camerino": {
-      "x": 591,
-      "y": 1752
-    },
-    "Álgido": {
-      "x": 3729,
-      "y": 3091
-    },
-    "Bola": {
-      "x": 4451,
-      "y": 1093
-    },
-    "Comitium": {
-      "x": 3729,
-      "y": 2092
-    },
-    "territorio de Alba": {
-      "x": 4090,
-      "y": 753
-    },
-    "Narni": {
-      "x": 340,
-      "y": 0
-    },
-    "Grecia": {
-      "x": 2751,
-      "y": 4090
-    },
-    "casa de Cayo Manlio": {
-      "x": 3091,
-      "y": 3091
-    },
-    "Ara Maxima": {
-      "x": 931,
-      "y": 1752
-    },
-    "Monte Álgido": {
-      "x": 4090,
-      "y": 2751
-    },
-    "Artena": {
-      "x": 6590,
-      "y": 2751
-    },
-    "Alife": {
-      "x": 4273,
-      "y": 2411
-    },
-    "Asylum": {
-      "x": 4090,
-      "y": 2751
-    },
-    "via Gabia": {
-      "x": 2411,
-      "y": 3091
-    },
-    "Ayo Locucio": {
-      "x": 1590,
-      "y": 1433
-    },
-    "Clusio": {
-      "x": 251,
-      "y": 2751
-    },
-    "Nocera Inferior": {
-      "x": 3933,
-      "y": 1072
-    },
-    "Lucania": {
-      "x": 3933,
-      "y": 2019
-    },
-    "Satrico": {
-      "x": 4252,
-      "y": 3771
     },
     "Circo Flaminio": {
-      "x": 340,
+      "x": 330,
       "y": 0
     },
-    "la Ficolense": {
-      "x": 2913,
-      "y": 2092
+    "Velletri": {
+      "x": 2648,
+      "y": 3960
     },
-    "Velitrae": {
-      "x": 4932,
-      "y": 3431
+    "Labico": {
+      "x": 3638,
+      "y": 1472
     },
-    "Pescara": {
-      "x": 4273,
-      "y": 2411
+    "Túsculo": {
+      "x": 3526,
+      "y": 3960
     },
-    "colinas Albanas": {
-      "x": 3431,
-      "y": 753
-    },
-    "Narnia": {
-      "x": 0,
+    "Pandosia": {
+      "x": 4290,
       "y": 0
-    },
-    "templo de Voltumna": {
-      "x": 5251,
-      "y": 2751
     },
     "praderas Flaminias": {
       "x": 0,
       "y": 0
     },
-    "Vulsinia": {
-      "x": 251,
-      "y": 2751
+    "higuera Ruminal": {
+      "x": 3562,
+      "y": 2315
     },
-    "Ciudadela de Roma": {
-      "x": 2751,
-      "y": 4090
+    "Chiusi": {
+      "x": 4290,
+      "y": 1472
     },
-    "Cameria": {
-      "x": 2751,
-      "y": 2751
+    "Capua": {
+      "x": 3892,
+      "y": 2386
     },
-    "Po": {
-      "x": 2908,
-      "y": 2092
+    "Palatino": {
+      "x": 3300,
+      "y": 2386
     },
-    "Verrugo": {
-      "x": 3410,
-      "y": 3091
+    "Falerno": {
+      "x": 2978,
+      "y": 0
     },
-    "Veyentinos": {
+    "Aharna": {
+      "x": 4222,
+      "y": 1142
+    },
+    "Vicus Cyprius": {
+      "x": 3272,
+      "y": 1142
+    },
+    "Apulia": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Colacia": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Inbrinio": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Lucera": {
       "x": 0,
       "y": 0
     },
-    "Italia": {
-      "x": 251,
-      "y": 2751
+    "Artena": {
+      "x": 3602,
+      "y": 2716
     },
-    "Lucio Emilio": {
+    "capilla del templo de Júpiter": {
+      "x": 3300,
+      "y": 2315
+    },
+    "Perugia": {
+      "x": 3046,
+      "y": 228
+    },
+    "campos de Roma": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Tito Tacio": {
+      "x": 2970,
+      "y": 2716
+    },
+    "Comicios": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Minturna": {
+      "x": 3308,
+      "y": 1472
+    },
+    "Tarento": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Romúlea": {
+      "x": 2028,
+      "y": 1472
+    },
+    "Capitolio": {
+      "x": 4544,
+      "y": 3559
+    },
+    "Monte Vesubio": {
+      "x": 2648,
+      "y": 1142
+    },
+    "Mediolanum": {
+      "x": 330,
+      "y": 0
+    },
+    "Latinos": {
       "x": 0,
       "y": 0
     },
-    "Tifata": {
-      "x": 3933,
-      "y": 3285
+    "templo de Carmentis": {
+      "x": 3300,
+      "y": 2315
     },
-    "Monte Sacro": {
-      "x": 3912,
-      "y": 3091
+    "Crustumeria": {
+      "x": 3562,
+      "y": 2970
     },
-    "Bolsena": {
-      "x": 5591,
-      "y": 1752
-    },
-    "Latino": {
-      "x": 0,
+    "templo de Júpiter Óptimo Máximo": {
+      "x": 330,
       "y": 0
     },
-    "Vaticano": {
-      "x": 2751,
-      "y": 2751
+    "Suesa Pomecia": {
+      "x": 2716,
+      "y": 1142
     },
-    "Apeninos": {
-      "x": 2908,
-      "y": 2092
+    "Tíbur": {
+      "x": 2064,
+      "y": 228
+    },
+    "Nola": {
+      "x": 3114,
+      "y": 1472
+    },
+    "Nocera Inferior": {
+      "x": 330,
+      "y": 0
+    },
+    "la fuente Ferentina": {
+      "x": 2716,
+      "y": 1142
+    },
+    "el Samnio": {
+      "x": 2454,
+      "y": 3960
+    },
+    "Cornículo": {
+      "x": 330,
+      "y": 0
+    },
+    "Templo de Quirino": {
+      "x": 3526,
+      "y": 2056
+    },
+    "Mater Matuta": {
+      "x": 3630,
+      "y": 2386
+    },
+    "el Lacio": {
+      "x": 3562,
+      "y": 3960
+    },
+    "Bovilas": {
+      "x": 330,
+      "y": 0
+    },
+    "templo de Vica Pota": {
+      "x": 1540,
+      "y": 1472
     },
     "Sessa": {
       "x": 0,
       "y": 0
     },
-    "Velitras": {
-      "x": 340,
+    "Galos": {
+      "x": 3960,
+      "y": 2386
+    },
+    "capilla de Júpiter": {
+      "x": 0,
       "y": 0
     },
-    "campamento de Servilio": {
-      "x": 4252,
-      "y": 2453
+    "Ardea": {
+      "x": 4806,
+      "y": 2386
     },
-    "Ariccia": {
-      "x": 4069,
-      "y": 2092
+    "Ánxur": {
+      "x": 4806,
+      "y": 2386
     },
-    "territorio de Velitras": {
+    "templo de Voltumna": {
+      "x": 4806,
+      "y": 3960
+    },
+    "Cerceii": {
+      "x": 3272,
+      "y": 228
+    },
+    "Aventino": {
+      "x": 4544,
+      "y": 2386
+    },
+    "Siponto": {
+      "x": 626,
+      "y": 0
+    },
+    "capilla próxima a la casa del Flamen": {
+      "x": 3232,
+      "y": 1142
+    },
+    "roca Tarpeya": {
+      "x": 3300,
+      "y": 2315
+    },
+    "Alife": {
+      "x": 2784,
+      "y": 2716
+    },
+    "territorio de Pomptina": {
+      "x": 3272,
+      "y": 0
+    },
+    "el Tesoro": {
       "x": 0,
+      "y": 0
+    },
+    "Aricia": {
+      "x": 4290,
+      "y": 2386
+    },
+    "campamento de Servilio": {
+      "x": 3232,
+      "y": 1142
+    },
+    "el Senado": {
+      "x": 3526,
+      "y": 3960
+    },
+    "Monte Álgido": {
+      "x": 3526,
+      "y": 2716
+    },
+    "Sinuessa": {
+      "x": 330,
+      "y": 0
+    },
+    "Cortona": {
+      "x": 2462,
+      "y": 0
+    },
+    "Italia": {
+      "x": 0,
+      "y": 2386
+    },
+    "Victoria": {
+      "x": 0,
+      "y": 0
+    },
+    "selva Ciminia": {
+      "x": 0,
+      "y": 0
+    },
+    "Suessa": {
+      "x": 2648,
+      "y": 1142
+    },
+    "Anzio": {
+      "x": 4186,
+      "y": 3300
+    },
+    "Aquilonia": {
+      "x": 3114,
+      "y": 2716
+    },
+    "Alba": {
+      "x": 3960,
+      "y": 2716
+    },
+    "Cielo": {
+      "x": 0,
+      "y": 0
+    },
+    "Atenas": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Ferentino": {
+      "x": 3272,
+      "y": 2716
+    },
+    "Latino": {
+      "x": 0,
+      "y": 0
+    },
+    "casa de Servio Sulpicio": {
+      "x": 2612,
+      "y": 2056
+    },
+    "Vulturno": {
+      "x": 2648,
+      "y": 1142
+    },
+    "colinas Tifata": {
+      "x": 2648,
+      "y": 2645
+    },
+    "Carvento": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Turno": {
+      "x": 0,
+      "y": 0
+    },
+    "el Estado": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Juno": {
+      "x": 330,
+      "y": 0
+    },
+    "Pontino": {
+      "x": 2978,
       "y": 0
     },
     "Velia": {
-      "x": 2751,
-      "y": 4090
+      "x": 2784,
+      "y": 2716
     },
-    "Mediolanum": {
-      "x": 340,
-      "y": 0
+    "Grecia": {
+      "x": 2056,
+      "y": 1142
     },
-    "Pompeya": {
-      "x": 3593,
-      "y": 2071
+    "Circo": {
+      "x": 5136,
+      "y": 1726
     },
-    "ciudadela de Fidenas": {
+    "Sátrico": {
+      "x": 3300,
+      "y": 2716
+    },
+    "Apolo": {
       "x": 0,
       "y": 0
     },
-    "Brindisi": {
+    "Pallantium": {
+      "x": 330,
+      "y": 0
+    },
+    "Estado romano": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Etruria": {
+      "x": 1210,
+      "y": 3630
+    },
+    "gens Claudia": {
+      "x": 2902,
+      "y": 0
+    },
+    "Cayo Manlio": {
+      "x": 2219,
+      "y": 645
+    },
+    "Mecencio": {
+      "x": 3562,
+      "y": 2716
+    },
+    "templo de Vesta": {
+      "x": 2612,
+      "y": 2056
+    },
+    "Minturnas": {
+      "x": 2064,
+      "y": 228
+    },
+    "Suessa Pomecia": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Civita Castellana": {
+      "x": 330,
+      "y": 2716
+    },
+    "Asamblea": {
+      "x": 4290,
+      "y": 2056
+    },
+    "Tíber": {
+      "x": 4806,
+      "y": 2970
+    },
+    "Semoni Sancus": {
+      "x": 0,
+      "y": 0
+    },
+    "Gabinia": {
+      "x": 3638,
+      "y": 1472
+    },
+    "Fidenas": {
+      "x": 4806,
+      "y": 2640
+    },
+    "via Gabia": {
+      "x": 2386,
+      "y": 3960
+    },
+    "Longula": {
+      "x": 3046,
+      "y": 2386
+    },
+    "Júpiter Capitolino": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Pietrabbondante": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Nápoles": {
+      "x": 3114,
+      "y": 1472
+    },
+    "Menturnas": {
+      "x": 660,
+      "y": 0
+    },
+    "estrecho de Mesina": {
+      "x": 0,
+      "y": 2386
+    },
+    "Vicus Sceleratus": {
+      "x": 2028,
+      "y": 0
+    },
+    "Luceria": {
+      "x": 1540,
+      "y": 1472
+    },
+    "Corioli": {
+      "x": 3046,
+      "y": 2386
+    },
+    "Tívoli": {
+      "x": 1734,
+      "y": 1472
+    },
+    "Écetra": {
+      "x": 2942,
+      "y": 3960
+    },
+    "Focea": {
+      "x": 330,
+      "y": 0
+    },
+    "Arezzo": {
+      "x": 3376,
+      "y": 0
+    },
+    "Eneas": {
+      "x": 3114,
+      "y": 2716
+    },
+    "Prados Flaminios": {
+      "x": 3630,
+      "y": 2056
+    },
+    "Astura": {
+      "x": 3856,
+      "y": 2716
+    },
+    "Volturno": {
+      "x": 2648,
+      "y": 1142
+    },
+    "Cerveteri": {
+      "x": 5136,
+      "y": 3046
+    },
+    "ciudadela de Fidenas": {
+      "x": 3196,
+      "y": 2716
+    },
+    "Horcas Caudinas": {
+      "x": 330,
+      "y": 0
+    },
+    "Palestrina": {
+      "x": 3308,
+      "y": 2716
+    },
+    "Tarquinios": {
+      "x": 2645,
+      "y": 2716
+    },
+    "Janículo": {
+      "x": 4476,
+      "y": 2386
+    },
+    "Sassoferrato": {
+      "x": 3960,
+      "y": 228
+    },
+    "Lucca": {
+      "x": 2978,
+      "y": 0
+    },
+    "colina del Palatino": {
+      "x": 0,
+      "y": 0
+    },
+    "Sabinos": {
+      "x": 3232,
+      "y": 1142
+    },
+    "Verrugo": {
+      "x": 2386,
+      "y": 3960
+    },
+    "Collatia": {
+      "x": 3232,
+      "y": 1142
+    },
+    "Faleria": {
+      "x": 6380,
+      "y": 2386
+    },
+    "Ausona": {
+      "x": 3308,
+      "y": 1472
+    },
+    "Corfú": {
+      "x": 0,
+      "y": 0
+    },
+    "Cures": {
+      "x": 3444,
+      "y": 228
+    },
+    "Lucio Furio": {
+      "x": 0,
+      "y": 0
+    },
+    "Sutri": {
+      "x": 0,
+      "y": 3960
+    },
+    "Ciudadela": {
+      "x": 4214,
+      "y": 2386
+    },
+    "Templo de Marte": {
+      "x": 0,
+      "y": 0
+    },
+    "Arcadia": {
+      "x": 660,
+      "y": 0
+    },
+    "Heraclea": {
+      "x": 3114,
+      "y": 1472
+    },
+    "Fondi": {
+      "x": 4552,
+      "y": 1472
+    },
+    "Cominio": {
+      "x": 1870,
+      "y": 1472
+    },
+    "Ayo Locucio": {
+      "x": 660,
+      "y": 0
+    },
+    "Palumbino": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Umbros": {
+      "x": 0,
+      "y": 0
+    },
+    "Formia": {
+      "x": 4222,
+      "y": 1472
+    },
+    "Ferentina": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Lucio Valerio": {
+      "x": 0,
+      "y": 0
+    },
+    "Campania": {
+      "x": 3698,
+      "y": 2716
+    },
+    "Macedonia": {
+      "x": 1870,
+      "y": 1472
+    },
+    "Herculáneo": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Feritro": {
+      "x": 330,
+      "y": 0
+    },
+    "Prado de Bacco": {
+      "x": 2056,
+      "y": 1142
+    },
+    "Palatium": {
+      "x": 330,
+      "y": 0
+    },
+    "Fregellas": {
+      "x": 2716,
+      "y": 1142
+    },
+    "Interamna Sucasina": {
+      "x": 2724,
+      "y": 1472
+    },
+    "Caenina": {
+      "x": 330,
+      "y": 0
+    },
+    "Álgido": {
+      "x": 3196,
+      "y": 3960
+    },
+    "Nepi": {
+      "x": 2716,
+      "y": 1142
+    },
+    "Quirino": {
+      "x": 330,
+      "y": 0
+    },
+    "Quirinal": {
+      "x": 3960,
+      "y": 2386
+    },
+    "monte Tarpeyo": {
+      "x": 3630,
+      "y": 1142
+    },
+    "Presenzano": {
+      "x": 0,
+      "y": 0
+    },
+    "Roma": {
+      "x": 3630,
+      "y": 3630
+    },
+    "templo de Júpiter Estator": {
+      "x": 0,
+      "y": 0
+    },
+    "templo de Júpiter": {
+      "x": 3300,
+      "y": 2386
+    },
+    "Ancio": {
+      "x": 4290,
+      "y": 1142
+    },
+    "Quirites": {
+      "x": 0,
+      "y": 0
+    },
+    "Juegos Capitolinos": {
+      "x": 3300,
+      "y": 2315
+    },
+    "Numa Pompilio": {
+      "x": 3562,
+      "y": 0
+    },
+    "Via Nova": {
+      "x": 330,
+      "y": 0
+    },
+    "Murgancia": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Pompeya": {
+      "x": 0,
+      "y": 0
+    },
+    "Polusca": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Columen": {
+      "x": 3960,
+      "y": 2386
+    },
+    "templo de Nortia": {
+      "x": 0,
+      "y": 0
+    },
+    "Templo de Juno": {
+      "x": 330,
+      "y": 0
+    },
+    "Moneta": {
+      "x": 2386,
+      "y": 3960
+    },
+    "Alia": {
+      "x": 4552,
+      "y": 2640
+    },
+    "Cayo Fabio": {
+      "x": 4544,
+      "y": 1142
+    },
+    "Murallas": {
+      "x": 0,
+      "y": 0
+    },
+    "Gabii": {
+      "x": 4806,
+      "y": 2716
+    },
+    "Cumas": {
+      "x": 2454,
+      "y": 2716
+    },
+    "distrito de Pontino": {
+      "x": 2942,
+      "y": 1472
+    },
+    "Sabina": {
+      "x": 330,
+      "y": 0
+    },
+    "Paleópolis": {
+      "x": 2784,
+      "y": 2716
+    },
+    "colinas de Túsculo": {
+      "x": 330,
+      "y": 0
+    },
+    "Vicus Tusco": {
+      "x": 2386,
+      "y": 3960
+    },
+    "Júpiter Optimo Máximo": {
+      "x": 0,
+      "y": 0
+    },
+    "Caudio": {
+      "x": 660,
+      "y": 0
+    },
+    "Calcis": {
+      "x": 2784,
+      "y": 1472
+    },
+    "Espurio Postumio": {
+      "x": 0,
+      "y": 0
+    },
+    "Contenebra": {
+      "x": 5466,
+      "y": 3046
+    },
+    "Curia Hostilia": {
+      "x": 4186,
+      "y": 2056
+    },
+    "Foro Boario": {
+      "x": 330,
+      "y": 0
+    },
+    "Galia": {
+      "x": 0,
+      "y": 0
+    },
+    "Nuceria Alfaterna": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Campo de Marte": {
+      "x": 4874,
+      "y": 3300
+    },
+    "Metaponto": {
+      "x": 2200,
+      "y": 0
+    },
+    "Adriático": {
+      "x": 330,
+      "y": 1142
+    },
+    "Lucio Tarquinio": {
+      "x": 4874,
+      "y": 3960
+    },
+    "Brucia": {
+      "x": 330,
+      "y": 0
+    },
+    "Nomento": {
+      "x": 3562,
+      "y": 2386
+    },
+    "Massilia": {
+      "x": 0,
+      "y": 0
+    },
+    "Veyentinos": {
+      "x": 0,
+      "y": 0
+    },
+    "Trifano": {
+      "x": 0,
+      "y": 0
+    },
+    "Curia": {
+      "x": 4186,
+      "y": 2716
+    },
+    "Alba Longa": {
+      "x": 3054,
+      "y": 228
+    },
+    "Marte": {
+      "x": 0,
+      "y": 0
+    },
+    "Norba": {
+      "x": 3602,
+      "y": 1142
+    },
+    "Lucania": {
+      "x": 0,
+      "y": 0
+    },
+    "Alpes": {
+      "x": 330,
+      "y": 0
+    },
+    "Asamblea de la plebe": {
+      "x": 2386,
+      "y": 3960
+    },
+    "ciudadela de Veyes": {
+      "x": 0,
+      "y": 0
+    },
+    "Consenza": {
+      "x": 2530,
+      "y": 0
+    },
+    "Antemnae": {
+      "x": 660,
+      "y": 0
+    },
+    "Monte Tiferno": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Tirreno": {
+      "x": 3562,
+      "y": 1726
+    },
+    "Éfeso": {
+      "x": 2056,
+      "y": 1142
+    },
+    "templo circular de Hércules": {
+      "x": 0,
+      "y": 0
+    },
+    "Fortuna de las Mujeres": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Vulsinia": {
+      "x": 2716,
+      "y": 0
+    },
+    "Clivus Urbius": {
+      "x": 4516,
+      "y": 1142
+    },
+    "Foro": {
+      "x": 3856,
+      "y": 3300
+    },
+    "Júpiter": {
+      "x": 3300,
+      "y": 2315
+    },
+    "Callifae": {
+      "x": 330,
+      "y": 0
+    },
+    "carretera de Gabii": {
+      "x": 2386,
+      "y": 3960
+    },
+    "Dodona": {
+      "x": 330,
+      "y": 0
+    },
+    "Vía Latina": {
+      "x": 2394,
+      "y": 2716
+    },
+    "Veseris": {
+      "x": 1404,
+      "y": 0
+    },
+    "Alejandría": {
+      "x": 330,
+      "y": 0
+    },
+    "Sicilia": {
+      "x": 2784,
+      "y": 3960
+    },
+    "Címino": {
+      "x": 330,
+      "y": 2716
+    },
+    "Ortona": {
+      "x": 3526,
+      "y": 2716
+    },
+    "Épiro": {
+      "x": 3960,
+      "y": 1210
+    },
+    "murallas de Roma": {
+      "x": 2386,
+      "y": 2386
+    },
+    "territorio de Nepete": {
+      "x": 5136,
+      "y": 2386
+    },
+    "Piras Galas": {
+      "x": 4214,
+      "y": 2315
+    },
+    "Calvi Risorta": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Corbión": {
+      "x": 3526,
+      "y": 3960
+    },
+    "Apio": {
+      "x": 4186,
+      "y": 2056
+    },
+    "Vía Sacra": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Ad Mecium": {
+      "x": 3856,
+      "y": 1142
+    },
+    "Apolinar": {
+      "x": 3960,
+      "y": 812
+    },
+    "Trebio": {
+      "x": 2724,
+      "y": 1472
+    },
+    "Tito Quincio": {
+      "x": 1889,
+      "y": 1889
+    },
+    "Tiendas Nuevas": {
+      "x": 330,
+      "y": 0
+    },
+    "Circei": {
+      "x": 2978,
+      "y": 2716
+    },
+    "V olsinia": {
+      "x": 330,
+      "y": 0
+    },
+    "Asia": {
+      "x": 2716,
+      "y": 1142
+    },
+    "colinas Albanas": {
+      "x": 1810,
+      "y": 0
+    },
+    "Romular": {
+      "x": 3892,
+      "y": 1071
+    },
+    "Ticino": {
+      "x": 0,
+      "y": 0
+    },
+    "Aquerusia": {
+      "x": 4620,
+      "y": 0
+    },
+    "Capaccio-Paestum": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Sezze": {
+      "x": 2942,
+      "y": 1472
+    },
+    "Boiano": {
+      "x": 2784,
+      "y": 2716
+    },
+    "Perusia": {
+      "x": 2132,
+      "y": 0
+    },
+    "Decio": {
+      "x": 4290,
+      "y": 1142
+    },
+    "Selva Maliciosa": {
+      "x": 0,
+      "y": 0
+    },
+    "Delfos": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Velitrae": {
+      "x": 1142,
+      "y": 1142
+    },
+    "Milionia": {
+      "x": 0,
+      "y": 0
+    },
+    "Lanuvio": {
+      "x": 3526,
+      "y": 2386
+    },
+    "Crotona": {
+      "x": 3444,
+      "y": 228
+    },
+    "Priverno": {
+      "x": 3892,
+      "y": 2716
+    },
+    "Caere": {
+      "x": 4806,
+      "y": 3960
+    },
+    "Jano": {
+      "x": 3300,
+      "y": 1142
+    },
+    "Clusinos": {
+      "x": 4290,
+      "y": 1472
+    },
+    "Pedum": {
+      "x": 2978,
+      "y": 2716
+    },
+    "volscos de Écetra": {
+      "x": 3272,
+      "y": 2716
+    },
+    "templo de Venus Cloacina": {
+      "x": 0,
+      "y": 0
+    },
+    "Eubea": {
+      "x": 364,
+      "y": 0
+    },
+    "Sutrio": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Tarquinio": {
+      "x": 4186,
+      "y": 2716
+    },
+    "Tarquinia": {
+      "x": 4806,
+      "y": 4290
+    },
+    "Cere": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Laurento": {
+      "x": 3856,
+      "y": 2056
+    },
+    "Corinto": {
+      "x": 5204,
+      "y": 3046
+    },
+    "Ostia": {
+      "x": 3562,
+      "y": 1726
+    },
+    "Volsines": {
+      "x": 5136,
+      "y": 2716
+    },
+    "Setia": {
+      "x": 3272,
+      "y": 2386
+    },
+    "templo de Minerva": {
+      "x": 0,
+      "y": 0
+    },
+    "Lavinio": {
+      "x": 2724,
+      "y": 1472
+    },
+    "Arpos": {
+      "x": 1870,
+      "y": 228
+    },
+    "Atria": {
+      "x": 0,
+      "y": 0
+    },
+    "Terracina": {
+      "x": 5136,
+      "y": 1142
+    },
+    "Vía Apia": {
+      "x": 146,
+      "y": 3960
+    },
+    "Camerino": {
+      "x": 5466,
+      "y": 1802
+    },
+    "Cutina": {
       "x": 0,
       "y": 0
     },
@@ -1460,51 +1268,195 @@
       "x": 0,
       "y": 0
     },
+    "casa Junia": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Quinto Fabio": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Sepino": {
+      "x": 2784,
+      "y": 2716
+    },
+    "templo de Diana": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Quincio": {
+      "x": 3526,
+      "y": 3960
+    },
+    "Cora": {
+      "x": 4290,
+      "y": 1142
+    },
+    "Circo Máximo": {
+      "x": 4186,
+      "y": 2386
+    },
+    "Prados Quincios": {
+      "x": 5136,
+      "y": 1726
+    },
+    "Caprae Palus": {
+      "x": 3630,
+      "y": 2056
+    },
+    "Vescia": {
+      "x": 2978,
+      "y": 2716
+    },
+    "Cingilia": {
+      "x": 330,
+      "y": 0
+    },
+    "Lavinia": {
+      "x": 1870,
+      "y": 1472
+    },
+    "Circeio": {
+      "x": 2386,
+      "y": 3960
+    },
+    "Arienzo": {
+      "x": 4222,
+      "y": 1142
+    },
+    "Crémera": {
+      "x": 4806,
+      "y": 2970
+    },
+    "Crustumerium": {
+      "x": 0,
+      "y": 0
+    },
+    "Monte Sacro": {
+      "x": 4874,
+      "y": 2386
+    },
     "Signia": {
-      "x": 2751,
-      "y": 3410
+      "x": 2386,
+      "y": 2386
     },
-    "Alba": {
-      "x": 4430,
-      "y": 2751
+    "Servio Tulio": {
+      "x": 0,
+      "y": 0
     },
-    "Escudos": {
-      "x": 2249,
-      "y": 2092
+    "Vetelia": {
+      "x": 2724,
+      "y": 1472
     },
-    "Pomecia": {
-      "x": 2589,
-      "y": 1093
+    "Lars Porsena": {
+      "x": 3889,
+      "y": 3960
     },
-    "templo de Vesta": {
-      "x": 2249,
-      "y": 2092
+    "Fundo": {
+      "x": 4186,
+      "y": 812
     },
-    "monte Tarpeyo": {
-      "x": 2589,
-      "y": 1093
+    "Ariccia": {
+      "x": 4222,
+      "y": 1472
     },
-    "Romular": {
-      "x": 4592,
-      "y": 2092
+    "Bolsena": {
+      "x": 5136,
+      "y": 2716
     },
-    "Crustumeria": {
-      "x": 4749,
-      "y": 2751
+    "Calacia": {
+      "x": 330,
+      "y": 0
     },
-    "Menturnas": {
-      "x": 3274,
-      "y": 434
+    "Veyes": {
+      "x": 6050,
+      "y": 3630
     },
-    "Sabinos": {
-      "x": 3750,
-      "y": 3091
+    "valle de Alba": {
+      "x": 0,
+      "y": 259
+    },
+    "patricios de Roma": {
+      "x": 2386,
+      "y": 3960
+    },
+    "Anco": {
+      "x": 0,
+      "y": 0
+    },
+    "Acerra": {
+      "x": 2386,
+      "y": 3960
+    },
+    "Apeninos": {
+      "x": 0,
+      "y": 0
+    },
+    "guerra Latina": {
+      "x": 160,
+      "y": 0
+    },
+    "Epidauro": {
+      "x": 3960,
+      "y": 2386
+    },
+    "Comitium": {
+      "x": 3856,
+      "y": 2716
+    },
+    "Poncias": {
+      "x": 2978,
+      "y": 0
+    },
+    "Sora": {
+      "x": 2386,
+      "y": 2386
+    },
+    "Paflagonia": {
+      "x": 1870,
+      "y": 1472
+    },
+    "Segni": {
+      "x": 2978,
+      "y": 2716
+    },
+    "Palatina": {
+      "x": 3630,
+      "y": 2716
+    },
+    "templo de Apolo": {
+      "x": 3300,
+      "y": 812
+    },
+    "Venus": {
+      "x": 3892,
+      "y": 482
+    },
+    "Camilo": {
+      "x": 0,
+      "y": 0
+    },
+    "Aleife": {
+      "x": 660,
+      "y": 0
+    },
+    "Comicio": {
+      "x": 4186,
+      "y": 2056
+    },
+    "Terminus": {
+      "x": 3630,
+      "y": 1142
+    },
+    "Faliscos": {
+      "x": 3630,
+      "y": 2386
     }
   },
-  "CSR": 0.9354207436399217,
+  "CSR": 0.971677559912854,
   "rel_eval": [
     {
-      "origen": "Adriático",
+      "origen": "Eneas",
       "tipo": "CERCA_DE",
       "destino": "Paflagonia",
       "satisface": true
@@ -1516,27 +1468,27 @@
       "satisface": true
     },
     {
-      "origen": "Troya",
+      "origen": "Eneas",
       "tipo": "CERCA_DE",
-      "destino": "Euganos",
+      "destino": "Macedonia",
       "satisface": true
     },
     {
-      "origen": "Macedonia",
+      "origen": "Eneas",
       "tipo": "CERCA_DE",
       "destino": "Sicilia",
       "satisface": true
     },
     {
-      "origen": "Mecencio",
-      "tipo": "NORTE_DE",
-      "destino": "Caere",
+      "origen": "Eneas",
+      "tipo": "CERCA_DE",
+      "destino": "Lavinia",
       "satisface": true
     },
     {
-      "origen": "Caere",
+      "origen": "Mecencio",
       "tipo": "CERCA_DE",
-      "destino": "Etruria",
+      "destino": "Caere",
       "satisface": true
     },
     {
@@ -1547,14 +1499,14 @@
     },
     {
       "origen": "Etruria",
-      "tipo": "NORTE_DE",
-      "destino": "Alpes",
+      "tipo": "CERCA_DE",
+      "destino": "estrecho de Mesina",
       "satisface": true
     },
     {
       "origen": "Etruria",
-      "tipo": "CERCA_DE",
-      "destino": "estrecho de Mesina",
+      "tipo": "NORTE_DE",
+      "destino": "Italia",
       "satisface": true
     },
     {
@@ -1576,15 +1528,21 @@
       "satisface": true
     },
     {
-      "origen": "el Aventino",
+      "origen": "Aventino",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Tiber",
+      "origen": "Tíber",
       "tipo": "CERCA_DE",
       "destino": "higuera Ruminal",
+      "satisface": true
+    },
+    {
+      "origen": "higuera Ruminal",
+      "tipo": "CERCA_DE",
+      "destino": "Tíber",
       "satisface": true
     },
     {
@@ -1594,15 +1552,15 @@
       "satisface": true
     },
     {
-      "origen": "Pallantium",
-      "tipo": "ESTE_DE",
-      "destino": "Arcadia",
-      "satisface": true
-    },
-    {
       "origen": "colina del Palatino",
       "tipo": "CERCA_DE",
       "destino": "Pallantium",
+      "satisface": true
+    },
+    {
+      "origen": "Pallantium",
+      "tipo": "CERCA_DE",
+      "destino": "Arcadia",
       "satisface": true
     },
     {
@@ -1612,39 +1570,15 @@
       "satisface": true
     },
     {
-      "origen": "Amulio",
+      "origen": "Alba",
       "tipo": "CERCA_DE",
-      "destino": "Numitor",
-      "satisface": true
-    },
-    {
-      "origen": "Remo",
-      "tipo": "CERCA_DE",
-      "destino": "casa de Numitor",
-      "satisface": true
-    },
-    {
-      "origen": "Numitor",
-      "tipo": "CERCA_DE",
-      "destino": "Alba",
-      "satisface": true
-    },
-    {
-      "origen": "Rómulo",
-      "tipo": "CERCA_DE",
-      "destino": "Remo",
-      "satisface": true
-    },
-    {
-      "origen": "Lavinio",
-      "tipo": "CERCA_DE",
-      "destino": "Alba",
+      "destino": "Lavinio",
       "satisface": true
     },
     {
       "origen": "Palatino",
       "tipo": "CERCA_DE",
-      "destino": "el Aventino",
+      "destino": "Aventino",
       "satisface": true
     },
     {
@@ -1654,51 +1588,9 @@
       "satisface": true
     },
     {
-      "origen": "Hércules",
+      "origen": "Rómulo",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": true
-    },
-    {
-      "origen": "Caco",
-      "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": true
-    },
-    {
-      "origen": "Evandro",
-      "tipo": "CERCA_DE",
-      "destino": "Peloponeso",
-      "satisface": true
-    },
-    {
-      "origen": "Evandro",
-      "tipo": "CERCA_DE",
-      "destino": "Italia",
-      "satisface": true
-    },
-    {
-      "origen": "Ara Maxima",
-      "tipo": "CERCA_DE",
-      "destino": "Italia",
-      "satisface": true
-    },
-    {
-      "origen": "Ara Maxima",
-      "tipo": "CERCA_DE",
-      "destino": "Evandro",
-      "satisface": true
-    },
-    {
-      "origen": "Capitolio",
-      "tipo": "CERCA_DE",
-      "destino": "Rómulo",
-      "satisface": true
-    },
-    {
-      "origen": "Etruria",
-      "tipo": "CERCA_DE",
-      "destino": "Rómulo",
+      "destino": "Capitolio",
       "satisface": true
     },
     {
@@ -1726,99 +1618,93 @@
       "satisface": true
     },
     {
-      "origen": "Palatino",
+      "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Capitolio",
+      "destino": "Foro",
       "satisface": true
     },
     {
-      "origen": "Caenina",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Antemnae",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Crustumerium",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Lavinio",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Fidenas",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Fidenas",
-      "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": true
-    },
-    {
-      "origen": "Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": true
-    },
-    {
-      "origen": "Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": false
-    },
-    {
-      "origen": "Cures",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "el Aventino",
+      "origen": "Roma",
       "tipo": "CERCA_DE",
       "destino": "Palatino",
       "satisface": true
     },
     {
-      "origen": "Alba",
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Fidenas",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Tíber",
+      "satisface": true
+    },
+    {
+      "origen": "Fidenas",
+      "tipo": "CERCA_DE",
+      "destino": "Tíber",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Veyes",
+      "satisface": false
+    },
+    {
+      "origen": "Caprae Palus",
+      "tipo": "CERCA_DE",
+      "destino": "Campo de Marte",
+      "satisface": true
+    },
+    {
+      "origen": "Cures",
       "tipo": "CERCA_DE",
       "destino": "Metaponto",
       "satisface": true
     },
     {
-      "origen": "Alba",
+      "origen": "Cures",
       "tipo": "CERCA_DE",
       "destino": "Heraclea",
       "satisface": true
     },
     {
-      "origen": "Alba",
+      "origen": "Heraclea",
       "tipo": "CERCA_DE",
       "destino": "Crotona",
       "satisface": true
     },
     {
-      "origen": "Monte de Alba",
+      "origen": "Aventino",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Jano",
       "satisface": true
     },
     {
-      "origen": "Celia",
+      "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Alba",
+      "satisface": true
+    },
+    {
+      "origen": "Fidenas",
+      "tipo": "CERCA_DE",
+      "destino": "Anio",
+      "satisface": true
+    },
+    {
+      "origen": "Veyes",
+      "tipo": "CERCA_DE",
+      "destino": "Tíber",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Tarquinia",
       "satisface": true
     },
     {
@@ -1828,15 +1714,15 @@
       "satisface": true
     },
     {
-      "origen": "Apiolas",
+      "origen": "Ostia",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Tíber",
       "satisface": true
     },
     {
       "origen": "Circo Máximo",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Foro",
       "satisface": true
     },
     {
@@ -1846,153 +1732,33 @@
       "satisface": true
     },
     {
-      "origen": "Fidenas",
-      "tipo": "CERCA_DE",
-      "destino": "Anio",
-      "satisface": true
-    },
-    {
       "origen": "Anio",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": true
-    },
-    {
-      "origen": "Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Fidenas",
-      "satisface": false
-    },
-    {
-      "origen": "Tarquinia",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Tarquinia",
-      "tipo": "CERCA_DE",
-      "destino": "Janículo",
-      "satisface": true
-    },
-    {
-      "origen": "Asylum",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Palatino",
-      "tipo": "CERCA_DE",
-      "destino": "Ciudadela",
-      "satisface": true
-    },
-    {
-      "origen": "Venus Murcia",
-      "tipo": "CERCA_DE",
-      "destino": "Palatino",
-      "satisface": true
-    },
-    {
-      "origen": "Curia Hostilia",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Ostia",
-      "satisface": false
-    },
-    {
-      "origen": "Ostia",
-      "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": false
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Foro",
+      "destino": "Tíber",
       "satisface": true
     },
     {
       "origen": "Selva Maliciosa",
       "tipo": "CERCA_DE",
-      "destino": "Anio",
+      "destino": "Sabina",
       "satisface": true
     },
     {
       "origen": "Collatia",
       "tipo": "CERCA_DE",
       "destino": "Anio",
-      "satisface": true
-    },
-    {
-      "origen": "Collatia",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Cornículo",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Ficulea Vieja",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Cameria",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Crustumerio",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Ameriola",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Medullia",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Normento",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
       "satisface": true
     },
     {
       "origen": "Foro",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Tíber",
       "satisface": true
     },
     {
-      "origen": "Capitolio",
+      "origen": "Via Nova",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "templo de Júpiter",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
+      "destino": "templo de Júpiter Estator",
       "satisface": true
     },
     {
@@ -2002,45 +1768,57 @@
       "satisface": true
     },
     {
-      "origen": "Campo de Marte",
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Campo de Marte",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Quirinal",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Viminal",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Esquilino",
+      "satisface": true
+    },
+    {
+      "origen": "templo de Diana",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Quirinal",
+      "origen": "templo de Diana",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Éfeso",
       "satisface": true
     },
     {
-      "origen": "Viminal",
+      "origen": "templo de Diana",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Asia",
       "satisface": true
-    },
-    {
-      "origen": "Esquilino",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "templo de Diana de Éfeso",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Tiber",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": false
     },
     {
       "origen": "Tarquinio",
       "tipo": "CERCA_DE",
       "destino": "el Senado",
+      "satisface": true
+    },
+    {
+      "origen": "Tarquinia",
+      "tipo": "CERCA_DE",
+      "destino": "Corinto",
       "satisface": true
     },
     {
@@ -2074,6 +1852,18 @@
       "satisface": true
     },
     {
+      "origen": "Lucio Tarquinio",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Túsculo",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
       "origen": "Aricia",
       "tipo": "CERCA_DE",
       "destino": "Ferentina",
@@ -2082,55 +1872,37 @@
     {
       "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Aricia",
+      "destino": "Ferentina",
       "satisface": true
     },
     {
-      "origen": "Fuente Ferentina",
+      "origen": "la fuente Ferentina",
       "tipo": "CERCA_DE",
       "destino": "Ferentina",
       "satisface": true
     },
     {
-      "origen": "Alba",
+      "origen": "Pontino",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Suessa",
       "satisface": true
     },
     {
-      "origen": "Liga Latina",
+      "origen": "el Lacio",
       "tipo": "CERCA_DE",
-      "destino": "Ferentina",
+      "destino": "Gabii",
       "satisface": true
     },
     {
-      "origen": "Gabii",
-      "tipo": "ESTE_DE",
-      "destino": "Roma",
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Gabii",
       "satisface": true
     },
     {
-      "origen": "Gabii",
+      "origen": "templo de Júpiter",
       "tipo": "CERCA_DE",
-      "destino": "murallas de Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Gabii",
-      "tipo": "CERCA_DE",
-      "destino": "Lacio",
-      "satisface": true
-    },
-    {
-      "origen": "Gabii",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "monte Tarpeyo",
-      "tipo": "CERCA_DE",
-      "destino": "templo de Júpiter",
+      "destino": "monte Tarpeyo",
       "satisface": true
     },
     {
@@ -2152,31 +1924,13 @@
       "satisface": true
     },
     {
+      "origen": "Colacia",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
       "origen": "Ardea",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Colacia",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Colacia",
-      "tipo": "CERCA_DE",
-      "destino": "Ardea",
-      "satisface": true
-    },
-    {
-      "origen": "Colacia",
-      "tipo": "CERCA_DE",
-      "destino": "Foro",
-      "satisface": true
-    },
-    {
-      "origen": "campamento de Ardea",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
@@ -2194,63 +1948,87 @@
       "satisface": true
     },
     {
-      "origen": "Tarquinios",
+      "origen": "Tíber",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Campo de Marte",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "casa Junia",
       "satisface": true
     },
     {
       "origen": "Veyes",
       "tipo": "CERCA_DE",
       "destino": "Tarquinia",
+      "satisface": true
+    },
+    {
+      "origen": "Veyes",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
       "satisface": false
     },
     {
       "origen": "Tarquinia",
-      "tipo": "SUR_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Etruria",
-      "tipo": "CERCA_DE",
-      "destino": "Veyes",
-      "satisface": false
-    },
-    {
-      "origen": "Etruria",
-      "tipo": "CERCA_DE",
-      "destino": "Tarquinia",
-      "satisface": false
-    },
-    {
-      "origen": "bosque de Arsia",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Velia",
+      "origen": "templo de Vica Pota",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Velia",
       "satisface": true
     },
     {
-      "origen": "Ciudadela del Capitolio",
+      "origen": "templo de Júpiter",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Capitolio",
       "satisface": true
     },
     {
-      "origen": "Tarquinios",
+      "origen": "Lars Porsena",
       "tipo": "CERCA_DE",
       "destino": "Clusium",
       "satisface": true
     },
     {
+      "origen": "Tarquinios",
+      "tipo": "CERCA_DE",
+      "destino": "Lars Porsena",
+      "satisface": true
+    },
+    {
+      "origen": "Lars Porsena",
+      "tipo": "ESTE_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
       "origen": "Janículo",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
+      "destino": "Tíber",
+      "satisface": true
+    },
+    {
+      "origen": "Comicios",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Vía Sacra",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Aricia",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
       "satisface": true
     },
     {
@@ -2261,6 +2039,24 @@
     },
     {
       "origen": "Anio",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Pomecia",
+      "tipo": "CERCA_DE",
+      "destino": "Cora",
+      "satisface": true
+    },
+    {
+      "origen": "Pomecia",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Fidenas",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
@@ -2290,9 +2086,27 @@
       "satisface": true
     },
     {
+      "origen": "Júpiter Capitolino",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
       "origen": "Foro",
       "tipo": "CERCA_DE",
-      "destino": "Curia",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Curia",
+      "tipo": "CERCA_DE",
+      "destino": "Foro",
+      "satisface": true
+    },
+    {
+      "origen": "Asamblea de la plebe",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
       "satisface": true
     },
     {
@@ -2302,33 +2116,15 @@
       "satisface": true
     },
     {
-      "origen": "Ecetra",
+      "origen": "Écetra",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Prados Mucianos",
+      "origen": "Aventino",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": true
-    },
-    {
-      "origen": "Aricia",
-      "tipo": "CERCA_DE",
-      "destino": "Cumas",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Anio",
-      "satisface": true
-    },
-    {
-      "origen": "Esquilino",
-      "tipo": "CERCA_DE",
-      "destino": "el Aventino",
+      "destino": "Foro",
       "satisface": true
     },
     {
@@ -2338,20 +2134,14 @@
       "satisface": true
     },
     {
-      "origen": "el Aventino",
+      "origen": "Esquilino",
       "tipo": "CERCA_DE",
-      "destino": "Foro",
-      "satisface": true
-    },
-    {
-      "origen": "territorio de Velitras",
-      "tipo": "CERCA_DE",
-      "destino": "Velitras",
+      "destino": "Roma",
       "satisface": true
     },
     {
       "origen": "Monte Sacro",
-      "tipo": "CERCA_DE",
+      "tipo": "ESTE_DE",
       "destino": "Anio",
       "satisface": true
     },
@@ -2374,19 +2164,31 @@
       "satisface": true
     },
     {
+      "origen": "Ostia",
+      "tipo": "CERCA_DE",
+      "destino": "Etruria",
+      "satisface": false
+    },
+    {
       "origen": "Etruria",
-      "tipo": "ESTE_DE",
-      "destino": "Ostia",
+      "tipo": "CERCA_DE",
+      "destino": "Cumas",
       "satisface": true
     },
     {
       "origen": "Cumas",
-      "tipo": "OESTE_DE",
+      "tipo": "CERCA_DE",
       "destino": "Sicilia",
       "satisface": true
     },
     {
-      "origen": "Tiber",
+      "origen": "distrito de Pontino",
+      "tipo": "CERCA_DE",
+      "destino": "Tarquinio",
+      "satisface": true
+    },
+    {
+      "origen": "Tíber",
       "tipo": "CERCA_DE",
       "destino": "Etruria",
       "satisface": false
@@ -2398,67 +2200,79 @@
       "satisface": true
     },
     {
-      "origen": "Pedum",
+      "origen": "Foro",
       "tipo": "CERCA_DE",
-      "destino": "fosas Cluilias",
+      "destino": "el Senado",
       "satisface": true
     },
     {
-      "origen": "Satrico",
-      "tipo": "CERCA_DE",
-      "destino": "Longula",
-      "satisface": true
-    },
-    {
-      "origen": "Longula",
-      "tipo": "CERCA_DE",
-      "destino": "Polusca",
-      "satisface": true
-    },
-    {
-      "origen": "Polusca",
-      "tipo": "CERCA_DE",
-      "destino": "Corioli",
-      "satisface": true
-    },
-    {
-      "origen": "Lavinio",
-      "tipo": "CERCA_DE",
-      "destino": "Corbión",
-      "satisface": true
-    },
-    {
-      "origen": "Corbión",
-      "tipo": "CERCA_DE",
-      "destino": "Vetelia",
-      "satisface": true
-    },
-    {
-      "origen": "Vetelia",
-      "tipo": "CERCA_DE",
-      "destino": "Trebio",
-      "satisface": true
-    },
-    {
-      "origen": "Trebio",
-      "tipo": "CERCA_DE",
-      "destino": "Lábico",
-      "satisface": true
-    },
-    {
-      "origen": "Lábico",
-      "tipo": "CERCA_DE",
-      "destino": "Pedum",
-      "satisface": true
-    },
-    {
-      "origen": "Fortuna de las Mujeres",
+      "origen": "Circeio",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Ortona",
+      "origen": "Sátrico",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Longula",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Polusca",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Corioli",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Lavinio",
+      "tipo": "CERCA_DE",
+      "destino": "Vía Latina",
+      "satisface": true
+    },
+    {
+      "origen": "Corbión",
+      "tipo": "CERCA_DE",
+      "destino": "Vía Latina",
+      "satisface": true
+    },
+    {
+      "origen": "Vetelia",
+      "tipo": "CERCA_DE",
+      "destino": "Vía Latina",
+      "satisface": true
+    },
+    {
+      "origen": "Trebio",
+      "tipo": "CERCA_DE",
+      "destino": "Vía Latina",
+      "satisface": true
+    },
+    {
+      "origen": "Labico",
+      "tipo": "CERCA_DE",
+      "destino": "Vía Latina",
+      "satisface": true
+    },
+    {
+      "origen": "Pedum",
+      "tipo": "CERCA_DE",
+      "destino": "Vía Latina",
+      "satisface": true
+    },
+    {
+      "origen": "Fortuna de las Mujeres",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
@@ -2476,27 +2290,39 @@
       "satisface": true
     },
     {
+      "origen": "Veyes",
+      "tipo": "CERCA_DE",
+      "destino": "Crémera",
+      "satisface": true
+    },
+    {
+      "origen": "Saxa Rubra",
+      "tipo": "CERCA_DE",
+      "destino": "Crémera",
+      "satisface": true
+    },
+    {
       "origen": "Etruria",
       "tipo": "CERCA_DE",
-      "destino": "Estado de Veyes",
-      "satisface": true
-    },
-    {
-      "origen": "Tiber",
-      "tipo": "CERCA_DE",
-      "destino": "Janículo",
-      "satisface": true
-    },
-    {
-      "origen": "campamento de Servilio",
-      "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": true
+      "destino": "Veyes",
+      "satisface": false
     },
     {
       "origen": "campamento de Servilio",
       "tipo": "CERCA_DE",
       "destino": "Janículo",
+      "satisface": true
+    },
+    {
+      "origen": "Foro",
+      "tipo": "CERCA_DE",
+      "destino": "Curia",
+      "satisface": true
+    },
+    {
+      "origen": "Monte Sacro",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
       "satisface": true
     },
     {
@@ -2512,87 +2338,63 @@
       "satisface": true
     },
     {
-      "origen": "Anzio",
-      "tipo": "CERCA_DE",
-      "destino": "Crémera",
-      "satisface": true
-    },
-    {
-      "origen": "Anzio",
+      "origen": "Quinto Fabio",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Monte Álgido",
+      "origen": "Quincio",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Roma",
+      "origen": "Quincio",
       "tipo": "CERCA_DE",
       "destino": "Álgido",
       "satisface": true
     },
     {
-      "origen": "los campos de Roma",
+      "origen": "volscos de Écetra",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "los campos de Roma",
-      "tipo": "CERCA_DE",
-      "destino": "via Gabia",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Alba",
-      "satisface": true
-    },
-    {
-      "origen": "Monte Sacro",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Tusculo",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Écetra",
       "satisface": true
     },
     {
       "origen": "Anzio",
       "tipo": "CERCA_DE",
-      "destino": "Ecetra",
+      "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Foro",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": false
-    },
-    {
-      "origen": "Álgido",
-      "tipo": "CERCA_DE",
-      "destino": "Tusculo",
-      "satisface": true
-    },
-    {
-      "origen": "Columen",
+      "origen": "campos de Roma",
       "tipo": "CERCA_DE",
       "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "via Gabia",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "colinas de Túsculo",
+      "tipo": "SUR_DE",
+      "destino": "valle de Alba",
+      "satisface": true
+    },
+    {
+      "origen": "Anzio",
+      "tipo": "CERCA_DE",
+      "destino": "Écetra",
+      "satisface": true
+    },
+    {
+      "origen": "Anzio",
+      "tipo": "CERCA_DE",
+      "destino": "Foro",
       "satisface": true
     },
     {
@@ -2602,21 +2404,33 @@
       "satisface": true
     },
     {
-      "origen": "Tusculo",
+      "origen": "Capitolio",
       "tipo": "CERCA_DE",
-      "destino": "Anzio",
-      "satisface": true
-    },
-    {
-      "origen": "Prados Quincios",
-      "tipo": "CERCA_DE",
-      "destino": "Tiber",
+      "destino": "Ciudadela",
       "satisface": true
     },
     {
       "origen": "Álgido",
       "tipo": "CERCA_DE",
+      "destino": "Túsculo",
+      "satisface": true
+    },
+    {
+      "origen": "Columen",
+      "tipo": "CERCA_DE",
       "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Monte Álgido",
+      "tipo": "CERCA_DE",
+      "destino": "Álgido",
+      "satisface": true
+    },
+    {
+      "origen": "Prados Quincios",
+      "tipo": "CERCA_DE",
+      "destino": "Tíber",
       "satisface": true
     },
     {
@@ -2626,81 +2440,63 @@
       "satisface": true
     },
     {
-      "origen": "casa de Sestio",
+      "origen": "Ortona",
       "tipo": "CERCA_DE",
-      "destino": "Asamblea",
+      "destino": "Álgido",
       "satisface": true
     },
     {
-      "origen": "Ereto",
+      "origen": "Atenas",
       "tipo": "CERCA_DE",
-      "destino": "Sabinos",
+      "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Ereto",
+      "origen": "el Senado",
       "tipo": "CERCA_DE",
-      "destino": "Fidenas",
-      "satisface": true
-    },
-    {
-      "origen": "Ereto",
-      "tipo": "CERCA_DE",
-      "destino": "Crustumeria",
-      "satisface": true
-    },
-    {
-      "origen": "Foro",
-      "tipo": "CERCA_DE",
-      "destino": "Apio",
+      "destino": "Foro",
       "satisface": true
     },
     {
       "origen": "Curia",
       "tipo": "CERCA_DE",
-      "destino": "Asamblea",
+      "destino": "Roma",
       "satisface": true
     },
     {
       "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Quirites",
+      "destino": "Curia",
       "satisface": true
     },
     {
-      "origen": "Foro",
+      "origen": "Fidenas",
       "tipo": "CERCA_DE",
-      "destino": "templos de Venus Cloacina",
+      "destino": "Crustumeria",
       "satisface": true
     },
     {
-      "origen": "templos de Venus Cloacina",
+      "origen": "Álgido",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "templo de Venus Cloacina",
       "tipo": "CERCA_DE",
       "destino": "Tiendas Nuevas",
       "satisface": true
     },
     {
-      "origen": "Vía Nomentana",
+      "origen": "Apio",
       "tipo": "CERCA_DE",
-      "destino": "Monte Sacro",
-      "satisface": true
-    },
-    {
-      "origen": "la Ficolense",
-      "tipo": "CERCA_DE",
-      "destino": "Monte Sacro",
+      "destino": "Foro",
       "satisface": true
     },
     {
       "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "el Aventino",
-      "satisface": true
-    },
-    {
-      "origen": "el Aventino",
-      "tipo": "CERCA_DE",
-      "destino": "Monte Sacro",
+      "destino": "Aventino",
       "satisface": true
     },
     {
@@ -2716,9 +2512,15 @@
       "satisface": true
     },
     {
-      "origen": "templo de Apolo",
+      "origen": "Apolinar",
       "tipo": "CERCA_DE",
-      "destino": "Apolinar",
+      "destino": "Prados Flaminios",
+      "satisface": true
+    },
+    {
+      "origen": "Campo de Marte",
+      "tipo": "CERCA_DE",
+      "destino": "Prados Flaminios",
       "satisface": true
     },
     {
@@ -2734,15 +2536,9 @@
       "satisface": true
     },
     {
-      "origen": "Curia",
+      "origen": "Aventino",
       "tipo": "CERCA_DE",
-      "destino": "Foro",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Asamblea",
+      "destino": "Monte Sacro",
       "satisface": true
     },
     {
@@ -2752,105 +2548,87 @@
       "satisface": true
     },
     {
+      "origen": "Asamblea",
+      "tipo": "CERCA_DE",
+      "destino": "Foro",
+      "satisface": true
+    },
+    {
+      "origen": "patricios de Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
       "origen": "Aricia",
       "tipo": "CERCA_DE",
       "destino": "Ardea",
       "satisface": true
     },
     {
-      "origen": "Aricia",
+      "origen": "Curia",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "el Senado",
       "satisface": true
     },
     {
-      "origen": "Corioli",
+      "origen": "Numa Pompilio",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Sabinos",
       "satisface": true
     },
     {
-      "origen": "Roma",
+      "origen": "Lucio Tarquinio",
       "tipo": "CERCA_DE",
-      "destino": "Ciudadela",
+      "destino": "Corinto",
+      "satisface": true
+    },
+    {
+      "origen": "Lucio Tarquinio",
+      "tipo": "CERCA_DE",
+      "destino": "Tarquinia",
+      "satisface": true
+    },
+    {
+      "origen": "Servio Tulio",
+      "tipo": "CERCA_DE",
+      "destino": "Cornículo",
+      "satisface": true
+    },
+    {
+      "origen": "Tito Tacio",
+      "tipo": "CERCA_DE",
+      "destino": "Rómulo",
       "satisface": true
     },
     {
       "origen": "Rómulo",
       "tipo": "CERCA_DE",
       "destino": "Roma",
-      "satisface": false
+      "satisface": true
     },
     {
       "origen": "gens Claudia",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Sabinos",
       "satisface": true
     },
     {
-      "origen": "Ardeatinos",
+      "origen": "Moneta",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "templo de Moneta",
+      "origen": "Etruria",
       "tipo": "CERCA_DE",
       "destino": "Roma",
-      "satisface": true
+      "satisface": false
     },
     {
       "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": false
-    },
-    {
-      "origen": "Fidenas",
-      "tipo": "CERCA_DE",
-      "destino": "Veyes",
-      "satisface": false
-    },
-    {
-      "origen": "Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Anio",
-      "satisface": false
-    },
-    {
-      "origen": "Faleria",
-      "tipo": "CERCA_DE",
-      "destino": "Fidenas",
-      "satisface": true
-    },
-    {
-      "origen": "Ciudadela de Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Júpiter Feretrio",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
-      "satisface": true
-    },
-    {
-      "origen": "templo de Moneta",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
-      "satisface": true
-    },
-    {
-      "origen": "Quirino",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Nomento",
-      "tipo": "CERCA_DE",
-      "destino": "Fidenas",
+      "destino": "Nomento",
       "satisface": true
     },
     {
@@ -2872,15 +2650,33 @@
       "satisface": true
     },
     {
-      "origen": "Álgido",
+      "origen": "Etruria",
       "tipo": "CERCA_DE",
-      "destino": "Lanuvio",
+      "destino": "Fidenas",
+      "satisface": false
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Álgido",
       "satisface": true
     },
     {
       "origen": "Fidenas",
       "tipo": "CERCA_DE",
-      "destino": "Nomento",
+      "destino": "Ostia",
+      "satisface": true
+    },
+    {
+      "origen": "Nomento",
+      "tipo": "CERCA_DE",
+      "destino": "Fidenas",
+      "satisface": true
+    },
+    {
+      "origen": "Veyes",
+      "tipo": "CERCA_DE",
+      "destino": "Fidenas",
       "satisface": true
     },
     {
@@ -2896,21 +2692,9 @@
       "satisface": true
     },
     {
-      "origen": "Vía Labicana",
+      "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "santuario de Quietas",
-      "satisface": true
-    },
-    {
-      "origen": "Bola",
-      "tipo": "CERCA_DE",
-      "destino": "Lábico",
-      "satisface": true
-    },
-    {
-      "origen": "Capua",
-      "tipo": "CERCA_DE",
-      "destino": "Cumas",
+      "destino": "el Senado",
       "satisface": true
     },
     {
@@ -2928,53 +2712,35 @@
     {
       "origen": "Capua",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
+      "destino": "Tíber",
       "satisface": true
     },
     {
       "origen": "Cumas",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
+      "destino": "Tíber",
+      "satisface": false
+    },
+    {
+      "origen": "Tirreno",
+      "tipo": "CERCA_DE",
+      "destino": "Tíber",
       "satisface": true
     },
     {
       "origen": "Sicilia",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
-      "satisface": true
-    },
-    {
-      "origen": "fortaleza de Carvento",
-      "tipo": "CERCA_DE",
       "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Ancio",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Verrugo",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "fortaleza de Carvento",
-      "tipo": "CERCA_DE",
-      "destino": "Verrugo",
       "satisface": true
     },
     {
       "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Veyes",
-      "satisface": false
+      "destino": "Carvento",
+      "satisface": true
     },
     {
-      "origen": "Anxur",
+      "origen": "Ánxur",
       "tipo": "CERCA_DE",
       "destino": "Terracina",
       "satisface": true
@@ -2988,37 +2754,31 @@
     {
       "origen": "Ferentino",
       "tipo": "CERCA_DE",
-      "destino": "Ecetra",
+      "destino": "Écetra",
       "satisface": true
     },
     {
       "origen": "Artena",
       "tipo": "CERCA_DE",
-      "destino": "Veyes",
+      "destino": "Écetra",
       "satisface": true
     },
     {
       "origen": "Artena",
       "tipo": "CERCA_DE",
-      "destino": "Caere",
-      "satisface": false
+      "destino": "Ferentino",
+      "satisface": true
     },
     {
       "origen": "Caere",
       "tipo": "CERCA_DE",
       "destino": "Veyes",
-      "satisface": false
+      "satisface": true
     },
     {
       "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Estado",
-      "satisface": true
-    },
-    {
-      "origen": "Grecia",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "el Estado",
       "satisface": true
     },
     {
@@ -3028,52 +2788,64 @@
       "satisface": true
     },
     {
-      "origen": "Etruria",
+      "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Etruria",
       "satisface": false
     },
     {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Curia",
-      "satisface": true
-    },
-    {
-      "origen": "Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Capena",
-      "satisface": true
-    },
-    {
-      "origen": "Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Faleria",
-      "satisface": true
-    },
-    {
-      "origen": "Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Anxur",
-      "satisface": true
-    },
-    {
-      "origen": "Votumna",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Cere",
-      "satisface": true
-    },
-    {
-      "origen": "Nepete",
+      "origen": "Capena",
       "tipo": "CERCA_DE",
       "destino": "Veyes",
       "satisface": true
+    },
+    {
+      "origen": "Faleria",
+      "tipo": "CERCA_DE",
+      "destino": "Veyes",
+      "satisface": true
+    },
+    {
+      "origen": "Ánxur",
+      "tipo": "CERCA_DE",
+      "destino": "Veyes",
+      "satisface": true
+    },
+    {
+      "origen": "Cere",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Delfos",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "territorio de Nepete",
+      "tipo": "CERCA_DE",
+      "destino": "Veyes",
+      "satisface": true
+    },
+    {
+      "origen": "Capena",
+      "tipo": "CERCA_DE",
+      "destino": "territorio de Nepete",
+      "satisface": true
+    },
+    {
+      "origen": "Faleria",
+      "tipo": "CERCA_DE",
+      "destino": "territorio de Nepete",
+      "satisface": true
+    },
+    {
+      "origen": "templo de Voltumna",
+      "tipo": "CERCA_DE",
+      "destino": "Etruria",
+      "satisface": false
     },
     {
       "origen": "Mater Matuta",
@@ -3082,61 +2854,49 @@
       "satisface": true
     },
     {
-      "origen": "el templo de Juno",
+      "origen": "Templo de Juno",
       "tipo": "CERCA_DE",
-      "destino": "la ciudadela de Veyes",
-      "satisface": true
-    },
-    {
-      "origen": "el templo de Juno",
-      "tipo": "CERCA_DE",
-      "destino": "Veyes",
+      "destino": "ciudadela de Veyes",
       "satisface": true
     },
     {
       "origen": "Capena",
       "tipo": "CERCA_DE",
       "destino": "Roma",
-      "satisface": false
-    },
-    {
-      "origen": "los Galos",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Faleria",
+      "origen": "Faliscos",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": false
+      "destino": "Capena",
+      "satisface": true
     },
     {
-      "origen": "Delfos",
+      "origen": "Galos",
       "tipo": "CERCA_DE",
-      "destino": "Apolo",
+      "destino": "Roma",
       "satisface": true
     },
     {
       "origen": "Verrugo",
       "tipo": "CERCA_DE",
-      "destino": "Tusculo",
+      "destino": "Túsculo",
       "satisface": true
     },
     {
-      "origen": "Vitelia",
+      "origen": "Verrugo",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Capitolio",
+      "origen": "Foro",
       "tipo": "CERCA_DE",
-      "destino": "templo de Vesta",
+      "destino": "Capitolio",
       "satisface": true
     },
     {
-      "origen": "Vía Nova",
+      "origen": "Foro",
       "tipo": "CERCA_DE",
       "destino": "templo de Vesta",
       "satisface": true
@@ -3154,33 +2914,27 @@
       "satisface": true
     },
     {
-      "origen": "Clusium",
-      "tipo": "CERCA_DE",
-      "destino": "Alpes",
-      "satisface": true
-    },
-    {
       "origen": "Apeninos",
       "tipo": "CERCA_DE",
       "destino": "Alpes",
       "satisface": true
     },
     {
-      "origen": "Po",
+      "origen": "Adriático",
       "tipo": "CERCA_DE",
-      "destino": "Alpes",
-      "satisface": true
-    },
-    {
-      "origen": "Galia",
-      "tipo": "ESTE_DE",
       "destino": "Italia",
       "satisface": true
     },
     {
-      "origen": "Taurinos",
+      "origen": "Atria",
       "tipo": "CERCA_DE",
-      "destino": "Alpes",
+      "destino": "Adriático",
+      "satisface": true
+    },
+    {
+      "origen": "Massilia",
+      "tipo": "CERCA_DE",
+      "destino": "Focea",
       "satisface": true
     },
     {
@@ -3190,33 +2944,21 @@
       "satisface": true
     },
     {
-      "origen": "Verona",
-      "tipo": "CERCA_DE",
-      "destino": "Brixia",
-      "satisface": true
-    },
-    {
       "origen": "Clusium",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Clusium",
+      "origen": "Etruria",
       "tipo": "CERCA_DE",
-      "destino": "Veyes",
-      "satisface": false
-    },
-    {
-      "origen": "Clusium",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": false
+      "destino": "Po",
+      "satisface": true
     },
     {
       "origen": "Alia",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
+      "destino": "Tíber",
       "satisface": true
     },
     {
@@ -3226,16 +2968,34 @@
       "satisface": true
     },
     {
-      "origen": "Capitolio",
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Anio",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
       "tipo": "CERCA_DE",
       "destino": "Ciudadela",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Janículo",
+      "satisface": true
+    },
+    {
+      "origen": "capilla próxima a la casa del Flamen",
+      "tipo": "CERCA_DE",
+      "destino": "Janículo",
       "satisface": true
     },
     {
       "origen": "Caere",
       "tipo": "CERCA_DE",
       "destino": "Roma",
-      "satisface": false
+      "satisface": true
     },
     {
       "origen": "Foro",
@@ -3244,39 +3004,27 @@
       "satisface": true
     },
     {
-      "origen": "Ardea",
+      "origen": "Etruria",
       "tipo": "CERCA_DE",
-      "destino": "Veyes",
+      "destino": "Clusium",
       "satisface": false
     },
     {
-      "origen": "Roma",
+      "origen": "Clusium",
       "tipo": "CERCA_DE",
-      "destino": "Ardea",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Galia",
-      "satisface": true
-    },
-    {
-      "origen": "territorio de Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Veyes",
-      "satisface": true
-    },
-    {
-      "origen": "Quirinal",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
+      "destino": "Clusinos",
       "satisface": true
     },
     {
       "origen": "Capitolio",
       "tipo": "CERCA_DE",
       "destino": "Quirinal",
+      "satisface": true
+    },
+    {
+      "origen": "Ardea",
+      "tipo": "CERCA_DE",
+      "destino": "Veyes",
       "satisface": true
     },
     {
@@ -3286,13 +3034,13 @@
       "satisface": true
     },
     {
-      "origen": "Alia",
+      "origen": "Piras Galas",
       "tipo": "CERCA_DE",
-      "destino": "carretera de Gabii",
+      "destino": "Capitolio",
       "satisface": true
     },
     {
-      "origen": "Cere",
+      "origen": "carretera de Gabii",
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
@@ -3300,7 +3048,19 @@
     {
       "origen": "templo de Júpiter",
       "tipo": "CERCA_DE",
-      "destino": "Júpiter",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Capitolio",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Ciudadela",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
       "satisface": true
     },
     {
@@ -3316,45 +3076,21 @@
       "satisface": true
     },
     {
-      "origen": "Veyes",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
-      "satisface": false
-    },
-    {
-      "origen": "Júpiter",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
-      "satisface": true
-    },
-    {
-      "origen": "reina Juno",
-      "tipo": "CERCA_DE",
-      "destino": "Veyes",
-      "satisface": true
-    },
-    {
-      "origen": "reina Juno",
-      "tipo": "CERCA_DE",
-      "destino": "el Aventino",
-      "satisface": true
-    },
-    {
       "origen": "Ayo Locucio",
       "tipo": "CERCA_DE",
-      "destino": "Vía Nova",
+      "destino": "Via Nova",
+      "satisface": true
+    },
+    {
+      "origen": "Juegos Capitolinos",
+      "tipo": "CERCA_DE",
+      "destino": "Capitolio",
       "satisface": true
     },
     {
       "origen": "Veyes",
       "tipo": "CERCA_DE",
       "destino": "Gabii",
-      "satisface": false
-    },
-    {
-      "origen": "Etruria",
-      "tipo": "NORTE_DE",
-      "destino": "Italia",
       "satisface": true
     },
     {
@@ -3367,24 +3103,6 @@
       "origen": "Comicio",
       "tipo": "CERCA_DE",
       "destino": "Foro",
-      "satisface": true
-    },
-    {
-      "origen": "el Senado",
-      "tipo": "CERCA_DE",
-      "destino": "Curia Hostilia",
-      "satisface": true
-    },
-    {
-      "origen": "Vesta",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
-      "satisface": true
-    },
-    {
-      "origen": "Escudos",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
       "satisface": true
     },
     {
@@ -3406,10 +3124,22 @@
       "satisface": true
     },
     {
-      "origen": "Sutrio",
+      "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": false
+      "destino": "Sutrio",
+      "satisface": true
+    },
+    {
+      "origen": "capilla de Júpiter",
+      "tipo": "CERCA_DE",
+      "destino": "Juno",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Capena",
+      "satisface": true
     },
     {
       "origen": "Tarquinia",
@@ -3430,30 +3160,6 @@
       "satisface": true
     },
     {
-      "origen": "Capitolio",
-      "tipo": "CERCA_DE",
-      "destino": "Júpiter",
-      "satisface": true
-    },
-    {
-      "origen": "Júpiter",
-      "tipo": "CERCA_DE",
-      "destino": "Juno",
-      "satisface": true
-    },
-    {
-      "origen": "Camilo",
-      "tipo": "CERCA_DE",
-      "destino": "Satrico",
-      "satisface": true
-    },
-    {
-      "origen": "Camilo",
-      "tipo": "CERCA_DE",
-      "destino": "Veyes",
-      "satisface": true
-    },
-    {
       "origen": "Nepi",
       "tipo": "CERCA_DE",
       "destino": "Sutrio",
@@ -3466,39 +3172,27 @@
       "satisface": true
     },
     {
-      "origen": "Nepi",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
       "origen": "Velletri",
       "tipo": "CERCA_DE",
       "destino": "Circei",
       "satisface": true
     },
     {
-      "origen": "Satrico",
+      "origen": "Palestrina",
       "tipo": "CERCA_DE",
-      "destino": "Velletri",
+      "destino": "Túsculo",
       "satisface": true
     },
     {
       "origen": "Palestrina",
       "tipo": "CERCA_DE",
-      "destino": "Satrico",
-      "satisface": true
-    },
-    {
-      "origen": "Tusculo",
-      "tipo": "CERCA_DE",
       "destino": "Gabinia",
       "satisface": true
     },
     {
-      "origen": "Gabinia",
+      "origen": "Palestrina",
       "tipo": "CERCA_DE",
-      "destino": "Lábico",
+      "destino": "Labico",
       "satisface": true
     },
     {
@@ -3508,21 +3202,33 @@
       "satisface": true
     },
     {
-      "origen": "Curia",
+      "origen": "roca Tarpeya",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Capitolio",
       "satisface": true
     },
     {
       "origen": "Anzio",
       "tipo": "CERCA_DE",
-      "destino": "Satrico",
+      "destino": "Sátrico",
+      "satisface": true
+    },
+    {
+      "origen": "Sátrico",
+      "tipo": "CERCA_DE",
+      "destino": "Velletri",
       "satisface": true
     },
     {
       "origen": "Velletri",
       "tipo": "CERCA_DE",
-      "destino": "Tusculo",
+      "destino": "Túsculo",
+      "satisface": true
+    },
+    {
+      "origen": "Gabii",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
       "satisface": true
     },
     {
@@ -3538,39 +3244,39 @@
       "satisface": true
     },
     {
-      "origen": "Templos de Júpiter y Minerva",
+      "origen": "Sátrico",
       "tipo": "CERCA_DE",
-      "destino": "Capitolio",
+      "destino": "Mater Matuta",
       "satisface": true
     },
     {
-      "origen": "Satrico",
+      "origen": "Foro",
       "tipo": "CERCA_DE",
-      "destino": "Anzio",
+      "destino": "casa de Servio Sulpicio",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Setia",
+      "satisface": true
+    },
+    {
+      "origen": "Túsculo",
+      "tipo": "CERCA_DE",
+      "destino": "Velletri",
       "satisface": true
     },
     {
       "origen": "Velletri",
       "tipo": "CERCA_DE",
-      "destino": "Foro",
-      "satisface": true
-    },
-    {
-      "origen": "Janículo",
-      "tipo": "CERCA_DE",
-      "destino": "Capitolio",
-      "satisface": false
-    },
-    {
-      "origen": "Janículo",
-      "tipo": "CERCA_DE",
-      "destino": "Ciudadela",
+      "destino": "Roma",
       "satisface": true
     },
     {
       "origen": "Circo",
       "tipo": "CERCA_DE",
-      "destino": "Tiber",
+      "destino": "Tíber",
       "satisface": true
     },
     {
@@ -3580,21 +3286,15 @@
       "satisface": true
     },
     {
-      "origen": "Volsinia",
+      "origen": "templo de Nortia",
       "tipo": "CERCA_DE",
-      "destino": "templo de Nortia",
+      "destino": "V olsinia",
       "satisface": true
     },
     {
-      "origen": "Signium",
-      "tipo": "CERCA_DE",
-      "destino": "Segni",
-      "satisface": true
-    },
-    {
-      "origen": "Signia",
-      "tipo": "CERCA_DE",
-      "destino": "Segni",
+      "origen": "Capitolio",
+      "tipo": "NORTE_DE",
+      "destino": "Foro",
       "satisface": true
     },
     {
@@ -3604,69 +3304,87 @@
       "satisface": true
     },
     {
-      "origen": "Palestrina",
-      "tipo": "CERCA_DE",
-      "destino": "Pedum",
-      "satisface": true
-    },
-    {
-      "origen": "Tarquinia",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": false
-    },
-    {
-      "origen": "Alia",
-      "tipo": "CERCA_DE",
-      "destino": "Veyes",
-      "satisface": true
-    },
-    {
-      "origen": "templo de Júpiter Óptimo Máximo",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Tifata",
-      "tipo": "NORTE_DE",
-      "destino": "Capua",
-      "satisface": true
-    },
-    {
-      "origen": "Tifata",
+      "origen": "Roma",
       "tipo": "CERCA_DE",
       "destino": "Capua",
       "satisface": true
     },
     {
-      "origen": "Campania",
+      "origen": "Cerveteri",
       "tipo": "CERCA_DE",
-      "destino": "Capua",
+      "destino": "Tarquinia",
       "satisface": true
     },
     {
-      "origen": "Mater Matuta",
+      "origen": "Tíber",
       "tipo": "CERCA_DE",
-      "destino": "Satrico",
+      "destino": "Anzio",
       "satisface": true
     },
     {
-      "origen": "Juno Moneta",
+      "origen": "Tíber",
       "tipo": "CERCA_DE",
-      "destino": "Ciudadela",
+      "destino": "Laurento",
       "satisface": true
     },
     {
-      "origen": "Samnio",
+      "origen": "Anzio",
       "tipo": "CERCA_DE",
-      "destino": "Capua",
+      "destino": "Laurento",
       "satisface": true
     },
     {
       "origen": "Capua",
       "tipo": "CERCA_DE",
       "destino": "Campania",
+      "satisface": true
+    },
+    {
+      "origen": "Capua",
+      "tipo": "CERCA_DE",
+      "destino": "colinas Tifata",
+      "satisface": true
+    },
+    {
+      "origen": "colinas Tifata",
+      "tipo": "NORTE_DE",
+      "destino": "Capua",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "capilla del templo de Júpiter",
+      "tipo": "CERCA_DE",
+      "destino": "Capitolio",
+      "satisface": true
+    },
+    {
+      "origen": "Anzio",
+      "tipo": "CERCA_DE",
+      "destino": "Lautulas",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Vía Apia",
+      "satisface": true
+    },
+    {
+      "origen": "Monte Sacro",
+      "tipo": "CERCA_DE",
+      "destino": "Aventino",
+      "satisface": true
+    },
+    {
+      "origen": "Suessa",
+      "tipo": "CERCA_DE",
+      "destino": "Capua",
       "satisface": true
     },
     {
@@ -3676,63 +3394,15 @@
       "satisface": true
     },
     {
-      "origen": "Capua",
+      "origen": "Tito Quincio",
       "tipo": "CERCA_DE",
-      "destino": "Suessa",
-      "satisface": true
-    },
-    {
-      "origen": "Anzio",
-      "tipo": "CERCA_DE",
-      "destino": "Láutulas",
-      "satisface": true
-    },
-    {
-      "origen": "territorio de Alba",
-      "tipo": "CERCA_DE",
-      "destino": "Alba Longa",
-      "satisface": true
-    },
-    {
-      "origen": "Vía Apia",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Monte Sacro",
-      "tipo": "CERCA_DE",
-      "destino": "el Aventino",
+      "destino": "Cayo Manlio",
       "satisface": true
     },
     {
       "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Campania",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "CERCA_DE",
-      "destino": "Samnio",
-      "satisface": true
-    },
-    {
-      "origen": "casa de Cayo Manlio",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "granja de Tito Quincio",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "casa de Cayo Manlio",
-      "tipo": "CERCA_DE",
-      "destino": "granja de Tito Quincio",
+      "destino": "Tito Quincio",
       "satisface": true
     },
     {
@@ -3754,27 +3424,21 @@
       "satisface": true
     },
     {
-      "origen": "Priverno",
+      "origen": "Sezze",
       "tipo": "CERCA_DE",
-      "destino": "Satrico",
+      "destino": "Norba",
       "satisface": true
     },
     {
-      "origen": "Lacio",
-      "tipo": "CERCA_DE",
+      "origen": "Épiro",
+      "tipo": "ESTE_DE",
       "destino": "Roma",
       "satisface": true
     },
     {
       "origen": "Sezze",
       "tipo": "CERCA_DE",
-      "destino": "Lacio",
-      "satisface": true
-    },
-    {
-      "origen": "Cerceii",
-      "tipo": "CERCA_DE",
-      "destino": "Lacio",
+      "destino": "Cerceii",
       "satisface": true
     },
     {
@@ -3786,31 +3450,25 @@
     {
       "origen": "Segni",
       "tipo": "CERCA_DE",
-      "destino": "Lacio",
-      "satisface": true
-    },
-    {
-      "origen": "Velletri",
-      "tipo": "CERCA_DE",
-      "destino": "Lacio",
-      "satisface": true
-    },
-    {
-      "origen": "Velitrae",
-      "tipo": "CERCA_DE",
       "destino": "Velletri",
+      "satisface": true
+    },
+    {
+      "origen": "Signia",
+      "tipo": "CERCA_DE",
+      "destino": "Velitrae",
       "satisface": true
     },
     {
       "origen": "Roma",
       "tipo": "CERCA_DE",
-      "destino": "Lacio",
+      "destino": "el Lacio",
       "satisface": true
     },
     {
-      "origen": "Lacio",
-      "tipo": "NORTE_DE",
-      "destino": "Roma",
+      "origen": "Júpiter",
+      "tipo": "CERCA_DE",
+      "destino": "Capitolio",
       "satisface": true
     },
     {
@@ -3820,15 +3478,15 @@
       "satisface": true
     },
     {
-      "origen": "Curia",
+      "origen": "Alba",
       "tipo": "CERCA_DE",
-      "destino": "Júpiter",
+      "destino": "Roma",
       "satisface": true
     },
     {
-      "origen": "Júpiter",
+      "origen": "Estado romano",
       "tipo": "CERCA_DE",
-      "destino": "Curia",
+      "destino": "Roma",
       "satisface": true
     },
     {
@@ -3838,9 +3496,15 @@
       "satisface": true
     },
     {
-      "origen": "Lanuvio",
+      "origen": "Capua",
       "tipo": "CERCA_DE",
-      "destino": "Pedum",
+      "destino": "Monte Vesubio",
+      "satisface": true
+    },
+    {
+      "origen": "Lanuvio",
+      "tipo": "SUR_DE",
+      "destino": "Tíber",
       "satisface": true
     },
     {
@@ -3850,9 +3514,39 @@
       "satisface": true
     },
     {
+      "origen": "Palestrina",
+      "tipo": "CERCA_DE",
+      "destino": "Pedum",
+      "satisface": true
+    },
+    {
       "origen": "Ariccia",
       "tipo": "CERCA_DE",
       "destino": "Pedum",
+      "satisface": true
+    },
+    {
+      "origen": "Lanuvio",
+      "tipo": "CERCA_DE",
+      "destino": "Pedum",
+      "satisface": true
+    },
+    {
+      "origen": "Velletri",
+      "tipo": "CERCA_DE",
+      "destino": "Pedum",
+      "satisface": true
+    },
+    {
+      "origen": "Anzio",
+      "tipo": "CERCA_DE",
+      "destino": "Pedum",
+      "satisface": true
+    },
+    {
+      "origen": "Ariccia",
+      "tipo": "CERCA_DE",
+      "destino": "Astura",
       "satisface": true
     },
     {
@@ -3874,15 +3568,21 @@
       "satisface": true
     },
     {
-      "origen": "Tívoli",
+      "origen": "Capua",
       "tipo": "CERCA_DE",
-      "destino": "Palestrina",
+      "destino": "Vulturno",
       "satisface": true
     },
     {
-      "origen": "Lacio",
+      "origen": "Falerno",
       "tipo": "CERCA_DE",
-      "destino": "Capua",
+      "destino": "Vulturno",
+      "satisface": true
+    },
+    {
+      "origen": "Minturna",
+      "tipo": "CERCA_DE",
+      "destino": "Vescia",
       "satisface": true
     },
     {
@@ -3892,39 +3592,15 @@
       "satisface": true
     },
     {
-      "origen": "Tiber",
+      "origen": "Trifano",
       "tipo": "CERCA_DE",
-      "destino": "Velletri",
+      "destino": "Sinuessa",
       "satisface": true
     },
     {
-      "origen": "templo de Castor",
+      "origen": "Trifano",
       "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Ceccano",
-      "tipo": "CERCA_DE",
-      "destino": "Luca",
-      "satisface": true
-    },
-    {
-      "origen": "Sezze",
-      "tipo": "CERCA_DE",
-      "destino": "Norba",
-      "satisface": true
-    },
-    {
-      "origen": "Norba",
-      "tipo": "CERCA_DE",
-      "destino": "Cora",
-      "satisface": true
-    },
-    {
-      "origen": "Palatino",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
+      "destino": "Menturnas",
       "satisface": true
     },
     {
@@ -3934,33 +3610,69 @@
       "satisface": true
     },
     {
-      "origen": "Sessa Aurunca",
+      "origen": "Calvi Risorta",
       "tipo": "CERCA_DE",
-      "destino": "Aurunca",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
       "origen": "Capaccio-Paestum",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
-      "origen": "Veyes",
+      "origen": "Acerra",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Priverno",
+      "tipo": "CERCA_DE",
+      "destino": "Fondi",
+      "satisface": true
+    },
+    {
+      "origen": "Priverno",
+      "tipo": "CERCA_DE",
+      "destino": "el Lacio",
+      "satisface": true
+    },
+    {
+      "origen": "Priverno",
+      "tipo": "CERCA_DE",
+      "destino": "Velletri",
+      "satisface": true
+    },
+    {
+      "origen": "Fondi",
       "tipo": "CERCA_DE",
       "destino": "Priverno",
       "satisface": true
     },
     {
-      "origen": "Quirinal",
+      "origen": "Quirino",
       "tipo": "CERCA_DE",
-      "destino": "capilla de Sancus",
+      "destino": "Semoni Sancus",
       "satisface": true
     },
     {
-      "origen": "capilla de Sancus",
+      "origen": "Palatino",
       "tipo": "CERCA_DE",
-      "destino": "templo de Quirino",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Circo Máximo",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Prado de Bacco",
+      "tipo": "CERCA_DE",
+      "destino": "Palatino",
       "satisface": true
     },
     {
@@ -3977,20 +3689,14 @@
     },
     {
       "origen": "Calcis",
-      "tipo": "CERCA_DE",
+      "tipo": "ESTE_DE",
       "destino": "Eubea",
       "satisface": true
     },
     {
-      "origen": "Paleópolis",
+      "origen": "Nola",
       "tipo": "CERCA_DE",
-      "destino": "Campania",
-      "satisface": true
-    },
-    {
-      "origen": "Priverno",
-      "tipo": "CERCA_DE",
-      "destino": "Fondi",
+      "destino": "Paleópolis",
       "satisface": true
     },
     {
@@ -4019,7 +3725,7 @@
     },
     {
       "origen": "Dodona",
-      "tipo": "CERCA_DE",
+      "tipo": "ESTE_DE",
       "destino": "Corfú",
       "satisface": true
     },
@@ -4036,13 +3742,25 @@
       "satisface": true
     },
     {
+      "origen": "Brucia",
+      "tipo": "CERCA_DE",
+      "destino": "Lucania",
+      "satisface": true
+    },
+    {
       "origen": "Heraclea",
       "tipo": "CERCA_DE",
       "destino": "Tarento",
       "satisface": true
     },
     {
-      "origen": "Alife",
+      "origen": "Consenza",
+      "tipo": "CERCA_DE",
+      "destino": "Metaponto",
+      "satisface": true
+    },
+    {
+      "origen": "Aleife",
       "tipo": "CERCA_DE",
       "destino": "Callifae",
       "satisface": true
@@ -4056,7 +3774,7 @@
     {
       "origen": "Paleópolis",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
@@ -4068,7 +3786,7 @@
     {
       "origen": "Inbrinio",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
@@ -4078,69 +3796,33 @@
       "satisface": true
     },
     {
-      "origen": "Marco Fabio",
-      "tipo": "CERCA_DE",
-      "destino": "Curia",
-      "satisface": true
-    },
-    {
-      "origen": "Marco Fabio",
+      "origen": "Fabio",
       "tipo": "CERCA_DE",
       "destino": "Asamblea",
       "satisface": true
     },
     {
-      "origen": "Papirio",
-      "tipo": "CERCA_DE",
-      "destino": "Curia",
-      "satisface": true
-    },
-    {
-      "origen": "Papirio",
-      "tipo": "CERCA_DE",
-      "destino": "Asamblea",
-      "satisface": true
-    },
-    {
-      "origen": "Papirio",
-      "tipo": "CERCA_DE",
-      "destino": "Rostra",
-      "satisface": true
-    },
-    {
-      "origen": "Samnio",
+      "origen": "el Samnio",
       "tipo": "CERCA_DE",
       "destino": "Apulia",
-      "satisface": true
-    },
-    {
-      "origen": "Velletri",
-      "tipo": "CERCA_DE",
-      "destino": "Priverno",
       "satisface": true
     },
     {
       "origen": "Calacia",
       "tipo": "CERCA_DE",
-      "destino": "Caudio",
-      "satisface": true
-    },
-    {
-      "origen": "Lucera",
-      "tipo": "CERCA_DE",
-      "destino": "Apulia",
-      "satisface": true
-    },
-    {
-      "origen": "Horcas Caudinas",
-      "tipo": "CERCA_DE",
-      "destino": "Caudio",
+      "destino": "Lucera",
       "satisface": true
     },
     {
       "origen": "Horcas Caudinas",
       "tipo": "CERCA_DE",
       "destino": "Lucera",
+      "satisface": true
+    },
+    {
+      "origen": "Horcas Caudinas",
+      "tipo": "CERCA_DE",
+      "destino": "Caudio",
       "satisface": true
     },
     {
@@ -4162,9 +3844,21 @@
       "satisface": true
     },
     {
-      "origen": "Satrico",
+      "origen": "Tarento",
       "tipo": "CERCA_DE",
-      "destino": "Fregellas",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Lautulas",
+      "tipo": "CERCA_DE",
+      "destino": "Ánxur",
+      "satisface": true
+    },
+    {
+      "origen": "Lautulas",
+      "tipo": "CERCA_DE",
+      "destino": "Fundo",
       "satisface": true
     },
     {
@@ -4180,105 +3874,45 @@
       "satisface": true
     },
     {
-      "origen": "Luceria",
-      "tipo": "CERCA_DE",
-      "destino": "Samnio",
-      "satisface": true
-    },
-    {
-      "origen": "Luceria",
-      "tipo": "CERCA_DE",
-      "destino": "Caudio",
-      "satisface": true
-    },
-    {
-      "origen": "Sora",
-      "tipo": "CERCA_DE",
-      "destino": "Samnio",
-      "satisface": true
-    },
-    {
-      "origen": "Sora",
-      "tipo": "CERCA_DE",
-      "destino": "Láutulas",
-      "satisface": true
-    },
-    {
-      "origen": "Sora",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Capua",
-      "tipo": "CERCA_DE",
-      "destino": "Lucania",
-      "satisface": true
-    },
-    {
-      "origen": "Sutri",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
-      "origen": "Sutri",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": false
-    },
-    {
-      "origen": "selva Ciminia",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
-      "origen": "Cerveteri",
-      "tipo": "CERCA_DE",
-      "destino": "selva Ciminia",
-      "satisface": true
-    },
-    {
-      "origen": "Camerino",
-      "tipo": "CERCA_DE",
-      "destino": "selva Ciminia",
-      "satisface": true
-    },
-    {
-      "origen": "Perusia",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
-      "origen": "Cortona",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
-      "origen": "Arezzo",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
-      "origen": "Arezzo",
+      "origen": "Civita Castellana",
       "tipo": "CERCA_DE",
       "destino": "Sutri",
       "satisface": true
     },
     {
-      "origen": "Alife",
+      "origen": "Pietrabbondante",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
-      "origen": "Pompeya",
+      "origen": "Boiano",
       "tipo": "CERCA_DE",
-      "destino": "Campania",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Fregellas",
+      "tipo": "CERCA_DE",
+      "destino": "Sora",
+      "satisface": true
+    },
+    {
+      "origen": "Suessa",
+      "tipo": "CERCA_DE",
+      "destino": "Poncias",
+      "satisface": true
+    },
+    {
+      "origen": "Interamna Sucasina",
+      "tipo": "CERCA_DE",
+      "destino": "Capua",
+      "satisface": true
+    },
+    {
+      "origen": "Alife",
+      "tipo": "CERCA_DE",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
@@ -4288,147 +3922,99 @@
       "satisface": true
     },
     {
-      "origen": "Clusio",
+      "origen": "Perusia",
+      "tipo": "CERCA_DE",
+      "destino": "Cortona",
+      "satisface": true
+    },
+    {
+      "origen": "Perusia",
+      "tipo": "CERCA_DE",
+      "destino": "Arezzo",
+      "satisface": true
+    },
+    {
+      "origen": "Sutri",
       "tipo": "CERCA_DE",
       "destino": "Etruria",
       "satisface": true
     },
     {
-      "origen": "Chiusi",
+      "origen": "Sutri",
       "tipo": "CERCA_DE",
-      "destino": "Etruria",
+      "destino": "Címino",
       "satisface": true
     },
     {
-      "origen": "Sassoferrato",
+      "origen": "Cerveteri",
       "tipo": "CERCA_DE",
-      "destino": "Sentino",
+      "destino": "Camerino",
       "satisface": true
     },
     {
-      "origen": "Volterra",
+      "origen": "selva Ciminia",
       "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
-      "origen": "Civita Castellana",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": true
-    },
-    {
-      "origen": "Tívoli",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "Nuceria Alfaterna",
-      "tipo": "CERCA_DE",
-      "destino": "Samnio",
-      "satisface": true
-    },
-    {
-      "origen": "Boiano",
-      "tipo": "CERCA_DE",
-      "destino": "Samnio",
-      "satisface": true
-    },
-    {
-      "origen": "Pupinia",
-      "tipo": "CERCA_DE",
-      "destino": "Anio",
-      "satisface": true
-    },
-    {
-      "origen": "Liris",
-      "tipo": "CERCA_DE",
-      "destino": "Sinuessa",
-      "satisface": true
-    },
-    {
-      "origen": "Sinuessa",
-      "tipo": "CERCA_DE",
-      "destino": "Falerno",
-      "satisface": true
-    },
-    {
-      "origen": "Vescia",
-      "tipo": "CERCA_DE",
-      "destino": "Falerno",
-      "satisface": true
-    },
-    {
-      "origen": "Cales",
-      "tipo": "CERCA_DE",
-      "destino": "Campania",
-      "satisface": true
-    },
-    {
-      "origen": "Vulturno",
-      "tipo": "CERCA_DE",
-      "destino": "Samnio",
-      "satisface": true
-    },
-    {
-      "origen": "Bacchiglione",
-      "tipo": "CERCA_DE",
-      "destino": "Padua",
-      "satisface": true
-    },
-    {
-      "origen": "Brindisi",
-      "tipo": "CERCA_DE",
-      "destino": "Adriático",
-      "satisface": true
-    },
-    {
-      "origen": "Vénetos",
-      "tipo": "CERCA_DE",
-      "destino": "Adriático",
-      "satisface": true
-    },
-    {
-      "origen": "higuera Ruminal",
-      "tipo": "CERCA_DE",
-      "destino": "Palatino",
-      "satisface": true
-    },
-    {
-      "origen": "Vaticano",
-      "tipo": "CERCA_DE",
-      "destino": "Roma",
-      "satisface": true
-    },
-    {
-      "origen": "bosque de Címino",
-      "tipo": "CERCA_DE",
-      "destino": "Etruria",
+      "destino": "Monte Címino",
       "satisface": true
     },
     {
       "origen": "Murgancia",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
       "origen": "Romúlea",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "Ferentino",
       "satisface": true
     },
     {
-      "origen": "Ferentino",
+      "origen": "Nuceria Alfaterna",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
-      "origen": "Narnia",
+      "origen": "Foro Boario",
       "tipo": "CERCA_DE",
-      "destino": "Narni",
+      "destino": "templo circular de Hércules",
+      "satisface": true
+    },
+    {
+      "origen": "higuera Ruminal",
+      "tipo": "CERCA_DE",
+      "destino": "Capitolio",
+      "satisface": true
+    },
+    {
+      "origen": "Aharna",
+      "tipo": "CERCA_DE",
+      "destino": "Capua",
+      "satisface": true
+    },
+    {
+      "origen": "Sassoferrato",
+      "tipo": "CERCA_DE",
+      "destino": "Chiusi",
+      "satisface": true
+    },
+    {
+      "origen": "Fabio",
+      "tipo": "CERCA_DE",
+      "destino": "Decio",
+      "satisface": true
+    },
+    {
+      "origen": "Decio",
+      "tipo": "CERCA_DE",
+      "destino": "Fabio",
+      "satisface": true
+    },
+    {
+      "origen": "Veseris",
+      "tipo": "CERCA_DE",
+      "destino": "guerra Latina",
       "satisface": true
     },
     {
@@ -4444,15 +4030,57 @@
       "satisface": true
     },
     {
-      "origen": "Samnio",
+      "origen": "Lucca",
       "tipo": "CERCA_DE",
-      "destino": "Etruria",
-      "satisface": false
+      "destino": "Suessa",
+      "satisface": true
     },
     {
-      "origen": "Samnio",
+      "origen": "Sora",
       "tipo": "CERCA_DE",
-      "destino": "Campania",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "el Samnio",
+      "tipo": "CERCA_DE",
+      "destino": "Roma",
+      "satisface": true
+    },
+    {
+      "origen": "Campania",
+      "tipo": "CERCA_DE",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Etruria",
+      "tipo": "CERCA_DE",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Monte Tiferno",
+      "tipo": "CERCA_DE",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Roma",
+      "tipo": "CERCA_DE",
+      "destino": "Sora",
+      "satisface": true
+    },
+    {
+      "origen": "Circo",
+      "tipo": "CERCA_DE",
+      "destino": "Venus",
+      "satisface": true
+    },
+    {
+      "origen": "Milionia",
+      "tipo": "CERCA_DE",
+      "destino": "Feritro",
       "satisface": true
     },
     {
@@ -4470,61 +4098,49 @@
     {
       "origen": "Vulsinia",
       "tipo": "CERCA_DE",
-      "destino": "Etruria",
+      "destino": "Perugia",
+      "satisface": true
+    },
+    {
+      "origen": "Vulsinia",
+      "tipo": "CERCA_DE",
+      "destino": "Arezzo",
       "satisface": true
     },
     {
       "origen": "Perugia",
       "tipo": "CERCA_DE",
-      "destino": "Etruria",
+      "destino": "Vulsinia",
+      "satisface": true
+    },
+    {
+      "origen": "Perugia",
+      "tipo": "CERCA_DE",
+      "destino": "Arezzo",
+      "satisface": true
+    },
+    {
+      "origen": "Arezzo",
+      "tipo": "CERCA_DE",
+      "destino": "Vulsinia",
+      "satisface": true
+    },
+    {
+      "origen": "Arezzo",
+      "tipo": "CERCA_DE",
+      "destino": "Perugia",
       "satisface": true
     },
     {
       "origen": "Aquilonia",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
-      "satisface": true
-    },
-    {
-      "origen": "Pescara",
-      "tipo": "CERCA_DE",
-      "destino": "Samnio",
-      "satisface": true
-    },
-    {
-      "origen": "Duronia",
-      "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "Cominio",
       "satisface": true
     },
     {
       "origen": "Cominio",
       "tipo": "CERCA_DE",
       "destino": "Aquilonia",
-      "satisface": true
-    },
-    {
-      "origen": "Cominio",
-      "tipo": "CERCA_DE",
-      "destino": "Pescara",
-      "satisface": true
-    },
-    {
-      "origen": "Cominio",
-      "tipo": "CERCA_DE",
-      "destino": "Duronia",
-      "satisface": true
-    },
-    {
-      "origen": "Pescara",
-      "tipo": "CERCA_DE",
-      "destino": "Duronia",
-      "satisface": true
-    },
-    {
-      "origen": "Roma",
-      "tipo": "NORTE_DE",
-      "destino": "Samnio",
       "satisface": true
     },
     {
@@ -4534,27 +4150,57 @@
       "satisface": true
     },
     {
-      "origen": "Cominio",
+      "origen": "Aquilonia",
       "tipo": "CERCA_DE",
       "destino": "Boiano",
       "satisface": true
     },
     {
-      "origen": "Roma",
+      "origen": "Aquilonia",
       "tipo": "CERCA_DE",
-      "destino": "Sepino",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
       "origen": "Sepino",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Velia",
+      "tipo": "CERCA_DE",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Palumbino",
+      "tipo": "CERCA_DE",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Herculáneo",
+      "tipo": "CERCA_DE",
+      "destino": "el Samnio",
       "satisface": true
     },
     {
       "origen": "Vescia",
       "tipo": "CERCA_DE",
-      "destino": "Samnio",
+      "destino": "el Samnio",
+      "satisface": true
+    },
+    {
+      "origen": "Templo de Quirino",
+      "tipo": "CERCA_DE",
+      "destino": "Foro",
+      "satisface": true
+    },
+    {
+      "origen": "Templo de Marte",
+      "tipo": "CERCA_DE",
+      "destino": "Bovilas",
       "satisface": true
     },
     {
@@ -4562,18 +4208,13 @@
       "tipo": "CERCA_DE",
       "destino": "Roma",
       "satisface": true
-    },
-    {
-      "origen": "templo de Quirino",
-      "tipo": "CERCA_DE",
-      "destino": "Foro",
-      "satisface": true
     }
   ],
-  "width": 7500,
-  "height": 7500,
-  "MARGIN_DIR": 267,
-  "DIST_CLOSE": 833,
-  "DIST_CONNECT": 937,
-  "metros_por_pixel": 5.43
+  "width": 7260,
+  "height": 7260,
+  "MARGIN_DIR": 259,
+  "RADIUS_DIR": 2420,
+  "DIST_CLOSE": 1037,
+  "DIST_CONNECT": 1452,
+  "metros_por_pixel": 4.08
 }

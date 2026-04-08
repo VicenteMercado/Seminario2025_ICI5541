@@ -59,9 +59,10 @@ N = max(1, len(clean_places))
 SIDE = max(600, 20 * N)
 WIDTH, HEIGHT = SIDE, SIDE
 
-MARGIN_DIR   = max(8, SIDE // 28)   # N/S/E/O
-DIST_CLOSE   = max(14, SIDE // 9)   # CERCA_DE
-DIST_CONNECT = max(16, SIDE // 8)   # CONECTA
+MARGIN_DIR   = max(8, SIDE // 28)    # N/S/E/O: margen mínimo direccional
+RADIUS_DIR   = max(20, SIDE // 3)   # N/S/E/O: radio máximo de cercanía (~33% del lienzo)
+DIST_CLOSE   = max(14, SIDE // 7)   # CERCA_DE: radio de proximidad (~14% del lienzo)
+DIST_CONNECT = max(16, SIDE // 5)   # CONECTA: radio de conexión (~20% del lienzo)
 MIN_SEP      = max(8, SIDE // 22)   # separación mínima nodos
 
 SOLVE_TIMEOUT_MS = 30000
@@ -97,10 +98,19 @@ def rel_to_constraints(A, B, tipo, x, y, distancia_px=None):
     dx, dy = x[A] - x[B], y[A] - y[B]
     cons = []
     margin = distancia_px if distancia_px else MARGIN_DIR
-    if   tipo == "NORTE_DE": cons.append(dy >= margin)
-    elif tipo == "SUR_DE":   cons.append(dy <= -margin)
-    elif tipo == "ESTE_DE":  cons.append(dx >= margin)
-    elif tipo == "OESTE_DE": cons.append(dx <= -margin)
+    radius = distancia_px if distancia_px else RADIUS_DIR
+    if tipo == "NORTE_DE":
+        cons.append(dy >= margin)
+        cons += [("abs_le", dx, radius), ("abs_le", dy, radius)]
+    elif tipo == "SUR_DE":
+        cons.append(dy <= -margin)
+        cons += [("abs_le", dx, radius), ("abs_le", dy, radius)]
+    elif tipo == "ESTE_DE":
+        cons.append(dx >= margin)
+        cons += [("abs_le", dx, radius), ("abs_le", dy, radius)]
+    elif tipo == "OESTE_DE":
+        cons.append(dx <= -margin)
+        cons += [("abs_le", dx, radius), ("abs_le", dy, radius)]
     elif tipo == "CERCA_DE":
         bound = int((distancia_px if distancia_px else DIST_CLOSE) * 1.2)
         cons += [("abs_le", dx, bound), ("abs_le", dy, bound)]
@@ -213,11 +223,16 @@ def solve_with_z3(lugares, relaciones):
         dx, dy = coords[A]["x"] - coords[B]["x"], coords[A]["y"] - coords[B]["y"]
         dpx = dist_m_to_px(rel.get("distancia_m"))
         margin = dpx if dpx else MARGIN_DIR
+        radius = dpx if dpx else RADIUS_DIR
         ok = True
-        if t == "NORTE_DE": ok &= (dy >= margin)
-        elif t == "SUR_DE": ok &= (dy <= -margin)
-        elif t == "ESTE_DE": ok &= (dx >= margin)
-        elif t == "OESTE_DE": ok &= (dx <= -margin)
+        if t == "NORTE_DE":
+            ok &= (dy >= margin) and (abs(dx) <= radius) and (abs(dy) <= radius)
+        elif t == "SUR_DE":
+            ok &= (dy <= -margin) and (abs(dx) <= radius) and (abs(dy) <= radius)
+        elif t == "ESTE_DE":
+            ok &= (dx >= margin) and (abs(dx) <= radius) and (abs(dy) <= radius)
+        elif t == "OESTE_DE":
+            ok &= (dx <= -margin) and (abs(dx) <= radius) and (abs(dy) <= radius)
         elif t == "CERCA_DE":
             bound = int((dpx if dpx else DIST_CLOSE) * 1.2)
             ok &= (abs(dx) <= bound and abs(dy) <= bound)
@@ -236,7 +251,8 @@ def solve_with_z3(lugares, relaciones):
     CSR = sum(1 for r in rel_eval if r["satisface"]) / max(1, len(rel_eval))
     result = {"coords": coords, "CSR": CSR, "rel_eval": rel_eval,
               "width": WIDTH, "height": HEIGHT,
-              "MARGIN_DIR": MARGIN_DIR, "DIST_CLOSE": DIST_CLOSE, "DIST_CONNECT": DIST_CONNECT}
+              "MARGIN_DIR": MARGIN_DIR, "RADIUS_DIR": RADIUS_DIR,
+              "DIST_CLOSE": DIST_CLOSE, "DIST_CONNECT": DIST_CONNECT}
     if METROS_POR_PIXEL is not None:
         result["metros_por_pixel"] = round(METROS_POR_PIXEL, 2)
     return result
