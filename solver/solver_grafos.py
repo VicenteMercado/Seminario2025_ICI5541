@@ -4,388 +4,206 @@ import random
 from pathlib import Path
 import networkx as nx
 import matplotlib.pyplot as plt
-from z3 import Solver, Int, And, Or, sat  # type: ignore[import-untyped]
+from z3 import *
 
 _ROOT = Path(__file__).resolve().parent.parent
 _JSON_DIR = _ROOT / "json"
 _IMG_DIR = _ROOT / "img"
 
 # ------------------------------------------------------------
-# 1. Cargar datos desde JSON (con meta y pivotes si existen)
+# 1. Cargar inecuaciones preprocesadas
 # ------------------------------------------------------------
-with open(_JSON_DIR / "map_relations.json", "r", encoding="utf-8") as f:
+with open(_JSON_DIR / "inequalities.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-clean_places = data.get("lugares", [])
-clean_relations = data.get("relaciones", [])
-meta = data.get("lugares_meta", {})        # meta por lugar (opcional)
+clean_places = data["lugares"]
+ineq_constraints = data["constraints"]
+pivotes_list = data.get("pivotes", [])
+params = data["params"]
 
-# pivotes: distinguir entre “no viene” y “lista vacía”
-if "pivotes" in data:
-    pivotes_list = data.get("pivotes", [])
-    if not pivotes_list:
-        print("⚠️ Aviso: 'pivotes' está presente pero vacío. Anclas de pivotes deshabilitadas.")
-else:
-    pivotes_list = []
-    print("⚠️ Aviso: 'pivotes' no viene en el JSON. Anclas de pivotes deshabilitadas.")
+WIDTH = params["WIDTH"]
+HEIGHT = params["HEIGHT"]
+MIN_SEP = params["MIN_SEP"]
 
-print(f"Cargados {len(clean_places)} lugares y {len(clean_relations)} relaciones.")
-if not meta:
-    print("⚠️ Aviso: 'lugares_meta' no viene en el JSON. Usaré defaults.")
+SOLVE_TIMEOUT_MS = 2500
+
 
 # ------------------------------------------------------------
-# 2. Normalización auxiliar
+# 2. Helpers
 # ------------------------------------------------------------
 def norm_place(s: str) -> str:
     return (s or "").strip().lower()
 
-meta_by_norm = {norm_place(k): v for k, v in meta.items()}
+
 pivots_norm = {norm_place(p) for p in pivotes_list}
 
-# ------------------------------------------------------------
-# 3. API desde meta
-# ------------------------------------------------------------
-def pivot_score(name: str) -> int:
-    m = meta_by_norm.get(norm_place(name), {})
-    return int(m.get("pivot_score", 0))
 
 def is_pivot(name: str) -> bool:
     return norm_place(name) in pivots_norm
 
-# ------------------------------------------------------------
-# 4. Parámetros del lienzo y distancias
-# ------------------------------------------------------------
-N = max(1, len(clean_places))
-SIDE = max(600, 20 * N)
-WIDTH, HEIGHT = SIDE, SIDE
 
-MARGIN_DIR   = max(8, SIDE // 28)    # N/S/E/O: margen mínimo direccional
-RADIUS_DIR   = max(20, SIDE // 3)   # N/S/E/O: radio máximo de cercanía (~33% del lienzo)
-DIST_CLOSE   = max(14, SIDE // 7)   # CERCA_DE: radio de proximidad (~14% del lienzo)
-DIST_CONNECT = max(16, SIDE // 5)   # CONECTA: radio de conexión (~20% del lienzo)
-MIN_SEP      = max(8, SIDE // 22)   # separación mínima nodos
-
-SOLVE_TIMEOUT_MS = 30000
-REL_LIMIT = 900
-
-# ------------------------------------------------------------
-# 4b. Escala metros → píxeles (si hay distancias concretas)
-# ------------------------------------------------------------
-all_dist_m = [r["distancia_m"] for r in clean_relations if "distancia_m" in r]
-if all_dist_m:
-    max_dist_m = max(all_dist_m)
-    METROS_POR_PIXEL = max_dist_m / (SIDE * 0.4)
-    print(f"Escala: {METROS_POR_PIXEL:.1f} m/px (dist. máx: {max_dist_m:.0f}m, lienzo: {SIDE}px)")
-else:
-    METROS_POR_PIXEL = None
-
-def dist_m_to_px(metros):
-    """Convierte metros a píxeles del lienzo. Retorna None si no hay escala."""
-    if METROS_POR_PIXEL is None or metros is None:
-        return None
-    return max(MIN_SEP + 1, int(metros / METROS_POR_PIXEL))
-
-# ------------------------------------------------------------
-# 5. Utilidades Z3
-# ------------------------------------------------------------
 def add_abs_le(s, expr, bound):
     s.add(expr <= bound, expr >= -bound)
+
 
 def add_min_sep(s, dx, dy, d):
     s.add(Or(dx >= d, dx <= -d, dy >= d, dy <= -d))
 
-def rel_to_constraints(A, B, tipo, x, y, distancia_px=None):
-    dx, dy = x[A] - x[B], y[A] - y[B]
-    cons = []
-    margin = distancia_px if distancia_px else MARGIN_DIR
-    radius = distancia_px if distancia_px else RADIUS_DIR
-    if tipo == "NORTE_DE":
-        cons.append(dy >= margin)
-        cons += [("abs_le", dx, radius), ("abs_le", dy, radius)]
-    elif tipo == "SUR_DE":
-        cons.append(dy <= -margin)
-        cons += [("abs_le", dx, radius), ("abs_le", dy, radius)]
-    elif tipo == "ESTE_DE":
-        cons.append(dx >= margin)
-        cons += [("abs_le", dx, radius), ("abs_le", dy, radius)]
-    elif tipo == "OESTE_DE":
-        cons.append(dx <= -margin)
-        cons += [("abs_le", dx, radius), ("abs_le", dy, radius)]
-    elif tipo == "CERCA_DE":
-        bound = int((distancia_px if distancia_px else DIST_CLOSE) * 1.2)
-        cons += [("abs_le", dx, bound), ("abs_le", dy, bound)]
-    elif tipo == "CONECTA":
-        bound = int((distancia_px if distancia_px else DIST_CONNECT) * 1.2)
-        cons += [("abs_le", dx, bound), ("abs_le", dy, bound)]
-    return cons
-
-def priority(rel):
-    t = rel["tipo"].upper()
-    if t in {"NORTE_DE", "SUR_DE", "ESTE_DE", "OESTE_DE"}: return 0
-    if t == "CERCA_DE": return 1
-    if t == "CONECTA":  return 2
-    return 3
 
 # ------------------------------------------------------------
-# 6. Solver incremental Z3
+# 3. Solver usando JSON de inecuaciones
 # ------------------------------------------------------------
-def solve_with_z3(lugares, relaciones):
-    rels = sorted(relaciones[:REL_LIMIT], key=priority)
+def solve_with_z3(lugares, constraints):
     s = Solver()
     s.set(timeout=SOLVE_TIMEOUT_MS)
+
     x, y = {}, {}
 
     # Variables de posición
     for i, p in enumerate(lugares):
-        x[p], y[p] = Int(f"x_{i}"), Int(f"y_{i}")
-        s.add(And(x[p] >= 0, x[p] <= WIDTH,
-                  y[p] >= 0, y[p] <= HEIGHT))
+        x[p] = Int(f"x_{i}")
+        y[p] = Int(f"y_{i}")
 
-    # Anclas de pivotes
-    pivs = [p for p in lugares if is_pivot(p)]
-    if pivs:
-        pivs.sort(key=lambda p: (pivot_score(p), p.lower()), reverse=True)
-        if len(pivs) >= 1: s.add(x[pivs[0]] == WIDTH // 2,     y[pivs[0]] == HEIGHT // 2)
-        if len(pivs) >= 2: s.add(x[pivs[1]] == (WIDTH * 5)//6, y[pivs[1]] == HEIGHT // 2)
-        if len(pivs) >= 3: s.add(x[pivs[2]] == (WIDTH * 1)//6, y[pivs[2]] == HEIGHT // 2)
-    else:
-        if len(lugares) >= 1:
-            p0 = lugares[0]
-            s.add(x[p0] == WIDTH // 2, y[p0] == HEIGHT // 2)
+        s.add(
+            And(
+                x[p] >= 0,
+                x[p] <= WIDTH,
+                y[p] >= 0,
+                y[p] <= HEIGHT
+            )
+        )
 
-    # Separación mínima (solo entre nodos conectados por alguna relación)
-    sep_pairs = set()
-    for rel in rels:
-        A, B = rel["origen"], rel["destino"]
-        if A in x and B in x:
-            pair = (min(A, B), max(A, B))
-            sep_pairs.add(pair)
-    for A, B in sep_pairs:
-        add_min_sep(s, x[A] - x[B], y[A] - y[B], MIN_SEP)
+    # --------------------------------------------------------
+    # Ancla inicial
+    # --------------------------------------------------------
+    if lugares:
+        first = lugares[0]
+        s.add(x[first] == WIDTH // 2)
+        s.add(y[first] == HEIGHT // 2)
 
-    # Añadir relaciones incrementalmente
-    for rel in rels:
-        A, B, t = rel["origen"], rel["destino"], rel["tipo"].upper()
+    # --------------------------------------------------------
+    # Separación mínima global
+    # --------------------------------------------------------
+    for i in range(len(lugares)):
+        for j in range(i + 1, len(lugares)):
+            A = lugares[i]
+            B = lugares[j]
+            add_min_sep(s, x[A] - x[B], y[A] - y[B], MIN_SEP)
+
+    # --------------------------------------------------------
+    # Aplicar restricciones desde inequalities.json
+    # --------------------------------------------------------
+    for item in constraints:
+        A = item["origen"]
+        B = item["destino"]
+        c = item["constraint"]
+
         if A not in x or B not in x:
             continue
-        dpx = dist_m_to_px(rel.get("distancia_m"))
-        cons = rel_to_constraints(A, B, t, x, y, distancia_px=dpx)
-        if not cons:
-            continue
-        s.push()
-        for c in cons:
-            if isinstance(c, tuple):
-                tag = c[0]
-                if tag == "abs_le":
-                    _, expr, bound = c
-                    add_abs_le(s, expr, bound)
-            else:
-                s.add(c)
-        if s.check() == sat:
-            s.pop()
-            # consolidar
-            for c in cons:
-                if isinstance(c, tuple):
-                    tag = c[0]
-                    if tag == "abs_le":
-                        _, expr, bound = c
-                        add_abs_le(s, expr, bound)
-                else:
-                    s.add(c)
-        else:
-            s.pop()
 
-    # Modelo final
+        dx = x[A] - x[B]
+        dy = y[A] - y[B]
+
+        kind = c["kind"]
+
+        if kind == "ineq":
+            expr = dx if c["expr"] == "dx" else dy
+            op = c["op"]
+            value = c["value"]
+
+            if op == ">=":
+                s.add(expr >= value)
+            elif op == "<=":
+                s.add(expr <= value)
+
+        elif kind == "abs_box":
+            add_abs_le(s, dx, c["dx_max"])
+            add_abs_le(s, dy, c["dy_max"])
+
+    # --------------------------------------------------------
+    # Resolver
+    # --------------------------------------------------------
     if s.check() != sat:
-        print("⚠️ Z3 no pudo satisfacer todas las restricciones. Se generará un layout parcial.")
-        try:
-            m = s.model()
-        except Exception:
-            coords = {p: {"x": random.randint(0, WIDTH), "y": random.randint(0, HEIGHT)} for p in lugares}
-            rel_eval = [{"origen": r["origen"], "tipo": r["tipo"], "destino": r["destino"], "satisface": False}
-                        for r in relaciones]
-            return {"coords": coords, "CSR": 0.0, "rel_eval": rel_eval,
-                    "width": WIDTH, "height": HEIGHT,
-                    "MARGIN_DIR": MARGIN_DIR, "DIST_CLOSE": DIST_CLOSE, "DIST_CONNECT": DIST_CONNECT}
+        print("⚠️ Layout no satisfacible. Generando layout aleatorio.")
+        return {
+            "coords": {
+                p: {
+                    "x": random.randint(0, WIDTH),
+                    "y": random.randint(0, HEIGHT)
+                }
+                for p in lugares
+            },
+            "CSR": 0.0,
+            "width": WIDTH,
+            "height": HEIGHT
+        }
 
-    m = s.model()
+    model = s.model()
 
     coords = {
         p: {
-            "x": int(m.eval(x[p]).as_long()),
-            "y": int(m.eval(y[p]).as_long())
+            "x": int(model.eval(x[p]).as_long()),
+            "y": int(model.eval(y[p]).as_long())
         }
         for p in lugares
     }
 
-    def satisfied(rel):
-        A, B, t = rel["origen"], rel["destino"], rel["tipo"].upper()
-        dx, dy = coords[A]["x"] - coords[B]["x"], coords[A]["y"] - coords[B]["y"]
-        dpx = dist_m_to_px(rel.get("distancia_m"))
-        margin = dpx if dpx else MARGIN_DIR
-        radius = dpx if dpx else RADIUS_DIR
-        ok = True
-        if t == "NORTE_DE":
-            ok &= (dy >= margin) and (abs(dx) <= radius) and (abs(dy) <= radius)
-        elif t == "SUR_DE":
-            ok &= (dy <= -margin) and (abs(dx) <= radius) and (abs(dy) <= radius)
-        elif t == "ESTE_DE":
-            ok &= (dx >= margin) and (abs(dx) <= radius) and (abs(dy) <= radius)
-        elif t == "OESTE_DE":
-            ok &= (dx <= -margin) and (abs(dx) <= radius) and (abs(dy) <= radius)
-        elif t == "CERCA_DE":
-            bound = int((dpx if dpx else DIST_CLOSE) * 1.2)
-            ok &= (abs(dx) <= bound and abs(dy) <= bound)
-        elif t == "CONECTA":
-            bound = int((dpx if dpx else DIST_CONNECT) * 1.2)
-            ok &= (abs(dx) <= bound and abs(dy) <= bound)
-        return bool(ok)
-
-    rel_eval = [{
-        "origen": r["origen"],
-        "tipo": r["tipo"],
-        "destino": r["destino"],
-        "satisface": satisfied(r)
-    } for r in relaciones]
-
-    CSR = sum(1 for r in rel_eval if r["satisface"]) / max(1, len(rel_eval))
-    result = {"coords": coords, "CSR": CSR, "rel_eval": rel_eval,
-              "width": WIDTH, "height": HEIGHT,
-              "MARGIN_DIR": MARGIN_DIR, "RADIUS_DIR": RADIUS_DIR,
-              "DIST_CLOSE": DIST_CLOSE, "DIST_CONNECT": DIST_CONNECT}
-    if METROS_POR_PIXEL is not None:
-        result["metros_por_pixel"] = round(METROS_POR_PIXEL, 2)
-    return result
+    return {
+        "coords": coords,
+        "CSR": 1.0,
+        "width": WIDTH,
+        "height": HEIGHT
+    }
 
 
 # ------------------------------------------------------------
-# 7. Resolver + guardar
+# 4. Ejecutar solver
 # ------------------------------------------------------------
-solution = solve_with_z3(clean_places, clean_relations)
+solution = solve_with_z3(clean_places, ineq_constraints)
+
 print(f"CSR: {solution['CSR']:.3f}")
 
-_sol_path = _JSON_DIR / "solution.json"
-with open(_sol_path, "w", encoding="utf-8") as f:
+solution_path = _JSON_DIR / "solution.json"
+with open(solution_path, "w", encoding="utf-8") as f:
     json.dump(solution, f, indent=2, ensure_ascii=False)
-print(f"Solución (coordenadas del solver) guardada en {_sol_path}")
 
-if pivotes_list:
-    print("\n=== Pivotes usados (desde extractor) ===")
-    for i, p in enumerate(pivotes_list, 1):
-        print(f"{i}. {p}")
-else:
-    print("\n(No hay pivotes definidos en el JSON)")
+print(f"Solución guardada en {solution_path}")
+
 
 # ------------------------------------------------------------
-# 8. Graficar usando coords del solver
+# 5. Graficar
 # ------------------------------------------------------------
-FIGSIZE = (20, 10)
-DPI = 240
-NODE_SIZE = 700
-FONT_NODES = 8
-FONT_EDGES = 10
-SAVE_SVG = True
+G = nx.Graph()
 
-# Todos los nodos se tratan como nodos estándar
-non_region_nodes = list(clean_places)
+for p in clean_places:
+    G.add_node(p)
 
-# map (origen,destino) -> ¿alguna relación satisfecha?
-pair_sat = {}
-for r in solution["rel_eval"]:
-    a, b = r["origen"], r["destino"]
-    key = tuple(sorted((a, b)))
-    pair_sat[key] = pair_sat.get(key, False) or r["satisface"]
+for item in ineq_constraints:
+    G.add_edge(item["origen"], item["destino"])
 
-G2 = nx.Graph()
-for p in non_region_nodes:
-    G2.add_node(p)
+plt.figure(figsize=(20, 10), dpi=240)
 
-for r in clean_relations:
-    a, b = r["origen"], r["destino"]
-    key = tuple(sorted((a, b)))
-    if not G2.has_edge(a, b):
-        G2.add_edge(a, b, tipo=r["tipo"], satisface=pair_sat.get(key, False))
-
-plt.figure(figsize=FIGSIZE, dpi=DPI)
-ax = plt.gca()
-
-# Coordenadas del solver (opcionalmente escaladas)
-ZOOM = 1.0
-pos_zoom = {
-    p: (solution["coords"][p]["x"] * ZOOM,
-        solution["coords"][p]["y"] * ZOOM)
-    for p in non_region_nodes
-}
-
-# Nodos conectados vs aislados
-deg_dict = dict(G2.degree())
-nodes_conectados = [p for p in non_region_nodes if deg_dict.get(p, 0) > 0]
-nodes_aislados   = [p for p in non_region_nodes if deg_dict.get(p, 0) == 0]
-
-# --- conectados ---
-node_edges_con = []
-node_colors_con = []
-for p in nodes_conectados:
-    if is_pivot(p):
-        node_edges_con.append("#1f3d1f")  # borde más oscuro para pivote
-        node_colors_con.append("#b8e6b8")
-    else:
-        node_edges_con.append("#2d7a41")
-        node_colors_con.append("#b8e6b8")
-
-nx.draw_networkx_nodes(
-    G2, pos_zoom, nodelist=nodes_conectados,
-    node_color=node_colors_con, node_size=NODE_SIZE,
-    edgecolors=node_edges_con, linewidths=1.2
-)
-
-# --- aislados ---
-DIBUJAR_AISLADOS = True
-
-if DIBUJAR_AISLADOS and nodes_aislados:
-    NODE_SIZE_ISO = int(NODE_SIZE * 0.5)
-    node_edges_iso = ["#2d7a41"] * len(nodes_aislados)
-    node_colors_iso = ["#cfe9cf"] * len(nodes_aislados)
-
-    nx.draw_networkx_nodes(
-        G2, pos_zoom, nodelist=nodes_aislados,
-        node_color=node_colors_iso, node_size=NODE_SIZE_ISO,
-        edgecolors=node_edges_iso, linewidths=0.8
+pos = {
+    p: (
+        solution["coords"][p]["x"],
+        solution["coords"][p]["y"]
     )
-
-# Aristas
-edge_colors = ["green" if G2[u][v]["satisface"] else "red" for u, v in G2.edges()]
-nx.draw_networkx_edges(
-    G2, pos_zoom,
-    edge_color=edge_colors, width=1.8, alpha=0.9
-)
-
-# Etiquetas: sólo para conectados
-labels_regular = {p: p for p in nodes_conectados}
-nx.draw_networkx_labels(
-    G2, pos_zoom, labels=labels_regular, font_size=FONT_NODES,
-    bbox=dict(facecolor="white", alpha=0.75, edgecolor="none", pad=1.0)
-)
-
-# Etiquetas de aristas violadas
-violadas_labels = {
-    (u, v): G2[u][v]["tipo"] for u, v in G2.edges()
-    if not G2[u][v]["satisface"]
+    for p in clean_places
 }
-nx.draw_networkx_edge_labels(
-    G2, pos_zoom, edge_labels=violadas_labels,
-    font_size=FONT_EDGES,
-    bbox=dict(alpha=0.35, facecolor="white", edgecolor="none")
+
+nx.draw(
+    G,
+    pos,
+    with_labels=True,
+    node_size=700
 )
 
-scale_info = f" · {solution['metros_por_pixel']:.0f} m/px" if "metros_por_pixel" in solution else ""
-plt.title(f"Mapa generado · CSR={solution['CSR']:.3f}{scale_info}\nVerde=satisfechas · Rojo=violadas")
+plt.title(f"Mapa generado desde inequalities.json · CSR={solution['CSR']:.3f}")
 plt.axis("equal")
 plt.axis("off")
 plt.tight_layout()
 
-if SAVE_SVG:
-    _IMG_DIR.mkdir(parents=True, exist_ok=True)
-    plt.savefig(_IMG_DIR / "mapa.svg", format="svg", bbox_inches="tight")
+_IMG_DIR.mkdir(parents=True, exist_ok=True)
+plt.savefig(_IMG_DIR / "mapa.svg", format="svg", bbox_inches="tight")
 
 plt.show()
