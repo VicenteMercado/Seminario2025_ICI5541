@@ -31,10 +31,28 @@ SIDE = max(600, 20 * N)
 WIDTH = SIDE
 HEIGHT = SIDE
 
-MARGIN_DIR = max(8, SIDE // 28)
-DIST_CLOSE = max(14, SIDE // 9)
-DIST_CONNECT = max(16, SIDE // 8)
-MIN_SEP = max(8, SIDE // 22)
+MARGIN_DIR   = max(8, SIDE // 28)    # N/S/E/O: margen mínimo direccional
+RADIUS_DIR   = max(20, SIDE // 3)    # N/S/E/O: radio máximo de cercanía (~33% del lienzo)
+DIST_CLOSE   = max(14, SIDE // 7)    # CERCA_DE: radio de proximidad (~14% del lienzo)
+DIST_CONNECT = max(16, SIDE // 5)    # CONECTA: radio de conexión (~20% del lienzo)
+MIN_SEP      = max(8, SIDE // 22)    # separación mínima nodos
+
+# ------------------------------------------------------------
+# 2b. Escala metros → píxeles (si hay distancias concretas)
+# ------------------------------------------------------------
+all_dist_m = [r["distancia_m"] for r in relaciones if "distancia_m" in r]
+if all_dist_m:
+    max_dist_m = max(all_dist_m)
+    METROS_POR_PIXEL = max_dist_m / (SIDE * 0.4)
+    print(f"Escala: {METROS_POR_PIXEL:.1f} m/px (dist. máx: {max_dist_m:.0f}m, lienzo: {SIDE}px)")
+else:
+    METROS_POR_PIXEL = None
+
+def dist_m_to_px(metros):
+    """Convierte metros a píxeles del lienzo. Retorna None si no hay escala."""
+    if METROS_POR_PIXEL is None or metros is None:
+        return None
+    return max(MIN_SEP + 1, int(metros / METROS_POR_PIXEL))
 
 
 # ------------------------------------------------------------
@@ -44,54 +62,68 @@ def relation_to_constraint(rel):
     A = rel["origen"]
     B = rel["destino"]
     tipo = rel["tipo"].upper()
+    dpx = dist_m_to_px(rel.get("distancia_m"))
 
-    # Relaciones direccionales
+    margin = dpx if dpx else MARGIN_DIR
+    radius = dpx if dpx else RADIUS_DIR
+
+    # Relaciones direccionales (margen mínimo + radio máximo)
     if tipo == "NORTE_DE":
         return {
-            "kind": "ineq",
-            "expr": "dy",
-            "op": ">=",
-            "value": MARGIN_DIR
+            "kind": "directional",
+            "dir_expr": "dy",
+            "dir_op": ">=",
+            "dir_value": margin,
+            "dx_max": radius,
+            "dy_max": radius
         }
 
     elif tipo == "SUR_DE":
         return {
-            "kind": "ineq",
-            "expr": "dy",
-            "op": "<=",
-            "value": -MARGIN_DIR
+            "kind": "directional",
+            "dir_expr": "dy",
+            "dir_op": "<=",
+            "dir_value": -margin,
+            "dx_max": radius,
+            "dy_max": radius
         }
 
     elif tipo == "ESTE_DE":
         return {
-            "kind": "ineq",
-            "expr": "dx",
-            "op": ">=",
-            "value": MARGIN_DIR
+            "kind": "directional",
+            "dir_expr": "dx",
+            "dir_op": ">=",
+            "dir_value": margin,
+            "dx_max": radius,
+            "dy_max": radius
         }
 
     elif tipo == "OESTE_DE":
         return {
-            "kind": "ineq",
-            "expr": "dx",
-            "op": "<=",
-            "value": -MARGIN_DIR
+            "kind": "directional",
+            "dir_expr": "dx",
+            "dir_op": "<=",
+            "dir_value": -margin,
+            "dx_max": radius,
+            "dy_max": radius
         }
 
     # Cercanía
     elif tipo == "CERCA_DE":
+        bound = int((dpx if dpx else DIST_CLOSE) * 1.2)
         return {
             "kind": "abs_box",
-            "dx_max": DIST_CLOSE,
-            "dy_max": DIST_CLOSE
+            "dx_max": bound,
+            "dy_max": bound
         }
 
     # Conexión
     elif tipo == "CONECTA":
+        bound = int((dpx if dpx else DIST_CONNECT) * 1.2)
         return {
             "kind": "abs_box",
-            "dx_max": DIST_CONNECT,
-            "dy_max": DIST_CONNECT
+            "dx_max": bound,
+            "dy_max": bound
         }
 
     return None
@@ -107,9 +139,11 @@ ineq_data = {
         "WIDTH": WIDTH,
         "HEIGHT": HEIGHT,
         "MARGIN_DIR": MARGIN_DIR,
+        "RADIUS_DIR": RADIUS_DIR,
         "DIST_CLOSE": DIST_CLOSE,
         "DIST_CONNECT": DIST_CONNECT,
-        "MIN_SEP": MIN_SEP
+        "MIN_SEP": MIN_SEP,
+        **({"metros_por_pixel": round(METROS_POR_PIXEL, 2)} if METROS_POR_PIXEL else {})
     },
     "constraints": []
 }
@@ -120,12 +154,15 @@ for rel in relaciones:
     if c is None:
         continue
 
-    ineq_data["constraints"].append({
+    entry = {
         "origen": rel["origen"],
         "destino": rel["destino"],
         "tipo": rel["tipo"],
         "constraint": c
-    })
+    }
+    if "distancia_m" in rel:
+        entry["distancia_m"] = rel["distancia_m"]
+    ineq_data["constraints"].append(entry)
 
 
 # ------------------------------------------------------------
